@@ -9,7 +9,7 @@ group :development, :test do
 end
 
 # Use postgreSQL as production database
-groupd :production, :staging do
+group :production, :staging do
 	gem 'pg'
 end
 
