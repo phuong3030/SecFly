@@ -13,17 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20140529034419) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "account_in_roles", id: false, force: true do |t|
     t.integer "account_id"
     t.integer "role_id"
     t.text    "description"
   end
 
-  add_index "account_in_roles", ["account_id"], name: "index_account_in_roles_on_account_id", using: :btree
-  add_index "account_in_roles", ["role_id"], name: "index_account_in_roles_on_role_id", using: :btree
+  add_index "account_in_roles", ["account_id"], name: "index_account_in_roles_on_account_id"
+  add_index "account_in_roles", ["role_id"], name: "index_account_in_roles_on_role_id"
 
   create_table "accounts", force: true do |t|
     t.string   "email"
@@ -73,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
   create_table "products", force: true do |t|
     t.integer  "category_id"
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
