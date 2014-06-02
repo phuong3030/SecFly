@@ -41,9 +41,9 @@ SecFly::Application.routes.draw do
 				get "/" => "products#index", :as => "products"
 				get "/:id" => "products#show", :as => "show_product"
 			end
-			%w( 404 422 500 ).each do |code|
-				get code, :to => "errors#show", :code => code
-			end
+			#%w( 404 422 500 ).each do |code|
+			#	get code, :to => "errors#show", :code => code
+			#end
 
 			root :to => "home#index"
 
