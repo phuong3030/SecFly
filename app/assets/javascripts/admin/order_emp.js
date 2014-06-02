@@ -1,6 +1,6 @@
 (function ($, scope) {
 
-	scope.dis = new WebSocketRails(scope.location.host + '/websocket');
+	scope.dis = new WebSocketRails(scope.location.host + '/websocket', false);
 	scope.channel = dis.subscribe('orders_management_emp');
 
 	channel.bind('new_request', function (data) {
