@@ -1,0 +1,247 @@
+// share 
+@mixin carousel-control-hover() {
+	opacity: .3;
+	filter: alpha(opacity=30);
+
+	&:hover, &:focus {
+		opacity: .9;
+		filter: alpha(opacity=90);
+	}
+}
+
+@mixin responsive-partners() {
+	.partners {
+		.carousel-control {
+			&.right {
+				&>i {
+					margin: 24% 0 0 32%;
+				}
+			}
+
+			&.left {
+				&>i {
+					margin: 24% 0 0 -32%;
+				}  	
+			}
+		}
+
+		.item {
+			&>span {
+				margin: 0;
+
+				img {
+					width: 26.5%;
+				}
+
+				&:first-child{
+					margin-left: 10%;
+				}
+			}
+		}
+	}
+}
+
+@mixin banner-height() {
+	#banner {	
+		.carousel-inner { 
+			.item {
+				img {
+					height: 560px;
+					min-height: 560px;
+				}
+			}	
+		}
+	}
+}
+
+// banner
+#banner {	
+	.carousel-control {
+		background: transparent;
+		@include carousel-control-hover();		
+
+		&.right {
+			&>i {
+				margin: 125% 0 0 32%;
+			}
+		}
+
+		&.left {
+			&>i {
+				margin: 125% 0 0 -32%;
+			}  	
+		}
+	}
+
+	.carousel-indicators {
+		&>li {
+			border: 0 !important;
+			background: #445878;
+
+			&.active {
+				background: #31353D;
+			}
+		}
+	}
+}
+
+// --- PAGE CONTENT --- //
+
+// services
+.services {
+	margin-top: 30px;
+
+	.heading {
+		margin-bottom: 10px;
+	}
+
+	h2, h3 {
+		left: 25%;
+		color: #92CDCF;
+		font: 24px Helvetica107XBCn;
+	}
+
+	h3 {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.services-description { 
+		min-height: 220px;
+
+		img {
+			float: right;
+		}
+	}
+}
+
+// partners
+.partners {
+	.carousel-control {
+		@include carousel-control-hover();		
+
+		&.right {
+			&>i {
+				margin: 230% 0 0 32%;
+			}
+		}
+
+		&.left {
+			&>i {
+				margin: 230% 0 0 -32%;
+			}  	
+		}
+	}
+
+	span {
+		margin-left: 7%;	
+	}
+
+	img {
+		margin-bottom: 2px;
+	}
+
+	h2 {
+		left: 30%;
+	}
+}
+
+.companyinfo {
+	h2 {
+		left: 36%;	
+	}
+
+	.about-us {
+		color: #EEEEF7;
+
+		.left-side {
+			width: 50%;
+			float: left;
+		}
+
+		.clear {
+			margin-top: 30px;
+		}
+
+		.commitment {
+			&>p {
+				margin: 0;
+			}
+		}
+	}
+
+	.contacts {
+		.office {
+			margin-right: 10px;
+		}	
+
+		.clear {
+			margin-bottom: 40px;
+
+			&>a {
+				display: inline-block;
+				margin-top: 25px;
+			}
+		}
+		
+		.address {
+			&>p {
+				margin: 0;
+
+				&:first-child {
+					font: 18px Helvetica107XBCn;
+					color: #92CDCF;
+					margin: 0 0 10px 0;
+				}
+			}
+		}
+	}
+}
+
+// --- Responsive --- //
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+/* small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	@include responsive-partners();
+	@include banner-height();
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	.services h2, .partners h2 {
+		left: 43%;
+	}
+
+	.companyinfo h2 {
+		left: 36%;
+	}
+
+	@include responsive-partners();
+	@include banner-height();
+
+	.companyinfo .contacts .office {
+		float: left;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	.services h2, .partners h2 {
+		left: 43%;
+	}
+	
+	@include responsive-partners();
+	@include banner-height();
+
+	.companyinfo h2 {
+		left: 36%;
+	}
+
+	.companyinfo .contacts .office {
+		float: left;
+	}
+}

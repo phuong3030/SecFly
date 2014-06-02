@@ -1,0 +1,78 @@
+<% content_for :page_spec do %>
+	<title>Customer orders</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+
+	<%= javascript_include_tag "websockets/websockets" %>
+	<%= javascript_include_tag "admin/order_emp" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ 
+			{ :name => 'Orders', :path => admin_orders_path }, 
+			{ :name => 'Orders management (Employee region)' }
+		]		
+	)%>
+<% end %>
+
+<% content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-money fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>MAGAGE CUSTOMER ORDERS</h6>
+		<h1>Orders</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+
+	<% if @orders.size > 0 %>
+
+		<table class='table table-bordered'>
+			<thead>
+				<tr>
+					<th>Customer id</th>
+					<th>From</th>
+					<th>To</th>
+					<th>Depart</th>
+					<th>Return</th>
+					<th>Adult</th>
+					<th>Children</th>
+					<th>Created at</th>
+					<th>View order</th>
+					<th>Send email</th>
+					<th>Send tickets</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<% @orders.each do |order| %>
+				<tr>			
+					<td><%= order.customer_id %></td>
+					<td><%= order.from %></td>
+					<td><%= order.to %></td>
+					<td><%= order.depart.strftime('%d/%m/%Y %I:%M') %></td>
+					<td><%= order.return.strftime('%d/%m/%Y %I:%M') %></td>
+					<td><%= order.adult %></td>
+					<td><%= order.children %></td>
+					<td><%= order.created_at.strftime('%d/%m/%Y %I:%M') %></td>
+					<td><%= link_to 'View order', '#', :class => 'view-order', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %></td>
+					<td><%= link_to 'Send email', '#', :class => 'send-email', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %></td>
+					<td><%= link_to 'Send tickets', '#', :class => 'send-ticket', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	<% else %>
+		<span>We don't have any order</span>
+	<% end %>
+
+
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav'  %>

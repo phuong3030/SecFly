@@ -1,0 +1,48 @@
+<% content_for :page_spec do %>
+	<title>Products</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/products/product_detail", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "zoomsl-3.0.min.js"  %>
+	<%= javascript_include_tag "home/product-detail.js"  %>
+<% end %>
+
+<%= currently_at 'Products' %>
+
+<div class='content container'>
+
+	<div class='row'>
+
+		<%= render_page_header(
+			@product.name.upcase ,
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'Products', :path => products_path},
+	 		{:name => @product.name}] 
+	 	)%>
+
+	</div>
+
+	<div class='product-detail-inner row'>
+
+		<% if @product.image.exists? %>
+			<div class='col-xs-12 col-md-4'>
+				<%= image_tag(
+					@product.image.url,
+					:alt => @product.name, 
+					:id => 'product-image',
+					:class => 'img-responsive',
+					:'data-large' => @product.image.url,
+					:'data-title' => @product.name
+				)%>
+			</div>
+		<% end %>
+		<div class='col-xs-12 col-md-8'>
+			<h3><%= t('products.Description').to_s %></h3>
+			<%= content_tag(:p, @product.description) %>
+		</div>
+
+	</div>
+
+</div>

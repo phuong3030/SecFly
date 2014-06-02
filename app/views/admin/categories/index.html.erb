@@ -1,0 +1,63 @@
+<% content_for :page_spec do %>
+	<title>Categories management</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+<% end %>
+
+<%= content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ { :name => 'Categories' } ]		
+	)%>
+<% end %>
+
+<%= content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-laptop fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>LISTING ALL CATEGORIES</h6>
+		<h1>Categories</h1>
+	</div>
+<% end %>
+
+<%= content_for :maincontent do %>
+
+	<%= link_to 'Create new category', new_admin_category_path %>
+
+	<% if @category.size > 0 %>
+		<table class='table table-bordered'>
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>description</th>				
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<% @category.each do |category| %>
+				<tr>
+					<td><%= category.name %></td>
+					<td><%= category.description %></td>
+					<td><%= link_to 'Show', admin_category_path(category.id) %></td>
+					<td><%= link_to 'List product', admin_category_products_path(category.id) %></td>
+					<td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
+					<td><%= link_to 'Destroy', admin_category_path(category.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	<% else %>
+		<span>We don't have any category</span>
+	<% end %>
+
+	<%= link_to 'Create new category', new_admin_category_path %>
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav' %>

@@ -1,0 +1,28 @@
+.services-inner { 
+	.img-responsive {
+		min-width: 100%;	
+		margin-bottom: 30px;
+	}
+
+	.dtpicker-content { 
+		background: #31353D;
+
+		.dtpicker-buttonCont .dtpicker-button {
+			background: #445878;
+		}
+
+		.dtpicker-header {
+			.dtpicker-title {
+				color: #EEEEF7;
+			}
+
+			.dtpicker-close { 
+				color: #EEEEF7;
+			}
+
+			.dtpicker-value {
+				color: #92CDCF;
+			}
+		}
+	}
+}

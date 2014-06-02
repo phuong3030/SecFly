@@ -1,0 +1,74 @@
+<% content_for :page_spec do %>
+	<title>Contacts</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/contacts", media: "all" %>
+<% end %>
+
+<%= currently_at "Contacts" %>
+
+<% content_for :page_script do %>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVgvvWayy8jqwz0qqKjJ5_Q8jCHq81VoU&sensor=false">
+	</script>
+
+	<%= javascript_include_tag "home/contacts" %>
+<% end %>
+
+<div class='contacts container'>
+
+	<div class='row'>
+		<%= render_page_header('Contacts',
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'Contacts'}] 
+	 	)%>
+	</div>
+	
+	<div class='contacts-inner row'>
+
+		<div class='office col-xs-12 col-md-12 row'>
+
+			<div class='address col-xs-12 col-md-4'>
+				<h2>Trụ sở chính</h2>
+				<div class='address'>
+					<p>Việt Nam</p>
+					<p>103 Lò Đúc, Hà Nội</p>
+					<p><span>SĐT: </span> +84-4-3821 3672 / 73</p>
+					<p><span>Fax: </span> +84-4-3821 1270</p>
+					<p>
+						<span>E-mail: </span>
+						<%= mail_to 'nacenopto@hn.vnn.vn', 'nacenopto@hn.vnn.vn' %>
+					</p>
+				</div>
+			</div>
+
+			<div class='col-xs-12 col-md-8'>
+				<div class='map' id='vietnam-map' style='width: 100%; height: 100%;'></div>
+			</div>
+
+		</div>
+
+		<div class='office col-xs-12 col-md-12 row'>
+
+			<div class='address col-xs-12 col-md-4'>
+				<h2>Văn phòng chi nhánh</h2>
+				<div class='address'>
+					<p>Germany</p>
+					<p>Seefelder Str.48-13053 Berlin</p>
+					<p><span>SĐT: </span>+49-30-9827056/9823257</p>
+					<p><span>Fax: </span>+49-30-9823277</p>
+					<p>
+						<span>E-mail: </span>
+						<%= mail_to 'nacenoptoberlin@t-online.de', 'nacenoptoberlin@t-online.de' %>
+					</p>
+				</div>
+			</div>
+
+			<div class='col-xs-12 col-md-8'>
+				<div class='map' id='germany-map' style='width: 100%; height: 100%;'></div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

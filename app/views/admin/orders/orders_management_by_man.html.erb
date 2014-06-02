@@ -1,0 +1,47 @@
+<% content_for :page_spec do %>
+	<title>Customer orders</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+
+	<%= javascript_include_tag "websockets/websockets" %>
+	<%= javascript_include_tag "admin/order_man" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ 
+			{ :name => 'Orders', :path => admin_orders_path }, 
+			{ :name => 'Orders management (Manager region)' }
+		]		
+	)%>
+<% end %>
+
+<% content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-money fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>MAGAGE CUSTOMER ORDERS</h6>
+		<h1>Orders</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+	<table class='table table-border'>
+		<thead>
+			<th>User</th>
+			<th>Action</th>
+			<th>Customer id</th>
+			<th>'From => to'</th>
+			<th>Time</th>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav'  %>

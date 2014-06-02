@@ -1,0 +1,85 @@
+<div class='row companyinfo'>
+
+	<div class='col-xs-12 col-md-6 about-us'>
+
+		<div class= heading>
+			<h2>Giới thiệu</h2>	
+		</div>
+
+		<p>
+		NACENOPTO là đối tác tin cậy của khách hàng và của các nhà sản xuất thiết bị danh tiếng
+		trên phạm vi toàn thế giới.
+		</p>
+		<p>
+		NACENOPTO hoạt động chuyên nghiệp trên lĩnh vực thiết bị công nghệ cao, bao gồm: tư vấn,
+		xây dựng dự án, xuất nhập khẩu, chuyển giao công nghệ và thực hiện các dịch vụ sau bán hàng. 
+		</p>
+		<p>
+		NACENOPTO là đại lý phân phối sản phẩm của nhiều hãng sản xuất thiết bị nổi tiếng thế giới như:
+		IBH Impex, Medav, Rohde&Schwarz, HAMEG, CTS, Siemens, Instek, Rheinmentall Defence, Carl Zeiss, 
+		MetaSystem, Kugel, VTQ Videotronik, Boerger REI, Intel…
+		<p>
+		Trụ sở chính của NACENOPTO đặt tại Hà nội, Viêt nam.
+		Và văn phòng chi nhánh tại Berlin, Cộng Hòa Liên Bang Đức.
+		</p>
+		</p>
+
+		<p>
+		Tiêu chí trong kinh doanh của chúng tôi là:
+		</p>
+		<div class='left-side commitment'>
+			<p>•	Một đối tác tin cậy</p>
+			<p>•	Kinh nghiệm dồi dào</p>
+			<p>•	Công nghệ đột phá</p>
+			<p>•	Thông tin cập nhật, hữu ích</p>
+		</div>
+		<div class='right-side commitment'>
+			<p>•	Kỹ thuật chuyên sâu</p>
+			<p>•	Liên kết bền vững</p>
+			<p>•	Nguồn nhân lực chuyên nghiệp</p>
+		</div>
+
+		<div class='clear'>
+			<%= link_to t("readmore").to_s, about_path %>
+		</div>
+
+	</div>
+
+	<div class='col-xs-12 col-md-6 contacts'>
+
+		<div class='heading'>
+			<h2>Văn phòng</h2>	
+		</div>
+		
+		<%= link_to contacts_path do %>
+			<img class='office' src='/images/office2.jpg' alt='' />
+		<% end %>
+		<div class='address'>
+			<p>Việt Nam</p>
+			<p>103 Lò Đúc, Hà Nội</p>
+			<p>SĐT: +84-4-3821 3672 / 73</p>
+			<p>Fax: +84-4-3821 1270</p>
+			<p>E-mail: nacenopto@hn.vnn.vn</p>
+		</div>
+
+		<div class='clear'></div>
+
+		<%= link_to contacts_path do %>
+			<img class='office' src='/images/office1.jpg' alt='' />
+		<% end %>
+		<div class='address'>
+			<p>Cộng Hòa Liên Bang Đức</p>
+			<p>Seefelder Str.48-13053 Berlin</p>
+			<p>SĐT : +49-30-9827056/9823257</p>
+			<p>Fax : +49-30-9823277</p>
+			<p>E-mail: nacenoptoberlin@t-online.de</p>
+		</div>
+
+		<div class='clear'>
+			<%= link_to t("readmore").to_s, contacts_path %>
+		</div>
+
+
+	</div>
+
+</div>	<!-- end companyinfo -->

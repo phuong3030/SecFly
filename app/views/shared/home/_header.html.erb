@@ -1,0 +1,23 @@
+<%= render :partial => 'shared/home/topbar' %>
+
+<div class='logo-region container'>
+
+	<div class='row'>
+
+		<div class='col-xs-12 col-md-4'>
+
+			<div id='logo'>
+				<a href='/'><img class='img-responsive' src='/images/Logo.png' alt='logo' /></a>
+			</div>
+
+		</div>
+
+		<div class='main_nav col-xs-12 col-md-8'>
+
+			<%= yield :main_navigation %>
+
+		</div>
+
+	</div>
+	
+</div>

@@ -1,0 +1,74 @@
+<div class='row services'>
+
+	<div class='col-xs-12 col-md-12'>
+		<div class='heading'>
+			<h2>Our Services</h2>
+		</div>
+	</div>
+
+	<div class='col-xs-12 col-md-4'>
+
+		<h3>Electronics and telecommunication solutions</h3>
+		<div class='services-description'>
+			<p>
+			<%= link_to security_devices_path do %>
+				<img src='/images/security-devices.jpg' alt='security devices services' />
+			<% end %>
+
+			<p>Manufacturing and assembling of electronics and telecommunication equipment.</p>
+			<p>
+			Import-export and technology transfer, service of consultancy, project planning,
+			performing and after-sales.
+			</p>
+			<p>
+			Sole agent of industrial equipment, IT, electronics and telecommunication 
+			equipment, testing and measuring equipment, health equipment, network security
+			and software solution...
+			</p>
+		</div>
+		<div class='clear'>
+			<%= link_to t('readmore').to_s, security_devices_path %>
+		</div>
+		</p>
+
+	</div>
+
+	<div class='col-xs-12 col-md-4'>
+
+		<h3>Airlines ticket agent, tourist and visa services</h3>
+		<div class='services-description'>
+			<p>
+			<%= link_to travel_path do %>
+				<img src='/images/airline-ticket.jpg' alt='airline tickets, tourist and visa services' />
+			<% end %>
+			We pride ourselves in being able to solve all your travel needs for both Business and Pleasure. 
+			Your satisfaction and happiness is our goal. 
+			Think of us as your well travelled friend here to advise and recommend the perfect holiday for you. 
+			We offer complete travel services for the independent traveller - novice or experienced, 
+			whether you’re on business or your journey is for pleasure. 
+			</p>
+		</div>
+		<div class='clear'>
+			<%= link_to t('readmore').to_s, travel_path %>
+		</div>
+	</div>
+
+	<div class='col-xs-12 col-md-4'>
+
+		<h3>Personal finance services</h3>
+		<div class='services-description'>
+			<p>
+			<%= link_to personal_finance_path do %>
+				<img src='/images/financial-planning.jpg' alt='personal finance services' />
+			<% end %>
+			The professionals in our practice offer the judgment, experience and capability 
+			required to help you achieve your goals now and for future generations. 
+			In addition, we team across the firm to provide a robust portfolio of private 
+			wealth services to better serve the sophisticated needs of high net worth individuals and families.
+			</p>
+		</div>
+		<div class='clear'>
+			<%= link_to t('readmore').to_s, personal_finance_path %>
+		</div>
+	</div>
+</div>

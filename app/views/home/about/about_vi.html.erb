@@ -1,0 +1,85 @@
+<% content_for :page_spec do %>
+	<title>About us</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/about", media: "all" %>
+<% end %>
+
+<%= currently_at "About" %>
+
+<div class='about container'> 
+	<div class='row'>
+		<%= render_page_header(
+			'About',
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'About'}] 
+	 	)%>
+	</div>
+
+	<div class='about-inner row'>
+
+		<div class='intro col-xs-12 col-md-8'>
+			<h2>ĐÔI LỜI GIỚI THIỆU </h2>
+
+			<div class='intro-inner'>
+				<img src='/images/office2.jpg' alt='nacenopto'>
+				<h3>Công ty trách nhiệm hữu hạn công nghệ Quang Điện tử NACENOPTO</h3>
+				<p>Công ty trách nhiệm hữu hạn công nghệ Quang Điện tử NACENOPTO 
+				được thành lập năm 1994 bởi tiến sỹ vật lý Hoàng Sơn, được đào tạo chính quy tại CHLB Đức.
+				Trụ sở chính của NACENOPTO đặt tại Hà nội, Viêt nam; NACENOPTO có văn phòng chi nhánh tại Đức.
+				</p>
+				<p>
+				NACENOPTO hoạt động chuyên nghiệp trên lĩnh vực thiết bị công nghệ cao, bao gồm: tư vấn, 
+				xây dựng dự án, xuất nhập khẩu, chuyển giao công nghệ và thực hiện các dịch vụ sau bán hàng.
+				NACENOPTO là đại lý phân phối sản phẩm của nhiều hãng sản xuất thiết bị nổi tiếng thế giới như: 
+				IBH Impex, Medav, Rohde&Schwarz, HAMEG, CTS, Siemens, Instek, Rheinmentall Defence, Carl Zeiss,
+				MetaSystem, Kugel, VTQ Videotronik, Boerger REI, Intel…
+				</p>
+				<p>Với lịch sử 15 năm xây dựng và phát triển, 
+				chúng tôi đã xây dựng được mối quan hệ bền vững với các khách hàng:</p>
+				<ul>
+					<li>Bộ công thương</li>
+					<li>Bộ nông nghiệp</li>
+					<li>Tập đoàn dầu khí Việt Nam</li>
+					<li>Bộ công an</li>
+					<li>Bộ quốc phòng</li>
+					<li>Bộ bưu chính viễn thông</li>
+					<li>Bộ khoa học công nghệ</li>
+					<li>Các viện nghiên cứu</li>
+					<li>Các doanh nghiệp trong và ngoài nước</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='services col-xs-12 col-md-4'>
+			<h2>DỊCH VỤ TIÊU BIỂU</h2>
+			<dl class="services-list">
+
+				<dt>Dịch vụ điện tử và viễn thông</dt>
+				<dd>
+				Sản xuất, lắp ráp thiết bị điện tử viễn thông.			
+				Xuất nhập khẩu và chuyển giao công nghệ, dich vụ khoa học kỹ thuật tư vấn, 
+				xây dựng dự án, thực hiện dự án và hỗ trợ sau bán hàng.
+				</dd>
+
+				<dt>Đại lý bán vé máy bay, du lịch, visa</dt>
+				<dd>
+				Chúng tôi tự hào trong việc có thể giải quyết tất cả nhu cầu di chuyển cho doanh nghiệp và 
+				mọi nhu cầu cá nhân của bạn. Sự hài lòng và hạnh phúc của khách hàng là mục tiêu của chúng tôi. 
+				Hãy suy nghĩ của chúng tôi như một người bạn cùng đi du lịch với bạn để tư vấn và giới thiệu các 
+				kỳ nghỉ hoàn hảo cho bạn. Chúng tôi cung cấp dịch vụ du lịch hoàn chỉnh cho các du khách đơn lẻ
+				hay khách hàng khó tính, ngay cả khi bạn đang trên chuyến đi cũng như có mới đang có ý định đi du lịch.
+				</dd>
+
+				<dt>Dịch vụ tài chính cá nhân</dt>
+				<dd>
+				Các chuyên gia giàu kinh nghiệm thực tế của chúng tôi tư vấn cho các quyết định tài chính, phân tích chi tiết 
+				trong các tình huống cụ thể để giúp bạn đạt được mục tiêu của bạn hiện tại cũng như tương lai. 
+				Ngoài ra, đội ngũ chuyên gia còn có thể cung cấp một danh mục đầu tư chi tiết để có thể phục vụ tốt hơn nhu cầu  
+				của các khách hàng khó tính.
+				</dd>
+
+			</dl>
+		</div>
+	</div>
+
+</div>

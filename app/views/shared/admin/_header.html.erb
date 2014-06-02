@@ -1,0 +1,97 @@
+<div class='row cms-header'>
+	
+	<div class='col-md-2 col-xs-12 logo'>
+		<%= link_to admin_dashboard_index_path do %>
+			<img src='/images/admin-logo.png' class='img-responsive' alt='Administrator page' />	
+		<% end %>
+	</div>
+
+   <div class='col-md-10 col-xs-12 row header-menu'>
+   	
+		<div class='col-md-8 col-xs-12 header-menu-inner'>
+			
+			<ul class='headmenu'>
+
+				<li>
+					<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+						<span class='count pull-right'>4</span>
+						<i class='fa fa-envelope-o fa-3x'></i>
+						<span class='headmenu-label'>Messages</span>
+					</a>
+					<ul class='dropdown-menu'>
+						<li class='nav-header'>Messages</li>
+						<li>
+							<i class='fa fa-envelope-o'></i>
+							New message from 
+							<strong>Phuong </strong>
+							<small>- Two days ago</small> 
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+						<span class='count pull-right'>&nbsp;</span>
+						<i class='fa fa-users fa-3x'></i>
+						<span class='headmenu-label'>Users</span>
+					</a>
+					<ul class='dropdown-menu'>
+						<li class='nav-header'>
+							Users
+						</li>
+						<li>
+							<i class='fa fa-users'></i>
+							New message from 
+							<strong>Phuong </strong>
+							<small>- Two days ago</small> 
+						</li>
+					</ul>
+				</li>
+			
+				<li>
+					<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+						<span class='count pull-right'>&nbsp;</span>
+						<i class='fa fa-bar-chart-o fa-3x'></i>
+						<span class='headmenu-label'>Statistics</span>
+					</a>
+					<ul class='dropdown-menu'>
+						<li class='nav-header'>
+							Statistics
+						</li>
+						<li>
+							<i class='fa fa-bar-chart-o'></i>
+							New report from 
+							<strong>Phuong </strong>
+							<small>- Two days ago</small> 
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+
+		</div>   <!-- End header-menu-inner -->
+   
+      <div class='col-md-4 col-xs-12 userLoggedInfo'>
+
+			<img src='/images/admin-icon.png' alt='admin-image' class='img-responsive' />
+
+			<div class='userinfo'>
+				<h5><%= session[:current_user] %></h5>
+				<ul>
+					<li>
+						<a href='#'>Edit Profile</a>
+					</li>
+					<li>
+						<a href='#'>Account Settings</a>
+					</li>
+					<li>
+						<%= link_to "Sign Out", admin_logout_path, :method => "POST" %>
+					</li>
+				</ul>
+			</div>
+
+		</div>   <!-- End userLoggedInfo -->
+		 
+	</div>   <!-- End header-menu  -->
+   
+</div>   <!-- End cms-header -->

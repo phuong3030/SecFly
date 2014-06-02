@@ -1,0 +1,106 @@
+.about-inner {  
+	h2 {
+		font: 24px Helvetica107XBCn;	
+		color: #92CDCF;
+		margin-bottom: 20px;
+	}
+
+	.intro {
+		margin-top: -30px;	
+
+		.intro-inner {
+			margin-top: 28px;
+
+			h3 {
+				font: 18px Helvetica107XBCn;	
+				color: #445878;
+			}
+
+			img {
+				float: left;
+				margin: 0 20px 0 0;
+			}
+		} 
+	}
+
+	.services {
+		.services-list {
+			counter-reset: services-counter;		
+			margin-top: -20px;
+
+			dt {
+				line-height: 0px;
+				padding: 0 0 20px 40px;
+				text-indent: -25px;
+				color: #445878;
+
+				&:before {
+					content: counter(services-counter);
+					counter-increment: services-counter;
+					position: relative;
+					top: 18px;
+					left: -20px;
+					font: 40px Helvetica95XB;
+					text-indent: 0px;
+					color: #445878;
+				}
+			}
+
+			dd {
+				padding: 0px 0 0 36px;	
+			}
+		}
+	}
+}
+
+// --- Responsive --- //
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+/* small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	.about-inner {
+		.services{ 
+			margin-top: -30px;
+
+			.services-list {
+				dt {
+					padding: 0 0 0 40px;
+				}
+			}
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	.about-inner {
+		.services { 
+			margin-top: -30px;
+			
+			.services-list {
+
+				dt {
+					padding: 0 0 0 40px;
+				}
+			}
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	.about-inner {
+		.services { 
+			margin-top: -30px;
+
+			.services-list {
+				dt {
+					padding: 0 0 0 40px;
+				}
+			}
+		}
+	}
+}

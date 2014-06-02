@@ -1,0 +1,45 @@
+<% content_for :page_spec do %>
+	<title>Categories management</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ { :name => 'Categories', :path => admin_categories_path }, { :name => 'Show' } ]		
+	)%>
+<% end %>
+
+<% content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-laptop fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>SHOW CATEGORY</h6>
+		<h1>Categories</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	<strong>Name:</strong>
+	<%= @category.name %>
+	</p>
+
+	<p>
+	<strong>Description:</strong>
+	<%= @category.description %>
+	</p>
+
+	<%= link_to 'Edit', edit_admin_category_path(@category) %> |
+	<%= link_to 'Back', admin_categories_path %>
+
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav' %>

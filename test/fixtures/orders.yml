@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyText
+  to: MyText
+  depart: 2014-05-28 08:37:44
+  return: 2014-05-28 08:37:44
+  adult: 1
+  seniors: 1
+  children: 1
+  customer_id: 1
+  process_id: 1
+
+two:
+  from: MyText
+  to: MyText
+  depart: 2014-05-28 08:37:44
+  return: 2014-05-28 08:37:44
+  adult: 1
+  seniors: 1
+  children: 1
+  customer_id: 1
+  process_id: 1

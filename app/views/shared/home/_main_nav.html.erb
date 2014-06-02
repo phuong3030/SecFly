@@ -1,0 +1,34 @@
+<% content_for :main_navigation do %>
+	<div class=' row'>
+
+		<div class='col-md-12'>
+			<div class='nav-button phone' data-toggle='collapse' data-target='.navHeader'>
+				<button class='navbar-toggle' data-toggle='collapse' data-target='.navHeader'>
+					<i class='fa fa-align-justify fa-2x'></i>	
+				</button>	
+			</div>
+
+			<div class='collapse nav-collapse navHeader'>
+
+				<ul class="nav phone">
+					<%= nav_tab 'Home', root_path, current: current_tab %>
+					<%= nav_tab 'About', about_path, current: current_tab %>
+					<%= nav_tab 'Services', services_path, current: current_tab %>
+					<%= nav_tab 'Products', products_path, current: current_tab %>
+					<%= nav_tab 'Contacts', contacts_path, current: current_tab %>
+				</ul>
+
+			</div>
+
+			<ul class="nav nav-tabs desktop">
+				<%= nav_tab 'Home', root_path, current: current_tab %>
+				<%= nav_tab 'About', about_path, current: current_tab %>
+				<%= nav_tab 'Services', services_path, current: current_tab %>
+				<%= nav_tab 'Products', products_path, current: current_tab %>
+				<%= nav_tab 'Contacts', contacts_path, current: current_tab %>
+			</ul>
+		</div>
+
+	</div>
+
+<% end %>

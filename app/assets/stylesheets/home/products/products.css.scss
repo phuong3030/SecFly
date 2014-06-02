@@ -1,0 +1,164 @@
+.pageheader {
+	margin-bottom: 30px;
+}
+
+// products show in grid view
+.product-filter { 
+	margin: 0 0 30px 0;
+	
+	#category-filter, #display-filter { 
+		label {
+			font-size: 16px;
+			padding: 6px 0;
+		}
+	}
+
+	.filter-params { 
+		margin-bottom: 20px;
+		color: #92CDCF;
+
+		select {
+			display: inline-block;
+			color: #1C1D21;
+			margin: 0;
+		}
+	}
+
+	.pagination-wrapper{
+		.pagination {
+			margin: 0;
+
+			li {
+				a {
+					background: transparent;
+					color: #92CDCF;
+					border: 1px solid #445878;
+
+					&:first-child, &:last-child {
+						border-radius: 0;
+					}
+
+					&:focus, &:hover {
+						color: #EEEEF7;	
+					}
+				}
+
+				&.active {
+					a {
+						color: #EEEEF7;
+					}
+				}
+			}
+		}
+	}
+}
+
+.list-product-inner { 
+
+	.lst-product {
+		.product-view { 
+			display: inline-block;
+			vertical-align: top;
+			color: #000;
+			background-color: transparent;
+
+			.product-image {
+				min-height: 330px;
+				max-height: 330px;
+			}
+
+			h4 {
+				color: #92CDCF;
+				font: 24px bold;	
+			}
+
+			#product-description { 
+				height: 50px;
+				color: #EEEEF7;
+				margin: 10px 0 15px 0;
+			}
+
+			#view-detail {
+				color: #92CDCF;	
+				display: inline-block;
+				margin: 0 0 20px 0;
+
+				&:hover, &:focus, &:active {
+					text-decoration: none;
+					color: #EEEEF7;
+				}
+			}
+
+			&:hover, &:focus {
+				h4 {
+					text-decoration: underline;
+				}
+
+				.product-image {
+					img { 
+						opacity: 0.8;
+						filter: alpha(opacity=80);
+					}
+				} 
+			}
+		}
+
+	}
+}
+
+// --- Responsive --- //
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+/* small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	.first-item-in-tablet-row {
+		clear: left;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	.first-item-in-desktop-row {
+		clear: left !important;
+	}
+
+	.first-item-in-tablet-row {
+		clear: none;
+	}
+	
+	.product-filter { 
+		.filter-params {
+			margin-bottom: 0;	
+		}
+
+		select.form-control{
+			width: auto;
+			margin: 0 0 0 15px;
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	.first-item-in-desktop-row {
+		clear: left !important;
+	}
+
+	.first-item-in-tablet-row {
+		clear: none;
+	}
+	
+	.product-filter { 
+		.filter-params {
+			margin-bottom: 0;	
+
+			select.form-control {
+				width: auto;
+				margin: 0 0 0 15px;
+			}
+		}
+	}
+}

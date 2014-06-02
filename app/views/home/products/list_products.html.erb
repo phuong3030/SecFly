@@ -1,0 +1,49 @@
+<% content_for :page_spec do %>
+	<title>Products</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/products/products", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "home/list-product" %>
+<% end %>
+
+<%= currently_at 'Products' %>
+
+<div class='content container'>
+
+	<div class='row'>
+
+		<%= render_page_header(
+			'Products',
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'Products'}] 
+	 	)%>
+
+	</div>
+
+	<div class='product-filter row'>
+
+		<div class='filter-params col-xs-12 col-md-4'>
+			<%= paginate @products %>
+		</div>
+
+		<div id='category-filter' class='filter-params col-xs-12 col-md-5'>
+			<%= label_tag 'category_id', t('products.Category_name').to_s %>
+			<%= render_categories_selector(@categories, @filtered_category_id) %>
+		</div>
+
+		<div id='display-filter' class='filter-params col-xs-12 col-md-3'>
+			<%= label_tag 'number_of_item', t('products.Display').to_s %>
+			<%= render_number_of_item_selector(@number_of_item) %>
+		</div>
+
+	</div>
+		
+	<div class='list-product-inner row'>
+		<ul class='lst-product col-xs-12 col-md-12'>
+			<%= render_list_product(@products) %>
+		</ul>
+	</div>
+
+</div>

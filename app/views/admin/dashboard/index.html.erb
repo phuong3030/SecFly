@@ -1,0 +1,30 @@
+<% content_for :page_spec do %>
+	<title>Dashboard</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ { :name => 'Dashboard' } ]		
+	)%>
+<% end %>
+
+<% content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-laptop fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>ALL FEATURES SUMMARY</h6>
+		<h1>Dashboard</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+	index main content
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav'  %>

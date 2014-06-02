@@ -1,0 +1,19 @@
+<% content_for :page_spec do %>
+	<title>Home</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/index", media: "all" %>
+<% end %>
+
+<%= currently_at 'Home' %>
+
+<%= render :partial => '/shared/home/banner' %>
+
+<div class='content container'>
+
+	<%= render :partial => 'home/shared/services_vi' %>
+
+	<%= render :partial => 'home/shared/partners_vi' %>
+
+	<%= render :partial => 'home/shared/companyinfo_vi' %>
+
+</div>	<!-- end content -->

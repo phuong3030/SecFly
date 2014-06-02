@@ -1,0 +1,24 @@
+<% content_for :page_spec do %>
+	<title>Login</title>
+	<%= stylesheet_link_tag "admin/login", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+<% end %>
+
+<section class="container">
+	<div class="login">
+		<h1>Administrator</h1>
+		<%= form_tag admin_login_path, method: "post" do %>         
+			<p><%= text_field_tag :username, nil, placeholder: "Username or Email", maxLength: 18, required: true %></p>
+			<p><%= password_field_tag :password, nil, placeholder: "Password", maxLength: 18, required: true %></p>
+			<p class="remember_me">
+			<label>
+				<%= check_box_tag "remember_me" %>
+				Remember me
+			</label>
+			</p>         
+			<p class="submit"><%= submit_tag("Login") %></p>
+		<% end %>
+	</div>
+</section>

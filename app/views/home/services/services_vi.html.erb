@@ -1,0 +1,54 @@
+<% content_for :page_spec do %>
+	<title>Services</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/services/services", media: "all" %>
+<% end %>
+
+<%= currently_at 'Services' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Services',
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'Services'}]
+		)%>
+	</div>
+
+	<div class='services-inner row'>
+
+		<div class='subservices security-devices col-xs-12 col-md-4'>
+			<%= link_to security_devices_path do %>
+				<img class='img-responsive' src='/images/electronic-telecom.jpg' alt='security devices' />
+			<% end %>
+			<p>
+				<h2>Giải pháp tổng thể dịch vụ điện tử viễn thông</h2>
+				<p>Sản xuất, lắp ráp thiết bị điện tử viễn thông. Xuất nhập khẩu và chuyển ...</p>
+				<%= link_to t("readmore").to_s, security_devices_path %>
+			</p>
+		</div>
+		<div class='subservices travel col-xs-12 col-md-4'>
+			<%= link_to travel_path do %>
+				<img class='img-responsive' src='/images/travel1.jpg' alt='travel' />
+			<% end %>
+			<p>
+				<h2>Đại lý bán vé máy bay, du lịch, visa</h2>
+				<p>Chúng tôi tự hào trong việc có thể giải quyết tất cả nhu cầu di chuyển cho doanh nghiệp và 
+				mọi nhu cầu cá nhân của bạn...</p>
+				<%= link_to t("readmore").to_s, travel_path %>
+			</p>
+		</div>
+		<div class='subservices finance col-xs-12 col-md-4'>
+			<%= link_to personal_finance_path do %>
+				<img class='img-responsive' src='/images/finance.jpg' alt='finance' />
+			<% end %>
+			<p>
+				<h2>Dịch vụ tài chính cá nhân</h2>
+				<p>Các chuyên gia giàu kinh nghiệm thực tế của chúng tôi tư vấn cho các quyết định tài chính, phân tích...</p>
+				<%= link_to t("readmore").to_s, personal_finance_path %>
+			</p>
+		</div>
+	</div>
+
+</div>

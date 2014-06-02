@@ -1,0 +1,48 @@
+<ul class='nav nav-tabs nav-stacked'>
+
+	<li class='nav-header'>NAVIGATION</li>
+	
+	<li class='nav_item ni_dashboard'>
+		<%= link_to admin_dashboard_index_path do %>
+			<i class='fa fa-gears'></i>
+			Dashboard
+		<% end %>
+	</li>
+
+	<li class='nav_item ni_pageview'> 
+		<a href='#'>
+			<i class='fa fa-eye'></i>
+			PageView
+		</a>
+	</li>
+
+	<li class='dropdown nav_item ni_pagedata'>
+		<a href='#'>
+			<i class='fa fa-clipboard'></i>
+			PageData
+			<i class='fa fa-angle-down'></i>
+		</a>
+		<ul class='menu' style='display: none;'>
+			<li>
+				<%= link_to admin_resources_path do %>
+					<i class='fa fa-caret-right'></i>
+					Resources
+				<% end %>
+			</li>
+			<li>
+				<%= link_to admin_categories_path do %>
+					<i class='fa fa-caret-right'></i>
+						Categories
+				<% end %>
+			</li>
+		</ul>
+	</li>
+
+	<li class='nav_item ni_pageview'> 
+		<%= link_to admin_orders_path do %>
+			<i class='fa fa-money'></i>
+			Customer Orders
+		<% end %>
+	</li>
+
+</ul>

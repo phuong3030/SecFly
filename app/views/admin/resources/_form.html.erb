@@ -1,0 +1,34 @@
+<%= form_for(@resource, :url => url, :method => method, :html => { :multipart => true, :class => 'form' } ) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <h2>Errors:</h2>
+
+      <ul>
+      <% @resource.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+	 <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+	 <%= f.text_area :description, :size => '40x8', :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :resource_type %><br>
+	 <%= f.number_field :resource_type, :value => 1, :min => 1, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :class => 'btn btn-defaults', :class => 'form-control' %>
+  </div>
+
+  <div class="actions">
+	  <%= f.submit :class => 'btn btn-primary' %>
+  </div>
+<% end %>

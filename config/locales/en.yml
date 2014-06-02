@@ -1,0 +1,26 @@
+en:
+   readmore: "read more"
+   main_nav:
+      Home: "Home"
+      About: "About us"
+      Services: "Services"
+      Products: "Products"
+      Contacts: "Contacts"
+      Language: "Language:"
+   footer:
+      Content: All Content
+      Design: Design & developed by
+   products:
+      ViewDetail: "View detail"
+      Description: "Product description"
+      Category_name: "Category name: "
+      Choose_category: "Select category"
+      Display: "Display: "
+      items: "items"
+      Choose_display: "Number of item in row"
+   services:
+      travel:
+         From: "From"
+         To: "To"
+         Depart: "Depart"
+         Return: "Return"

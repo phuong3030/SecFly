@@ -1,0 +1,30 @@
+<% content_for :page_spec do %>
+	<title>Personal finance</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/services/personal_finance", media: "all" %>
+<% end %>
+
+<%= currently_at 'Services' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Personal finance',
+			[
+				{ :name => 'Home', :path => root_path },
+				{ :name => 'Services', :path => services_path },
+				{ :name => 'Personal finance' } 
+			]
+		)%>
+	</div>
+
+	<div class='services-inner row'>
+		<div class='col-xs-12 col-md-12'>
+			<img class='img-responsive' src='/images/personal-finance.jpg' alt='Personal finance' />			
+		</div>
+		<div class='col-xs-12 col-md-12'>
+		</div>
+	</div>
+
+</div>

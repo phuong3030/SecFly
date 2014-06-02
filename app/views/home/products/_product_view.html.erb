@@ -1,0 +1,10 @@
+<%= content_tag(:li, :class => 'product-view col-xs-12 col-sm-6 col-md-3' + grid_class) do %>
+
+	<%= link_to show_product_path(product.name.tr(' ', '-')), :class => 'product-image' do %>
+		<%= image_tag(product.image.url, :class => 'img-responsive', :alt => product.name) %>
+	<% end %>
+	<%= content_tag(:h4, product.name) %>
+	<%= content_tag(:div, product.description.slice(0...80) + '...', :id => 'product-description' )%>
+	<%= link_to t('products.ViewDetail').to_s, show_product_path(product.name.tr(' ', '-')), :id => 'view-detail' %>
+
+<% end %>

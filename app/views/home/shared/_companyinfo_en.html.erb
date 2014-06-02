@@ -1,0 +1,85 @@
+<div class='row companyinfo'>
+
+	<div class='col-xs-12 col-md-6 about-us'>
+
+		<div class= heading>
+			<h2>About us</h2>	
+		</div>
+
+		<p>
+		NACENOPTO is a responsible partner of our customers and worldwide well-known 
+		equipment manufacturers in the field of equipment supply, consultancy, technology transfer.	
+		</p>
+		<p>
+		NACENOPTO operated in many aspects of the high technology equipment, including consultancy, 
+		planning, export and import, technology transfer and after sales services.  
+		</p>
+		<p>
+		NACENOPTO distribute products of well - known equipment manufacturers, such as IBH Impex, 
+		Medav, Rohde&Schwarz, HAMEG, CTS, Siemens, Instek, Rheinmentall Defence, Carl Zeiss, 
+		MetaSystem, Kugel, VTQ Videotronik, Boerger REI, Intel…
+		<p>
+		Our head office located in Hanoi, Vietnam. 
+		NACENOPTO has a representative office in Berlin, operated under Germany law. 
+		</p>
+		</p>
+
+		<p>
+		Our commitment is:
+		</p>
+		<div class='left-side commitment'>
+			<p>•	Partnership - trustworthy</p>
+			<p>•	Experience - broad</p>
+			<p>•	Technology - innovatory</p>
+			<p>•	Information - useful</p>
+		</div>
+		<div class='right-side commitment'>
+			<p>•	Expertise - deep</p>
+			<p>•	Communication - close</p>
+			<p>•	Human resources - dedicated</p>
+		</div>
+
+		<div class='clear'>
+			<%= link_to t("readmore").to_s, about_path %>
+		</div>
+
+	</div>
+
+	<div class='col-xs-12 col-md-6 contacts'>
+
+		<div class='heading'>
+			<h2>Our Offices</h2>	
+		</div>
+		
+		<%= link_to contacts_path do %>
+			<img class='office' src='/images/office2.jpg' alt='' />
+		<% end %>
+		<div class='address'>
+			<p>Vietnam</p>
+			<p>103 LoDuc, Hanoi</p>
+			<p>Tel: +84-4-3821 3672 / 73</p>
+			<p>Fax: +84-4-3821 1270</p>
+			<p>E-mail: nacenopto@hn.vnn.vn</p>
+		</div>
+
+		<div class='clear'></div>
+
+		<%= link_to contacts_path do %>
+			<img class='office' src='/images/office1.jpg' alt='' />
+		<% end %>
+		<div class='address'>
+			<p>Germany</p>
+			<p>Seefelder Str.48-13053 Berlin</p>
+			<p>Tel. : +49-30-9827056/9823257</p>
+			<p>Fax : +49-30-9823277</p>
+			<p>E-mail: nacenoptoberlin@t-online.de</p>
+		</div>
+
+		<div class='clear'>
+			<%= link_to t("readmore").to_s, contacts_path %>
+		</div>
+
+
+	</div>
+
+</div>	<!-- end companyinfo -->

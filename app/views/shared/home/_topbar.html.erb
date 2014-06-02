@@ -1,0 +1,31 @@
+<div class='topbar container-fluid'>
+
+	<div class='container'>
+
+		<div class='row topbar-inner'>
+
+			<div class='col-xs-12 col-md-12'>
+
+				<span class='sitemap'><a href='/sitemap.xml'>Sitemap</a></span>
+
+				<div class="dropdown">
+					<a data-toggle="dropdown" href="#"><%= I18n.locale.capitalize %></a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						<li>
+							<%= link_to_unless_current "English", :locale => 'en' %>
+						</li>
+						<li>
+							<%= link_to_unless_current "Vietnamese", :locale => 'vi' %>
+						</li>
+					</ul>
+				</div>
+
+				<span><%= t "main_nav.Language" %>&nbsp;</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

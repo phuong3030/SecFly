@@ -1,0 +1,84 @@
+<% content_for :page_spec do %>
+	<title>About us</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/about", media: "all" %>
+<% end %>
+
+<%= currently_at "About" %>
+
+<div class='about container'> 
+	<div class='row'>
+		<%= render_page_header(
+			'About',
+			[{:name => 'Home', :path => root_path},
+	 		{:name => 'About'}] 
+	 	)%>
+	</div>
+
+	<div class='about-inner row'>
+
+		<div class='intro col-xs-12 col-md-8'>
+			<h2>A FEW WORD ABOUT US </h2>
+
+			<div class='intro-inner'>
+				<img src='/images/office2.jpg' alt='nacenopto'>
+				<h3>NACENOPTO Optoelectronics Technology and Trading Corporation</h3>
+				<p>NACENOPTO Optoelectronics Technology and Trading Corporation established in 1994 
+				by Mr. Hoang Son, doctor of physics, graduated in Germany. Our head office located
+				in Hanoi, Vietnam. NACENOPTO has a representative office in	Berlin, operated under
+				Germany law.
+				</p>
+				<p>
+				NACENOPTO operated in many aspects of the high technology equipment, including
+				consultancy, planning, export and import, technology transfer and after sales services.
+				NACENOPTO distribute products of well - known equipment manufacturers, such as IBH Impex,
+				Medav, Rohde&Schwarz, HAMEG, CTS, Siemens, Instek, Rheinmentall Defence, Carl Zeiss,
+				MetaSystem, Kugel, VTQ Videotronik, Boerger REI, Intel…
+				</p>
+				<p>In 15 years of development, we focus on reliable relationship with our customer.
+				Our customers include:</p>
+				<ul>
+					<li>Ministry of Industry and Commerce</li>
+					<li>Ministry of Agriculture</li>
+					<li>Petrovietnam</li>
+					<li>Ministry of Public Security</li>
+					<li>Ministry of Defense</li>
+					<li>Ministry of Post and Telecommunication</li>
+					<li>Ministry of Science and Technology</li>
+					<li>Institutes</li>
+					<li>Home and aboard companies</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='services col-xs-12 col-md-4'>
+			<h2>WHAT WE OFFER</h2>
+			<dl class="services-list">
+
+				<dt>Electronics and telecommunication solutions</dt>
+				<dd>
+				Manufacturing and assembling of electronics and telecommunication equipment.			
+				Import-export and technology transfer, service of consultancy, project planning, performing and after-sales.
+				</dd>
+
+				<dt>Airlines ticket agent, tourist and visa services</dt>
+				<dd>
+				We pride ourselves in being able to solve all your travel needs for both Business and Pleasure. Your 
+				satisfaction and happiness is our goal. Think of us as your well travelled friend here to advise and 
+				recommend the perfect holiday for you. We offer complete travel services for the independent traveller 
+				- novice or experienced, whether you’re on business or your journey is for pleasure.
+				</dd>
+
+				<dt>Personal finance services</dt>
+				<dd>
+				The professionals in our practice offer the judgment, experience and capability required to help
+				you achieve your goals now and for future generations. In addition, we team across the firm to 
+				provide a robust portfolio of private wealth services to better serve the sophisticated needs
+				of high net worth individuals and families.
+				</dd>
+
+			</dl>
+		</div>
+	</div>
+
+</div>

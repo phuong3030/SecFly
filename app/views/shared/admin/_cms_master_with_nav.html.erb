@@ -1,0 +1,31 @@
+<div class='container-fluid'>
+
+   <%= render :partial => "shared/admin/header" %>
+
+   <div class='row cms-content'>
+
+      <div class='col-md-2 col-xs-12 panel panel-default cms-panel-navigation'>
+
+			<%= render :partial => "shared/admin/navigation"  %>         
+			
+      </div> <!-- end panel navigation -->
+
+		<div class='col-md-10 col-xs-12 cms-main'>
+
+			<div class='breadcrumbs'>
+				<%= yield :breadcrumbs %>
+			</div>   <!-- End breadcrumbs -->
+
+			<div class='pageheader'>
+				<%= yield :pageheader %>
+			</div>   <!-- End pageheader -->
+
+			<div class='maincontent'>
+				<%= yield :maincontent %>
+			</div>   <!-- End maincontent -->
+
+      </div> <!-- end main -->
+
+	</div> <!-- end row cms-content -->
+
+</div> <!-- end container-fluid -->

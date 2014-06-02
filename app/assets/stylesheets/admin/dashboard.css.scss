@@ -1,0 +1,314 @@
+// Mixin 
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// css content for medium and large screen
+@mixin cms-content() {
+	.cms-header { 
+		.userLoggedInfo {
+			img {
+				margin-left: 100px;
+			}
+		}
+	}
+
+	.cms-content {
+		height: 83.5%;
+
+		.cms-panel-navigation {
+			height: 100%;
+		}
+	}
+}
+
+// CMS Global settings
+html, body, .container-fluid {
+	height: 100%;
+}
+
+// End CMS global settings
+
+// CMS header menu
+.cms-header {
+	background: #0866c6;
+
+	.logo {
+		padding: 0;
+		margin: 0;
+
+		img {
+			margin-top: 30px;	
+		}
+	}
+
+	.header-menu-inner {
+		padding: 0;
+		margin: 0;
+	}
+
+	.header-menu {
+		padding: 0;
+		margin: 0;
+
+		.headmenu {
+			padding: 0;
+			margin: 0;
+
+			&>li {
+				display: block;
+				float: left;
+				height: 100%;
+				width: 110px;
+				border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+				&:first-child {
+					border-left: 1px solid rgba(255, 255, 255, 0.15);
+				}
+
+				&>a {
+					color: #CCC;
+					text-decoration: none;
+
+					span.count {
+						width: 80%;
+						display: block;
+						padding: 10px 10px 0 0;
+						text-align: right;
+					}
+
+					i {
+						padding: 0 0 0 31px;
+					}
+
+					span.headmenu-label {
+						display: block;
+						padding: 5px 0 0 0;
+						text-align: center;
+						font-weight: 100;
+					}
+
+					&:hover {
+						color: #FFF;
+					}
+				}
+			}
+		}
+	}
+
+	.userLoggedInfo {
+		img {
+			background: rgba(255, 255, 255, 0.3);
+			width: 86px;
+			height: 86px;
+			padding: 3px;
+			margin: 12px;
+			float: left;
+		}
+
+		h5 {
+			color: #FFF;
+			margin: 18px 0 0 0;
+		}
+
+		ul {
+			margin: 8px 0 0 0;
+			padding: 0;
+
+			li {
+				display: block;
+
+				a {
+					font-size: 12px;
+					color: #CCC;
+					line-height: 16px;
+					text-decoration: none;
+
+					&:hover, &:focus, &:active {
+						color: #FFF;
+					}
+				}
+			}
+		}
+
+		.userinfo {
+			padding: 0 30px 0 0
+		}
+	}
+}
+// End CMS header menu
+
+// CMS Content
+.cms-main {
+	background: #FFF;
+	padding: 0;
+
+	.breadcrumbs {
+		.breadcrumb { 
+			background: #DDD; 
+			border-bottom: 1px solid #CCC;
+			border-radius: 0;
+			padding: 5px 15px;
+
+			li {
+				font-size: 11px;	
+				color: #666;
+			}
+		}
+	}
+
+	.pageheader { 
+		border-bottom: 1px solid #DDD;
+		height: 80px;
+
+		.page-icon {
+			float: left;	
+			color: #0866C6;
+			margin-left: 20px;
+			border: 3px solid #0866C6;
+			padding: 10px;
+			width: 70px;
+
+			@include border-radius(50px);
+		}
+
+		.page-title { 
+			float: left;
+			margin-left: 20px;
+
+			h6 {
+				color: #999;	
+				margin: 5px 0 0 2px;
+				padding: 0;
+				font-size: 10px;
+			}
+
+			h1 {
+				color: #0866C6;
+				font-weight: 100;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.maincontent {
+		padding: 0 20px;
+	}
+}
+
+.cms-panel-navigation {
+	background: #333;
+	color: #FFF;
+	float: left;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+	ul li {
+		a {
+			line-height: 20px;
+			border: 0;
+			padding-left: 20px;
+			cursor: pointer;
+			margin: 0;
+
+			&>i {
+				padding-right: 10px;
+			}
+		}
+	}
+
+	ul.nav {
+		border-radius: 0;
+
+		&>li {
+			border-bottom: 1px solid #222;
+			border-radius: 0;
+			width: 100%;
+
+			&>a {
+				background-color: #333;
+				border: 0;
+				color: #999;
+				border-radius: 0;
+
+				&.active, &:hover, &:focus {
+					background: #333;
+					color: #FFF;
+				}
+			}
+
+			&.active>a {
+				background: #0866c6;
+				color: #FFF;
+				border: 0;
+			}
+
+			&.nav-header {
+				padding: 5px 10px;
+				border: 0;
+				font-size: 12px;
+			}
+		}
+
+		&>li.dropdown {
+			i.fa-angle-down{
+				float: right;
+			}
+		}
+	}
+
+	// Submenu in navigation
+	ul.menu {
+		list-style: none;
+		padding: 0;
+
+		&>li {
+			background: #EEE;
+			border-bottom: 1px solid #333;
+			height: 41px;
+
+			a {
+				background: #EEE;
+				width: 100%;
+				color: #999;
+				text-decoration: none;
+				padding: 10px 20px;
+				display: block;
+
+				&.active, &:hover, &:focus {
+					background: #FFF;
+					color: #000;
+				}
+			}
+		}
+	}
+	// End submenu
+}
+// End CMS Content
+
+// --- Responsive --- //
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+/* small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	@include cms-content();
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	@include cms-content();
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	@include cms-content();
+}

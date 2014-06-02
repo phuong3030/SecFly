@@ -1,0 +1,26 @@
+.services-inner {
+	.subservices {
+		h2 {
+			font: 18px Helvetica107XBCn;		
+			color: #92CDCF;
+		}
+
+		p {
+			color: #EEEEF7;
+		}
+
+		a {
+			color: #92CDCF;
+
+			&:hover, &:focus {
+				color: #EEEEF7;
+				text-decoration: none;
+			}
+		}
+
+		img {
+			min-height: 250px;
+			height: 250px;
+		}	
+	}	
+}

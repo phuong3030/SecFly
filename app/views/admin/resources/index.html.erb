@@ -1,0 +1,64 @@
+<% content_for :page_spec do %>
+	<title>Resources management</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ { :name => 'Resources' } ]		
+	)%>
+<% end %>
+
+<% content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-laptop fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>LISTING ALL RESOURCES</h6>
+		<h1>Resources</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+
+	<h6>LISTING ALL RESOURCES</h6>
+
+	<% if @resource.size > 0 %>
+
+		<%= link_to 'Create new resource', new_admin_resource_path %>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Resource Type</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<% @resource.each do |resource| %>
+				<tr>
+					<td><%= resource.name %></td>
+					<td><%= resource.description %></td>
+					<td><%= resource.resource_type %></td>
+					<td><%= link_to 'Show', admin_resource_path(resource.id) %></td>
+					<td><%= link_to 'Edit', edit_admin_resource_path(resource) %></td>
+					<td><%= link_to 'Destroy', admin_resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	<% else %>
+		<span>We don't have any resource</span>
+	<% end %>
+	<%= link_to 'Create new resource', new_admin_resource_path %>
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav' %>

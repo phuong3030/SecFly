@@ -1,0 +1,55 @@
+<% content_for :page_spec do %>
+	<title>Products management</title>
+	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "admin/panel_nav_toggle" %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<%= create_breadcrumbs(
+		[ 
+			{ :name => 'Categories', :path => admin_categories_path }, 
+			{ :name => 'Products', :path => admin_category_products_path }, 
+			{ :name => 'Show' } 
+		]		
+	)%>
+<% end %>
+
+<%= content_for :pageheader do %>
+	<div class='page-icon'>
+		<i class='fa fa-laptop fa-3x'></i>
+	</div>
+	<div class='page-title'>
+		<h6>SHOW PRODUCT</h6>
+		<h1>Products</h1>
+	</div>
+<% end %>
+
+<% content_for :maincontent do %>
+
+	<p id="notice"><%= notice %></p>
+	<p>
+	<strong>Name:</strong>
+	<%= @product.name %>
+	</p>
+
+	<p>
+	<strong>Description:</strong>
+	<%= @product.description %>
+	</p>
+
+	<p>
+	<strong>Image:</strong>
+	<%= image_tag @product.image.url, :class => 'img-responsive' %>
+	</p>
+
+
+
+	<%= link_to 'Edit', edit_admin_category_product_path(@product.category_id, @product.id) %> |
+	<%= link_to 'Back', admin_category_products_path %>
+
+<% end %>
+
+<%= render :partial => 'shared/admin/cms_master_with_nav' %>

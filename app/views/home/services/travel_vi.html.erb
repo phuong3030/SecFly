@@ -1,0 +1,53 @@
+<% content_for :page_spec do %>
+	<title>Travel</title>
+	<%= stylesheet_link_tag "home/home", media: "all" %>
+	<%= stylesheet_link_tag "home/services/travel", media: "all" %>
+	<%= stylesheet_link_tag "DateTimePicker", media: "all" %>
+<% end %>
+
+<% content_for :page_script do %>
+	<%= javascript_include_tag "DateTimePicker" %>
+	<%= javascript_include_tag "home/travel", media: "all" %>
+<% end %>
+
+<%= currently_at 'Services' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Đại lý bán vé máy bay, du lịch, visa',
+			[
+				{ :name => 'Home', :path => root_path },
+				{ :name => 'Services', :path => services_path },
+				{ :name => 'Đại lý bán vé máy bay, du lịch, visa' } 
+			]
+		)%>
+	</div>
+
+	<div class='services-inner row'>
+
+		<% if flash.now[:notice] %>
+			<div class='col-xs-12 col-md-12'>
+				<%= content_tag('div', flash[:notice], :class => 'alert alert-success') %>
+			</div>
+		<% end %>
+
+		<% if flash.now[:alert] %>
+			<div class='col-xs-12 col-md-6'>
+				<%= content_tag('div', flash[:alert], :class => 'alert alert-danger') %>
+			</div>
+		<% end %>
+
+		<div class='col-xs-12 col-md-6'>
+			<%= render 'home/services/shared/request_ticket_form', :url => travel_path, :method => 'POST' %>		
+		</div>
+
+		<div class='col-xs-12 col-md-6'>
+			<img class='img-responsive' src='/images/passport-map-travel.jpg' alt='Personal finance' />			
+		</div>
+
+	</div>
+
+
+</div>

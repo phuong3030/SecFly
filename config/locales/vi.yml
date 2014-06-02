@@ -1,0 +1,26 @@
+vi:
+   readmore: "Chi tiết"
+   main_nav:
+      Home: "Trang chủ"
+      About: "Giới thiệu"
+      Services: "Dịch vụ"
+      Products: "Sản phẩm"
+      Contacts: "Liên hệ"
+      Language: "Ngôn ngữ:"
+   footer: 
+      Content: "Nội dung"
+      Design: "Xây dựng và phát triển"
+   products:
+      ViewDetail: "Xem sản phẩm"
+      Description: "Mô tả sản phẩm"
+      Category_name: "Nhóm sản phẩm: "
+      Choose_category: "Chọn nhóm sản phẩm"
+      Display: "Hiển thị: "
+      items: "sản phẩm"
+      Choose_display: "Sản phẩm"
+   services:
+      travel:
+         From: "From"
+         To: "To"
+         Depart: "Depart"
+         Return: "Return"
