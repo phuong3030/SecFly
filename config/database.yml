@@ -18,24 +18,10 @@ test:
    pool: 5
    timeout: 5000
 
-production:
-   adapter: sqlite3
-   database: db/production.sqlite3
+test:
+   adapter: postgresql
+   encoding: unicode
+   database: secfly_test
    pool: 5
-   timeout: 5000
-
-#development:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: secfly
-#   pool: 5
-#   username: phuong3030
-#   password:
-
-#test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: secfly_test
-#   pool: 5
-#   username: phuong3030
-#   password:
+   username: phuong3030
+   password:
