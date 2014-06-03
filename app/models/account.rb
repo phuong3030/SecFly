@@ -3,6 +3,7 @@ class Account < ActiveRecord::Base
 
    has_and_belongs_to_many :roles 
    has_many :orders, :through => :order_processings 
+   has_many :order_processings
    
    validates :username, :email, :password_hash, presence: true
    validates :username, :email, uniqueness: { case_sensitive: false }

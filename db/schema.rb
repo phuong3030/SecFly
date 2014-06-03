@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.datetime "updated_at"
   end
 
+  add_index "order_processings", ["account_id"], name: "index_order_processings_on_account_id"
+  add_index "order_processings", ["order_id"], name: "index_order_processings_on_order_id"
+
   create_table "orders", force: true do |t|
     t.integer  "customer_id"
     t.text     "from"
@@ -70,7 +73,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
   create_table "products", force: true do |t|
     t.integer  "category_id"
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
