@@ -37,28 +37,40 @@
 
 	.mfp-close { 
 		color: #EEEEF7;
+		margin: 3px 0 0 0;
 	}
 
-	td {
-		border: 0;
+	.place-title { 
+		background: #31353D;
+		padding-bottom: 12px;
+		height: 44px;
+
+		h2 {
+			font: 24px Helvetica107XBCN;
+			color: #92CDCF;
+			border: 0;
+			padding: 0 0 0 15px;
+			margin: 6px 0 0 0;
+		}
 	}
 
-	th { 
-		font: 24px Helvetica107XBCN;
+	h4 {
 		color: #92CDCF;
-		border: 0;
+		margin-left: 40px;
 	}
 
 	ul { 
 		list-style: none;
 
-		h4 {
-			color: #92CDCF;
-		}
-
 		li {
 			span {
-				font-size: 12px;	
+				font-size: 14px;	
+				color: #EEEEF7;
+
+				&:hover, &:focus {
+					cursor: pointer;
+					color: #92CDCF;	
+				}
 			}
 		}
 	}
