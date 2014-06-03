@@ -69,5 +69,6 @@
 
 		return false;
 	});
+	$('.footable').footable();	
 
 })(jQuery, window);
