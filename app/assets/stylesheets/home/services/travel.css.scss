@@ -35,7 +35,31 @@
 	border-top: 3px solid #445878;
 	border-bottom: 3px solid #445878;
 
+	.mfp-close { 
+		color: #EEEEF7;
+	}
+
 	td {
 		border: 0;
+	}
+
+	th { 
+		font: 24px Helvetica107XBCN;
+		color: #92CDCF;
+		border: 0;
+	}
+
+	ul { 
+		list-style: none;
+
+		h4 {
+			color: #92CDCF;
+		}
+
+		li {
+			span {
+				font-size: 12px;	
+			}
+		}
 	}
 }
