@@ -1,6 +1,6 @@
 (function ($) {
 
-	$("#dtBox").DateTimePicker({
-	});
+	$("#dtBox").DateTimePicker({});
+//$("button").magnificPopup({});
 
 }) (jQuery);

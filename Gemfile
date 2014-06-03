@@ -29,7 +29,7 @@ gem 'kaminari'
 gem 'websocket-rails', :git => 'https://github.com/websocket-rails/websocket-rails.git'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+#gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -48,6 +48,9 @@ gem 'pry'
 
 # File uploading plugin
 gem "paperclip", github: 'thoughtbot/paperclip'
+
+# aws for heroku file uploader
+#gem 'aws-s3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

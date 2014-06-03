@@ -29,13 +29,13 @@
 
 		<% if flash.now[:notice] %>
 			<div class='col-xs-12 col-md-12'>
-				<%= content_tag('div', flash[:notice], :class => 'alert alert-success') %>
+				<%= content_tag('div', flash.now[:notice], :class => 'alert alert-success') %>
 			</div>
 		<% end %>
 
 		<% if flash.now[:alert] %>
 			<div class='col-xs-12 col-md-6'>
-				<%= content_tag('div', flash[:alert], :class => 'alert alert-danger') %>
+				<%= content_tag('div', flash.now[:alert], :class => 'alert alert-danger') %>
 			</div>
 		<% end %>
 
