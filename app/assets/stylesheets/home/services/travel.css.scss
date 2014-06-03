@@ -26,3 +26,16 @@
 		}
 	}
 }
+
+#place-popup {
+	z-index: 100;
+	color: #EEEEF7;
+	background: #1C1D21;
+	text-align: left;
+	border-top: 3px solid #445878;
+	border-bottom: 3px solid #445878;
+
+	td {
+		border: 0;
+	}
+}
