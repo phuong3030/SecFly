@@ -16,7 +16,6 @@ class CreateOrderProcessings < ActiveRecord::Migration
 
 	def self.down
 		add_column :orders, :accounts
-
 		drop_table :order_processions 
 	end
 end

@@ -1,3 +1,4 @@
 class Role < ActiveRecord::Base
-	has_and_belongs_to_many :accounts
+	has_many :accounts, :through => :account_in_roles 
+   has_many :account_in_roles
 end
