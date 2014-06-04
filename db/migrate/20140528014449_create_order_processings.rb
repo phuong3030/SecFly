@@ -3,7 +3,7 @@ class CreateOrderProcessings < ActiveRecord::Migration
 		create_table :order_processings do |t|
 			t.integer :order_id
 			t.integer :account_id
-			t.integer :status
+			t.integer :status, :null => false, :default => 1
 			t.text :description
 			t.timestamps
 		end

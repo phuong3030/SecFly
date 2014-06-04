@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140529034419) do
 
-  create_table "account_in_roles", id: false, force: true do |t|
+  create_table "account_in_roles", force: true do |t|
     t.integer "account_id"
     t.integer "role_id"
     t.text    "description"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
   create_table "order_processings", force: true do |t|
     t.integer  "order_id"
     t.integer  "account_id"
-    t.integer  "status"
+    t.integer  "status",      default: 1, null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
