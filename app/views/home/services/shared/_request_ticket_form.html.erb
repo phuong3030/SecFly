@@ -3,41 +3,41 @@
 	<div class="row customer-info ">
 		<div class="form-group col-md-12 col-xs-12" >
 			<%= label_tag :name %><br>
-			<%= text_field_tag :name, 'your name', :class => 'form-control' %>
+			<%= text_field_tag :name, nil, :class => 'form-control', :placeholder => 'Enter your name' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :email %><br>
-			<%= email_field_tag :email, 'email@mail.com', :class => 'form-control' %>
+			<%= email_field_tag :email, nil, :class => 'form-control', :placeholder => 'Enter your email' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :phone %><br>
-			<%= phone_field_tag :phone, '000xxxxxxx', :class => 'form-control' %>
+			<%= phone_field_tag :phone, nil, :class => 'form-control', :placeholder => 'Enter your phone number' %>
 		</div>
 	</div>
 
 	<div class="row place">
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :from %><br>
-			<%= text_field_tag :from, 'Ha Noi (HAN)', :class => 'form-control' %>
+			<%= text_field_tag :from, nil, :class => 'form-control', :placeholder => 'Choose place' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :to %><br>
-			<%= text_field_tag :to, 'Ho Chi Minh City (SGN)', :class => 'form-control' %>
+			<%= text_field_tag :to, nil, :class => 'form-control', :placeholder => 'Choose place' %>
 		</div>
 	</div>
 
 	<div class="row time">
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :depart %><br>
-			<%= text_field_tag :depart, Date.today.strftime('%d-%m-%Y %H:%M'), :class => 'form-control', :'data-field' => 'datetime' %>
+			<%= text_field_tag :depart, nil, :class => 'form-control', :'data-field' => 'datetime', :placeholder => 'Enter datetime' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
 			<%= label_tag :return %><br>
-			<%= text_field_tag :return, Date.today.strftime('%d-%m-%Y %H:%M'), :class => 'form-control', :'data-field' => 'datetime' %>
+			<%= text_field_tag :return, nil, :class => 'form-control', :'data-field' => 'datetime', :placeholder => 'Enter datetime' %>
 		</div>
 
 		<div id='dtBox'></div>
