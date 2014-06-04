@@ -12,7 +12,8 @@
 
 		newRow =	$(
 			'<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
-			+ data.order.depart.substring(0, 10) + '</td><td>' + data.order.return.substring(0, 10) + '</td><td>'
+			+ data.order.depart.substring(0, 10) + '</td><td>' 
+			+ data.order.return.substring(0, 10) + '</td><td>'
 			+ data.order.created_at.substring(0, 10) + '</td><td>' 
 			+ '<button class="view-order view-order btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
 			+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">View order</button>' + '</td><td>'
@@ -23,6 +24,18 @@
 		);
 
 	   footable.appendRow(newRow);
+	});
+
+	channel.bind('order_detail', function (data) {
+		console.log(data);
+	});
+
+	channel.bind('order_customer_email', function (data) {
+		console.log(data);
+	});
+
+	channel.bind('order_customer_tickets', function (data) {
+		console.log(data);
 	});
 
 	dis.on_open = function(data) {
