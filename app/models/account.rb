@@ -4,7 +4,8 @@ class Account < ActiveRecord::Base
    has_many :roles, :through => :account_in_roles 
    has_many :account_in_roles
    has_many :orders, :through => :order_processings 
-   has_many :order_processings
+   has_many :order_processings, :dependent => :destroy 
+   accepts_nested_attributes_for :order_processings
    
    validates :username, :email, :password_hash, presence: true
    validates :username, :email, uniqueness: { case_sensitive: false }

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.datetime "updated_at"
   end
 
-  create_table "order_processings", id: false, force: true do |t|
+  create_table "order_processings", force: true do |t|
     t.integer  "order_id"
     t.integer  "account_id"
     t.integer  "status"

@@ -7,10 +7,8 @@
 	
 		console.log(data);
 		$('tbody').append(
-			$('<tr><td>' + data.customer.id + '</td><td>'
-				+ data.order.from + '</td><td>' + data.order.to + '</td><td>'
+			$('<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
 				+ data.order.depart.substring(0, 10) + '</td><td>' + data.order.return.substring(0, 10) + '</td><td>'
-				+ data.order.adult + '</td><td>' + data.order.children + '</td><td>'
 				+ data.order.created_at.substring(0, 10) + '</td><td>' 
 				+ '<a class="view-order" href="#" data-customer_id="' + data.customer.id 
 				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">View order</a>' + '</td><td>'
@@ -33,8 +31,7 @@
 			customer_id: e.currentTarget.getAttribute('data-customer_id'),
 			from: e.currentTarget.getAttribute('data-from'),
 			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html(),
-			time: new Date()
+			user: $('.userinfo>h5').html()
 		};
 
 		window.dis.trigger('view_order', data);
@@ -47,8 +44,7 @@
 			customer_id: e.currentTarget.getAttribute('data-customer_id'),
 			from: e.currentTarget.getAttribute('data-from'),
 			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html(),
-			time: new Date()
+			user: $('.userinfo>h5').html()
 		};
 
 		window.dis.trigger('send_email', data);
@@ -61,14 +57,15 @@
 			customer_id: e.currentTarget.getAttribute('data-customer_id'),
 			from: e.currentTarget.getAttribute('data-from'),
 			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html(),
-			time: new Date()
+			user: $('.userinfo>h5').html()
 		};
 
 		window.dis.trigger('send_ticket', data);
 
 		return false;
 	});
-	$('.footable').footable();	
+	$('.footable').bind('footable_breakpoint', function() {
+		$('.footable').trigger('footable_expand_first_row');
+	}).footable();
 
 })(jQuery, window);

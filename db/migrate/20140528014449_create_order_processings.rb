@@ -1,6 +1,6 @@
 class CreateOrderProcessings < ActiveRecord::Migration
 	def self.up
-		create_table :order_processings, :id => false do |t|
+		create_table :order_processings do |t|
 			t.integer :order_id
 			t.integer :account_id
 			t.integer :status
