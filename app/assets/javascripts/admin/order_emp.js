@@ -10,12 +10,12 @@
 			$('<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
 				+ data.order.depart.substring(0, 10) + '</td><td>' + data.order.return.substring(0, 10) + '</td><td>'
 				+ data.order.created_at.substring(0, 10) + '</td><td>' 
-				+ '<a class="view-order" href="#" data-customer_id="' + data.customer.id 
-				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">View order</a>' + '</td><td>'
-				+ '<a class="send-email" href="#" data-customer_id="' + data.customer.id 
-				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send email</a>' + '</td><td>'
-				+ '<a class="send-ticket" href="#" data-customer_id="' + data.customer.id 
-				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send ticket</a>' + '</td><td>'
+				+ '<button class="view-order view-order btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
+				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">View order</button>' + '</td><td>'
+				+ '<button class="send-email btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
+				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send email</button>' + '</td><td>'
+				+ '<button class="send-ticket btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
+				+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send ticket</button>' + '</td><td>'
 			 ));
 
 	});

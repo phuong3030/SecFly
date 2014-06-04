@@ -9,6 +9,9 @@
 	<%= javascript_include_tag "admin/panel_nav_toggle" %>
 	<%= javascript_include_tag "websockets/websockets" %>
 	<%= javascript_include_tag "footable/footable" %>
+	<%= javascript_include_tag "footable/footable.sort" %>
+	<%= javascript_include_tag "footable/footable.filter" %>
+	<%= javascript_include_tag "footable/footable.paginate" %>
 	<%= javascript_include_tag "admin/order_emp" %>
 <% end %>
 
@@ -35,7 +38,7 @@
 
 	<% if @orders.size > 0 %>
 
-		<table class='table footable'>
+		<table class='table footable' data-page-size="5">
 			<thead>
 				<tr>
 					<th>From</th>
@@ -43,9 +46,9 @@
 					<th data-hide="phone,tablet">Depart</th>
 					<th data-hide="phone,tablet">Return</th>
 					<th data-hide="phone,tablet">Created at</th>
-					<th data-hide="phone,tablet">View order</th>
-					<th data-hide="phone,tablet">Send email</th>
-					<th data-hide="phone,tablet">Send tickets</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet">View order</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet">Send email</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet">Send tickets</th>
 					<th>Status</th>
 				</tr>
 			</thead>
@@ -71,6 +74,15 @@
 				</tr>
 			<% end %>
 			</tbody>
+			<tfoot class="hide-if-no-paging">
+				<tr>
+					<td colspan="3">
+						<ul class="pagination pagination-centered">
+
+						</ul>
+					</td>
+				</tr>
+			</tfoot>
 		</table>
 	<% else %>
 		<span>We don't have any order</span>
