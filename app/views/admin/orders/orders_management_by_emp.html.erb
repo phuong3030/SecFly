@@ -37,6 +37,20 @@
 <% content_for :maincontent do %>
 
 	<% if @orders.size > 0 %>
+		
+		<form class="form-horizontal" role="form">
+			<div class="form-group col-md-6 col-xs-12" >
+				<%= text_field_tag :search, nil, :class => 'form-control', :placeholder => 'Enter keyword' %>
+			</div>
+			<div class="form-group col-md-6 col-xs-12" >
+				<%= select_tag(
+					:status, 
+					options_for_select([['Viewed', 0], ['Sent email', 0], ['Sent tickets', 2]]), 
+					:prompt => "Filter by status",
+					:class => 'form-control' 
+				)%>
+			</div>
+		</form>
 
 		<table class='table footable' data-page-size="5">
 			<thead>
