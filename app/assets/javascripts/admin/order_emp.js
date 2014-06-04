@@ -72,5 +72,12 @@
 	$('.footable').bind('footable_breakpoint', function() {
 		$('.footable').trigger('footable_expand_first_row');
 	}).footable();
+	$('#status').change(function (e) {
+		e.preventDefault();
+
+		$('.footable').trigger('footable_filter', {
+			filter: $('#filter').val()
+		});
+	});
 
 })(jQuery, window);

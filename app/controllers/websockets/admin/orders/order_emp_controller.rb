@@ -3,6 +3,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	filter_for_channels :orders_management_emp
 
 	def view_order
+
 		WebsocketRails[:orders_management_man].trigger(:view_order, message)
 	end
 

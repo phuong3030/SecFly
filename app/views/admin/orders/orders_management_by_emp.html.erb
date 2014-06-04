@@ -37,22 +37,15 @@
 <% content_for :maincontent do %>
 
 	<% if @orders.size > 0 %>
-		
-		<form class="form-horizontal" role="form">
-			<div class="form-group col-md-6 col-xs-12" >
+
+		<div class="row search-region" >
+			<%= label_tag :search, "Search: ", :class => "col-md-1 col-xs-12"  %>
+			<div class="col-md-11 col-xs-12">
 				<%= text_field_tag :search, nil, :class => 'form-control', :placeholder => 'Enter keyword' %>
 			</div>
-			<div class="form-group col-md-6 col-xs-12" >
-				<%= select_tag(
-					:status, 
-					options_for_select([['Viewed', 0], ['Sent email', 0], ['Sent tickets', 2]]), 
-					:prompt => "Filter by status",
-					:class => 'form-control' 
-				)%>
-			</div>
-		</form>
+		</div>
 
-		<table class='table footable' data-page-size="5">
+		<table class='table footable' data-filter="#search" data-page-size="5">
 			<thead>
 				<tr>
 					<th>From</th>
@@ -63,7 +56,6 @@
 					<th data-sort-ignore="true" data-hide="phone,tablet">View order</th>
 					<th data-sort-ignore="true" data-hide="phone,tablet">Send email</th>
 					<th data-sort-ignore="true" data-hide="phone,tablet">Send tickets</th>
-					<th>Status</th>
 				</tr>
 			</thead>
 
@@ -84,7 +76,6 @@
 					<td>
 						<%= button_tag 'Send tickets', :class => 'send-ticket btn btn-primary btn-sm', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %>
 					</td>
-					<td></td>
 				</tr>
 			<% end %>
 			</tbody>
