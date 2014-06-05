@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.text     "email"
     t.text     "phone"
     t.text     "name"
+    t.string   "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

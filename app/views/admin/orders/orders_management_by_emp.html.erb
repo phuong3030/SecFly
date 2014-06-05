@@ -68,13 +68,13 @@
 					<td><%= order.return.strftime('%d/%m/%Y %I:%M') %></td>
 					<td><%= order.created_at.strftime('%d/%m/%Y %I:%M') %></td>
 					<td>
-						<%= button_tag 'View detail', :class => 'view-order btn btn-primary btn-sm', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %>
+						<%= button_tag 'View detail', :class => 'view-order btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
 					<td>
-						<%= button_tag  'Send email', :class => 'send-email btn btn-primary btn-sm', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %>
+						<%= button_tag 'Send email', :class => 'send-email btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
 					<td>
-						<%= button_tag 'Send tickets', :class => 'send-ticket btn btn-primary btn-sm', :'data-customer_id' => order.customer_id, :'data-from' => order.from, :'data-to' => order.to %>
+						<%= button_tag 'Send tickets', :class => 'send-ticket btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
 				</tr>
 			<% end %>

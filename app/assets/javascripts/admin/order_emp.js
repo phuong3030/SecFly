@@ -1,12 +1,64 @@
 (function ($, scope) {
 
+	// Create connection to server and subcribe to special channel
 	scope.dis = new WebSocketRails(scope.location.host + '/websocket');
 	scope.channel = dis.subscribe('orders_management_emp');
 
+	// Binding event from user and send data to server
+	$('tbody').on('click', '.view-order', function(e) {
+
+		var data = { 
+			order_id: e.currentTarget.getAttribute('data-order_id')
+		};
+
+		window.dis.trigger('view_order', data);
+		
+		return false;
+	});
+	$('tbody').on('click', '.send-email', function(e) {
+
+		var data = { 
+			order_id: e.currentTarget.getAttribute('data-order_id')
+		};
+
+		window.dis.trigger('send_email', data);
+		
+		return false;
+	});
+	$('tbody').on('click', '.send-ticket', function(e) {
+		
+		var data = { 
+			order_id: e.currentTarget.getAttribute('data-order_id')
+		};
+
+		window.dis.trigger('send_ticket', data);
+
+		return false;
+	});
+
+	// Listen event from server
+	dis.on_open = function(data) {
+
+		console.log('Connection has been established: ', data);
+	}
+
+	channel.bind('order_detail', function (data) {
+
+		console.log(data);
+	});
+
+	channel.bind('order_customer_email', function (data) {
+
+		console.log(data);
+	});
+
+	channel.bind('order_customer_tickets', function (data) {
+
+		console.log(data);
+	});
+
 	channel.bind('new_request', function (data) {
 	
-		console.log(data);
-		//get the footable object
 		var footable = $('table').data('footable'),
 			 newRow;
 
@@ -26,66 +78,13 @@
 	   footable.appendRow(newRow);
 	});
 
-	channel.bind('order_detail', function (data) {
-		console.log(data);
-	});
-
-	channel.bind('order_customer_email', function (data) {
-		console.log(data);
-	});
-
-	channel.bind('order_customer_tickets', function (data) {
-		console.log(data);
-	});
-
-	dis.on_open = function(data) {
-
-		console.log('Connection has been established: ', data);
-	}
-
-	$('tbody').on('click', '.view-order', function(e) {
-
-		var data = { 
-			customer_id: e.currentTarget.getAttribute('data-customer_id'),
-			from: e.currentTarget.getAttribute('data-from'),
-			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html()
-		};
-
-		window.dis.trigger('view_order', data);
-		
-		return false;
-	});
-	$('tbody').on('click', '.send-email', function(e) {
-
-		var data = { 
-			customer_id: e.currentTarget.getAttribute('data-customer_id'),
-			from: e.currentTarget.getAttribute('data-from'),
-			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html()
-		};
-
-		window.dis.trigger('send_email', data);
-		
-		return false;
-	});
-	$('tbody').on('click', '.send-ticket', function(e) {
-		
-		var data = { 
-			customer_id: e.currentTarget.getAttribute('data-customer_id'),
-			from: e.currentTarget.getAttribute('data-from'),
-			to: e.currentTarget.getAttribute('data-to'),
-			user: $('.userinfo>h5').html()
-		};
-
-		window.dis.trigger('send_ticket', data);
-
-		return false;
-	});
+	// Binding table and filter table event
 	$('.footable').bind('footable_breakpoint', function() {
+
 		$('.footable').trigger('footable_expand_first_row');
 	}).footable();
 	$('#status').change(function (e) {
+
 		e.preventDefault();
 
 		$('.footable').trigger('footable_filter', {

@@ -31,7 +31,7 @@ class Home::ServicesController < ApplicationController
 	# POST /travel
 	def request_ticket
 		# just get, check customer information, store to database and subcribe to websocket channel 
-		customer = Customer.new({ :email => params[:email], :phone => params[:phone] })
+		customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name] })
 		order = Order.new(
 			{ 
 				:from => params[:from], 

@@ -7,14 +7,14 @@
 		console.log('Connection has been established: ', data); 
 	}; 
 
-	channel.bind('view_order', function(data) {
+	channel.bind('emp_view_order', function(data) {
 	
 		console.log(data);
 		
-		$('tbody').append($('<tr><td> ' + data.user 
-				+ '</td><td>VIEW ORDER</td><td>' + data.customer_id 
-				+ '</td><td> ' + data.from + ' => ' + data.to + '</td><td>' + data.time
-				+ '</td></tr>'));
+		//$('tbody').append($('<tr><td> ' + data.user 
+		//		+ '</td><td>VIEW ORDER</td><td>' + data.customer_id 
+		//		+ '</td><td> ' + data.from + ' => ' + data.to + '</td><td>' + data.time
+		//		+ '</td></tr>'));
 	});
 	channel.bind('send_email', function(data) {
 	

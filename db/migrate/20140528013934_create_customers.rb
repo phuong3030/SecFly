@@ -4,6 +4,7 @@ class CreateCustomers < ActiveRecord::Migration
 			t.text :email
 			t.text :phone
 			t.text :name
+			t.string :group_id
 			t.timestamps
 		end
 	end
