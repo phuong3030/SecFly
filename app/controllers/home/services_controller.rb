@@ -49,7 +49,7 @@ class Home::ServicesController < ApplicationController
 			# subcribe to company to process your request
 			WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 
 
-			flash[:notice] = 'Your request is created successful! We will confirm to you later.'
+			flash[:notice] = 'Thank you for using our services. We have received your request and will sent confirmation email to you.'
 			redirect_to travel_path 
 		else 
 			flash[:alert] = 'Your request is created failed! Please try again later.'

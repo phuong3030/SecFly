@@ -44,7 +44,32 @@
 
 	channel.bind('order_detail', function (data) {
 
-		console.log(data);
+		$('.customer_id').html(data.customer.id);
+		$('.customer_name').html(data.customer.name);
+		$('.customer_phone').html(data.customer.phone);
+		$('.customer_email').html(data.customer.email);
+
+		$('.order_from').html(data.order.from);
+		$('.order_to').html(data.order.to);
+		$('.order_depart').html(data.order.depart);
+		$('.order_return').html(data.order.return);
+		$('.order_quantity').html(
+			data.order.children + ' children tickets, ' 
+			+ data.order.adult + ' adult tickets, ' 
+			+ data.order.seniors + ' senior tickets '
+		);
+
+		$.magnificPopup.open({
+			items: {
+				src: ".order-detail",
+				type: "inline"
+			},
+			callbacks: {
+				beforeClose: function() {
+				}
+			}
+		});
+
 	});
 
 	channel.bind('order_customer_email', function (data) {
@@ -64,15 +89,15 @@
 
 		newRow =	$(
 			'<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
-			+ data.order.depart.substring(0, 10) + '</td><td>' 
-			+ data.order.return.substring(0, 10) + '</td><td>'
-			+ data.order.created_at.substring(0, 10) + '</td><td>' 
-			+ '<button class="view-order view-order btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
-			+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">View order</button>' + '</td><td>'
-			+ '<button class="send-email btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
-			+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send email</button>' + '</td><td>'
-			+ '<button class="send-ticket btn btn-primary btn-sm" href="#" data-customer_id="' + data.customer.id 
-			+ '" data-from="' + data.order.from + '" data-to="' + data.order.to + '">Send ticket</button>' + '</td><td>'
+			+ data.order.depart + '</td><td>' 
+			+ data.order.return + '</td><td>'
+			+ data.order.created_at + '</td><td>' 
+			+ '<button class="view-order view-order btn btn-primary btn-sm" href="#" data-order_id="' 
+			+ data.order.id + '">View order</button>' + '</td><td>'
+			+ '<button class="send-email btn btn-primary btn-sm" href="#" data-order_id="' 
+			+ data.order.id + '">Send email</button>' + '</td><td>'
+			+ '<button class="send-ticket btn btn-primary btn-sm" href="#" data-order_id="' 
+			+ data.order.id + '">Send ticket</button>' + '</td><td>'
 		);
 
 	   footable.appendRow(newRow);

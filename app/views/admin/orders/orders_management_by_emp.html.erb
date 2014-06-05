@@ -13,7 +13,7 @@
 	<%= javascript_include_tag "footable/footable.sort" %>
 	<%= javascript_include_tag "footable/footable.filter" %>
 	<%= javascript_include_tag "footable/footable.paginate" %>
-	<%= javascript_include_tag  "magnific-popup" %>
+	<%= javascript_include_tag "magnific-popup" %>
 	<%= javascript_include_tag "admin/order_emp" %>
 <% end %>
 
@@ -66,9 +66,9 @@
 				<tr>			
 					<td><%= order.from %></td>
 					<td><%= order.to %></td>
-					<td><%= order.depart.strftime('%d/%m/%Y %I:%M') %></td>
-					<td><%= order.return.strftime('%d/%m/%Y %I:%M') %></td>
-					<td><%= order.created_at.strftime('%d/%m/%Y %I:%M') %></td>
+					<td><%= order.depart.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.return.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
 					<td>
 						<%= button_tag 'View detail', :class => 'view-order btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
@@ -95,6 +95,7 @@
 		<span>We don't have any order</span>
 	<% end %>
 
+	<%= render "admin/orders/shared/order_detail" %>
 <% end %>
 
 <%= render :partial => 'shared/admin/cms_master_with_nav'  %>

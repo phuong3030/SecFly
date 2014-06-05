@@ -12,7 +12,7 @@
 	}
 
 	.search-region { 
-		margin-top: 10px;
+		padding-top: 10px;
 
 		label {
 			line-height: 40px;
@@ -20,3 +20,26 @@
 		}
 	}
 }
+
+.mfp-content {
+	.order-detail {
+		padding: 10px 0 20px 0;
+		background: #1C1D21;
+		color: #EEEEF7;
+
+		dt {
+			color: #445878;
+		}
+
+		h3 {
+			color: #92CDCF;
+			font: 22px Helvetica107XBCn; 
+			text-align: center;
+		}
+
+		.mfp-close {
+			color: #EEEEF7;
+		}	
+	}
+}
+
