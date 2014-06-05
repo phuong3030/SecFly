@@ -1,6 +1,4 @@
-class Admin::ProductsController < ApplicationController
-	layout "admin"
-	before_filter :checkAuthorization
+class Admin::ProductsController < Admin::DashboardController
 	before_action :set_admin_product, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/products
@@ -83,9 +81,4 @@ class Admin::ProductsController < ApplicationController
 	def admin_product_params
 		params.require(:product).permit(:name, :description, :image)
 	end
-
-	def checkAuthorization
-		redirect_to admin_login_path unless session[:logged_in] 
-	end
-
 end

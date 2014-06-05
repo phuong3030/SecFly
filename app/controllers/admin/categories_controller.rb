@@ -1,6 +1,4 @@
-class Admin::CategoriesController < ApplicationController
-	layout "admin"
-	before_filter :checkAuthorization
+class Admin::CategoriesController < Admin::DashboardController
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/categories
@@ -75,9 +73,5 @@ class Admin::CategoriesController < ApplicationController
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def category_params
 		params.require(:category).permit(:name, :description)
-	end
-
-	def checkAuthorization
-		redirect_to admin_login_path unless session[:logged_in] 
 	end
 end

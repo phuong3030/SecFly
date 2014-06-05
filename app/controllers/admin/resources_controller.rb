@@ -1,6 +1,4 @@
-class Admin::ResourcesController < ApplicationController
-	layout 'admin'
-	before_filter :checkAuthorization
+class Admin::ResourcesController < Admin::DashboardController
 	before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/resources
@@ -76,9 +74,4 @@ class Admin::ResourcesController < ApplicationController
 	def resource_params
 		params.require(:resource).permit(:name, :description, :resource_type, :image)
 	end
-
-	def checkAuthorization
-		redirect_to admin_login_path unless session[:logged_in] 
-	end
-
 end

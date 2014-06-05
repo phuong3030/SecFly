@@ -11,8 +11,14 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			# check account is saved, send data back to employee client
 			# and trigger event to logging data 
 			if @account.save
-				WebsocketRails[:orders_management_man].trigger(:emp_view_order, @order)
-				WebsocketRails[:orders_management_emp].trigger(:order_detail, @order)
+				WebsocketRails[:orders_management_man].trigger(
+					:emp_view_order, 
+					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_detail, 
+					{ :order => @order, :customer => @order.customer }
+				)
 			end
 		else
 			WebsocketRails[:orders_management_emp].trigger(:error, "Account or order not found")
@@ -20,8 +26,20 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	end
 
 	def send_email_to_customer
+		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
-			WebsocketRails[:orders_management_man].trigger(:send_email, message)
+			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
+			
+			if (logging.save) 
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_customer_email, 
+					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_man].trigger(
+					:send_email, 
+					{ :order => @order, :customer => @order.customer }
+				)
+			end
 		end
 	end
 
@@ -29,7 +47,18 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		# confirm to employee client update order table and trigger event 
 		# to log action
 		if (@account != nil && @order != nil)	
-			WebsocketRails[:orders_management_man].trigger(:send_ticket, message)
+			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
+
+			if (logging.save) 
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_customer_email, 
+					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_man].trigger(
+					:send_ticket, 
+					{ :order => @order, :customer => @order.customer }
+				)
+			end
 		end
 	end
 
