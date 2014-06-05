@@ -3,11 +3,13 @@
 	<%= stylesheet_link_tag "home/home", media: "all" %>
 	<%= stylesheet_link_tag "home/services/travel", media: "all" %>
 	<%= stylesheet_link_tag "DateTimePicker", media: "all" %>
+	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
 	<%= javascript_include_tag "DateTimePicker" %>
-	<%= javascript_include_tag "home/travel", media: "all" %>
+	<%= javascript_include_tag  "magnific-popup" %>
+	<%= javascript_include_tag "home/travel" %>
 <% end %>
 
 <%= currently_at 'Services' %>
@@ -49,5 +51,5 @@
 
 	</div>
 
-
+	<%= render 'home/services/shared/dialog' %>
 </div>
