@@ -86,6 +86,29 @@
 }
 
 // --- PAGE CONTENT --- //
+h2 { 
+	color: #92CDCF;
+	font: 24px Helvetica107XBCn;
+	text-align: center;
+
+	span {
+		display: inline-block;
+		padding: 0px 15px;
+		background: url('/images/bg_pattern.png'); 
+	}
+
+	&:before {
+		position: absolute;
+		z-index: -1;
+		top: 34px;
+		left: 0;
+		right: 0;
+		margin: 0 15px;
+		border-top: 1px solid #445878;
+		border-bottom: 1px solid #445878;
+		content: "";
+	}
+}
 
 // services
 .services {
@@ -95,13 +118,9 @@
 		margin-bottom: 10px;
 	}
 
-	h2, h3 {
-		left: 25%;
+	h3 {
 		color: #92CDCF;
 		font: 24px Helvetica107XBCn;
-	}
-
-	h3 {
 		font-size: 18px;
 		margin-bottom: 20px;
 	}
@@ -140,17 +159,9 @@
 	img {
 		margin-bottom: 2px;
 	}
-
-	h2 {
-		left: 30%;
-	}
 }
 
 .companyinfo {
-	h2 {
-		left: 36%;	
-	}
-
 	.about-us {
 		color: #EEEEF7;
 
@@ -212,14 +223,6 @@ $screen-lg-min: 1200px;
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
-	.services h2, .partners h2 {
-		left: 43%;
-	}
-
-	.companyinfo h2 {
-		left: 36%;
-	}
-
 	@include responsive-partners();
 	@include banner-height();
 
@@ -230,16 +233,8 @@ $screen-lg-min: 1200px;
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) { 
-	.services h2, .partners h2 {
-		left: 43%;
-	}
-	
 	@include responsive-partners();
 	@include banner-height();
-
-	.companyinfo h2 {
-		left: 36%;
-	}
 
 	.companyinfo .contacts .office {
 		float: left;
