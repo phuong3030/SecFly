@@ -56,7 +56,7 @@
 					<th data-hide="phone,tablet">Return</th>
 					<th data-hide="phone,tablet">Created at</th>
 					<th data-sort-ignore="true" data-hide="phone,tablet">View order</th>
-					<th data-sort-ignore="true" data-hide="phone,tablet">Send email</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet">Preview email</th>
 					<th data-sort-ignore="true" data-hide="phone,tablet">Send tickets</th>
 				</tr>
 			</thead>
@@ -73,7 +73,7 @@
 						<%= button_tag 'View detail', :class => 'view-order btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
 					<td>
-						<%= button_tag 'Send email', :class => 'send-email btn btn-primary btn-sm', :'data-order_id' => order.id %>
+						<%= button_tag 'Preview email', :class => 'preview-email btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
 					<td>
 						<%= button_tag 'Send tickets', :class => 'send-ticket btn btn-primary btn-sm', :'data-order_id' => order.id %>
@@ -96,6 +96,7 @@
 	<% end %>
 
 	<%= render "admin/orders/shared/order_detail" %>
+	<%= render "admin/orders/shared/preview_email" %>
 <% end %>
 
 <%= render :partial => 'shared/admin/cms_master_with_nav'  %>

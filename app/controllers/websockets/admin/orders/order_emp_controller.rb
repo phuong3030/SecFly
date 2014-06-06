@@ -25,6 +25,16 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		end
 	end
 
+	def preview_email
+		# Create email form sent back to employee client and log employee action
+		if (@account != nil && @order != nil)	
+			WebsocketRails[:orders_management_emp].trigger(
+				:order_customer_preview_email, 
+				@order
+			)
+		end
+	end
+
 	def send_email_to_customer
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
@@ -32,7 +42,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			
 			if (logging.save) 
 				WebsocketRails[:orders_management_emp].trigger(
-					:order_customer_email, 
+					:order_customer_send_email, 
 					{ :order => @order, :customer => @order.customer }
 				)
 				WebsocketRails[:orders_management_man].trigger(

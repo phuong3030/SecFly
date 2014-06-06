@@ -15,13 +15,13 @@
 		
 		return false;
 	});
-	$('tbody').on('click', '.send-email', function(e) {
+	$('tbody').on('click', '.preview-email', function(e) {
 
 		var data = { 
 			order_id: e.currentTarget.getAttribute('data-order_id')
 		};
 
-		window.dis.trigger('send_email', data);
+		window.dis.trigger('preview_email', data);
 		
 		return false;
 	});
@@ -72,7 +72,34 @@
 
 	});
 
-	channel.bind('order_customer_email', function (data) {
+	channel.bind('order_customer_preview_email', function (data) {
+
+		$('.email_order_id').html(data.id);
+		$('.email_order_created_at').html(data.created_at);
+		$('.email_from').html(data.from);
+		$('.email_to').html(data.to);
+		$('.email_depart').html(data.depart);
+		$('.email_return').html(data.return);
+		$('.email_quantity').html(
+			data.children + ' children ticket(s), ' 
+			+ data.adult + ' adult ticket(s), ' 
+			+ data.seniors + ' senior ticket(s) '
+		);
+
+		$.magnificPopup.open({
+			items: {
+				src: ".preview-email-wrap",
+				type: "inline"
+			},
+			callbacks: {
+				beforeClose: function() {
+				}
+			}
+		});
+
+	});
+
+	channel.bind('order_customer_send_email', function (data) {
 
 		console.log(data);
 	});

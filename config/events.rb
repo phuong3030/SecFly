@@ -14,7 +14,9 @@ WebsocketRails::EventMap.describe do
 	
 	subscribe :client_connected, 'websockets/socket#connected'
 	subscribe :client_connected, 'websockets/socket#disconnected'
+
 	subscribe :view_order, 'websockets/admin/orders/order_emp#view_order'
+	subscribe :preview_email, 'websockets/admin/orders/order_emp#preview_email'
 	subscribe :send_email, 'websockets/admin/orders/order_emp#send_email_to_customer'
 	subscribe :send_ticket, 'websockets/admin/orders/order_emp#send_ticket_to_customer'
 
