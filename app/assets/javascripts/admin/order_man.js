@@ -61,6 +61,47 @@
 		});
 	});
 
+	channel.bind('view_order_logs', function (data) {
+
+		var i,
+		 	 accountMap = {},
+			 lstLoggingItems = '',
+			 accounts = data.accounts
+			 orderProcessings = data.order_processings,
+			 statusMap = [
+				 "",
+			 	 "VIEW ORDER",
+				 "SENT EMAIL to customer",
+				 "SENT TICKETS to customer"
+			 ];
+
+		console.log(data);
+
+		for (i = 0; i < accounts.length; i++) {
+			accountMap[accounts[i].id] = accounts[i].username;
+		}
+
+		for (i = 0; i < orderProcessings.length; i++) {
+			lstLoggingItems = lstLoggingItems 
+						+ '<li>' + accountMap[orderProcessings[i].account_id] 
+						+ ' ' + statusMap[orderProcessings[i].status] 
+						+ ' at ' + orderProcessings[i].created_at + '</li>'
+		}
+
+		$('.logs').html($(lstLoggingItems));
+
+		$.magnificPopup.open({
+			items: {
+				src: ".action-logs",
+				type: "inline"
+			},
+			callbacks: {
+				beforeClose: function() {
+				}
+			}
+		});
+	});
+
 	// Binding table and filter table event
 	$('.footable').bind('footable_breakpoint', function() {
 

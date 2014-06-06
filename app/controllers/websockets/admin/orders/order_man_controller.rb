@@ -17,8 +17,12 @@ class Websockets::Admin::Orders::OrderManController < WebsocketRails::BaseContro
 	def view_logs
 		if (@order != nil)
 			WebsocketRails[:orders_management_man].trigger(
-				:order_detail, 
-				{ :order => @order, :customer => @order.customer }
+				:view_order_logs, 
+				{ 
+					:order => @order, 
+					:order_processings => @order.order_processings,
+					:accounts => @order.accounts.map { |acc| acc.slice(:id, :username) }
+				}
 			)
 		else
 			WebsocketRails[:orders_management_man].trigger(:error, "Order not found")
