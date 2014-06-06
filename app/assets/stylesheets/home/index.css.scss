@@ -126,8 +126,6 @@ h2 {
 	}
 
 	.services-description { 
-		min-height: 220px;
-
 		img {
 			float: right;
 		}
@@ -226,6 +224,10 @@ $screen-lg-min: 1200px;
 	@include responsive-partners();
 	@include banner-height();
 
+	.services-description { 
+		min-height: 220px;
+	}
+
 	.companyinfo .contacts .office {
 		float: left;
 	}
@@ -235,6 +237,10 @@ $screen-lg-min: 1200px;
 @media (min-width: $screen-lg-min) { 
 	@include responsive-partners();
 	@include banner-height();
+
+	.services-description { 
+		min-height: 220px;
+	}
 
 	.companyinfo .contacts .office {
 		float: left;
