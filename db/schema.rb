@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.integer  "adult"
     t.integer  "seniors"
     t.integer  "children"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

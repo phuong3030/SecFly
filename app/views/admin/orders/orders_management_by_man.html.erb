@@ -1,11 +1,18 @@
 <% content_for :page_spec do %>
 	<title>Customer orders</title>
 	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
+	<%= stylesheet_link_tag "footable/footable.core", media: "all" %>
+	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
+	<%= stylesheet_link_tag "admin/order_emp", media: "all" %>
+	<%= stylesheet_link_tag "admin/order_man", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
 	<%= javascript_include_tag "admin/panel_nav_toggle" %>
-
+	<%= javascript_include_tag "footable/footable" %>
+	<%= javascript_include_tag "footable/footable.sort" %>
+	<%= javascript_include_tag "footable/footable.paginate" %>
+	<%= javascript_include_tag "magnific-popup" %>
 	<%= javascript_include_tag "websockets/websockets" %>
 	<%= javascript_include_tag "admin/order_man" %>
 <% end %>
@@ -30,18 +37,66 @@
 <% end %>
 
 <% content_for :maincontent do %>
-	<table class='table footable'>
-		<thead>
-			<th>User</th>
-			<th>Action</th>
-			<th>Customer id</th>
-			<th>From => to</th>
-			<th>Time</th>
-		</thead>
-		<tbody>
+	
+	<% if @orders.size > 0 %>
 
-		</tbody>
-	</table>
+		<div class="row search-region" >
+			<%= label_tag :search, "Search: ", :class => "col-md-1 col-xs-12"  %>
+			<div class="col-md-11 col-xs-12">
+				<%= text_field_tag :search, nil, :class => 'form-control', :placeholder => 'Enter keyword' %>
+			</div>
+		</div>
+
+		<table class='table footable' data-filter="#search" data-page-size="5">
+			<thead>
+				<tr>
+					<th>Customer</th>
+					<th>From</th>
+					<th>To</th>
+					<th data-hide="phone,tablet">Depart</th>
+					<th data-hide="phone,tablet">Return</th>
+					<th data-hide="phone,tablet">Created at</th>
+					<th data-hide="phone,tablet">Status</th>
+					<th data-hide="phone,tablet">View detail</th>
+					<th data-hide="phone,tablet">View logs</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<% @orders.each do |order| %>
+				<tr>			
+					<td><%= order.customer.name %></td>
+					<td><%= order.from %></td>
+					<td><%= order.to %></td>
+					<td><%= order.depart.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.return.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.status %></td>
+					<td>
+						<%= button_tag 'View detail', :class => 'view-detail btn btn-primary btn-sm', :'data-order_id' => order.id %>
+					</td>
+					<td>
+						<%= button_tag 'View logs', :class => 'view-logs btn btn-primary btn-sm', :'data-order_id' => order.id %>
+					</td>
+				</tr>
+			<% end %>
+			</tbody>
+			<tfoot class="hide-if-no-paging">
+				<tr>
+					<td colspan="3">
+						<ul class="pagination pagination-centered">
+
+						</ul>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	<% else %>
+		<span>We don't have any order</span>
+	<% end %>
+
+	<%= render "admin/orders/shared/order_detail" %>
+	<%= render "admin/orders/shared/log_action" %>
 <% end %>
 
 <%= render :partial => 'shared/admin/cms_master_with_nav'  %>

@@ -10,6 +10,7 @@ class CreateOrders < ActiveRecord::Migration
 			t.integer :adult
 			t.integer :seniors
 			t.integer :children
+			t.integer :status, :default => 0
 			t.timestamps
 		end
 	end

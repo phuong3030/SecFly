@@ -5,7 +5,8 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 
 	def view_order
 		if (@account != nil && @order != nil)
-			# mapping account with order
+			# update current status for order and mapping account with order
+			@order.status = 1
 			@account.orders << @order
 	
 			# check account is saved, send data back to employee client
@@ -38,9 +39,10 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	def send_email_to_customer
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
+			@order.status = 2
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
 			
-			if (logging.save) 
+			if (@order.save && logging.save) 
 				WebsocketRails[:orders_management_emp].trigger(
 					:order_customer_send_email, 
 					{ :order => @order, :customer => @order.customer }
@@ -57,9 +59,10 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		# confirm to employee client update order table and trigger event 
 		# to log action
 		if (@account != nil && @order != nil)	
+			@order.status = 3
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
 
-			if (logging.save) 
+			if (@order.save && logging.save) 
 				WebsocketRails[:orders_management_emp].trigger(
 					:order_customer_email, 
 					{ :order => @order, :customer => @order.customer }

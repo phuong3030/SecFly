@@ -31,7 +31,14 @@
 			order_id: e.currentTarget.getAttribute('data-order_id')
 		};
 
-		window.dis.trigger('send_ticket', data);
+		alertify.confirm("Has customer already get tickets? System will delete this row.", function (e) {
+			if (e) {
+				window.dis.trigger('send_ticket', data);
+				alertify.success("Send tickets successful!");
+			} else {
+				alertify.error("Cancel action send tickets!", "", 0);
+			}
+		});
 
 		return false;
 	});
