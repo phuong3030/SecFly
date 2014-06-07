@@ -71,7 +71,15 @@
 					<td><%= order.depart.strftime('%d/%m/%Y %H:%M') %></td>
 					<td><%= order.return.strftime('%d/%m/%Y %H:%M') %></td>
 					<td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
-					<td><%= order.status %></td>
+					<% if order.status == 1 %>
+						<td><span class='order_status viewed'>VIEWED</span></td>
+					<% elsif order.status == 2 %>
+						<td><span class='order_status sent-email'>SENT EMAIL</span></td>
+					<% elsif order.status == 3 %>
+						<td><span class='order_status sent-tickets'>SENT TICKETS</span></td>
+					<% else %>
+						<td><span class='order_status new'>NEW</span></td>
+					<% end %>
 					<td>
 						<%= button_tag 'View detail', :class => 'view-detail btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
