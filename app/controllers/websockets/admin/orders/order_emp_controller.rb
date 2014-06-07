@@ -29,17 +29,26 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	def preview_email
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
+			if @order.status < 2
+				@order.status = 2
+			end
+			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
+			
+			if (@order.save && logging.save) 
 			WebsocketRails[:orders_management_emp].trigger(
 				:order_customer_preview_email, 
 				@order
 			)
+			end
 		end
 	end
 
 	def send_email_to_customer
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
-			@order.status = 2
+			if @order.status < 2
+				@order.status = 2
+			end
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
 			
 			if (@order.save && logging.save) 
@@ -59,7 +68,9 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		# confirm to employee client update order table and trigger event 
 		# to log action
 		if (@account != nil && @order != nil)	
-			@order.status = 3
+			if @order.status < 3
+				@order.status = 3
+			end
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
 
 			if (@order.save && logging.save) 
