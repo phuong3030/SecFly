@@ -11,11 +11,9 @@ class CreateOrderProcessings < ActiveRecord::Migration
 		add_index :order_processings, :order_id 
 		add_index :order_processings, :account_id 
 
-		remove_column :orders, :accounts
 	end
 
 	def self.down
-		add_column :orders, :accounts
 		drop_table :order_processions 
 	end
 end
