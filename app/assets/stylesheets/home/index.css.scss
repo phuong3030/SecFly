@@ -42,6 +42,15 @@
 
 // banner
 #banner {	
+	.carousel-inner { 
+		.item {
+			img {
+				height: 200px;
+				min-height: 200px;
+			}
+		}	
+	}
+
 	.carousel-control {
 		background: transparent;
 		@include carousel-control-hover();		
