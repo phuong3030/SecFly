@@ -11,20 +11,6 @@
 
 @mixin responsive-partners() {
 	.partners {
-		.carousel-control {
-			&.right {
-				&>i {
-					margin: 24% 0 0 32%;
-				}
-			}
-
-			&.left {
-				&>i {
-					margin: 24% 0 0 -32%;
-				}  	
-			}
-		}
-
 		.item {
 			&>span {
 				margin: 0;
@@ -60,16 +46,9 @@
 		background: transparent;
 		@include carousel-control-hover();		
 
-		&.right {
-			&>i {
-				margin: 125% 0 0 32%;
-			}
-		}
-
-		&.left {
-			&>i {
-				margin: 125% 0 0 -32%;
-			}  	
+		&>i {
+			position: absolute;
+			top: 45%;
 		}
 	}
 
