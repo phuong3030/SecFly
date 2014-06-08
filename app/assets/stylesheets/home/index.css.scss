@@ -116,16 +116,21 @@ h2 {
 	.carousel-control {
 		@include carousel-control-hover();		
 
+		&>i {
+			position: absolute;
+			top: 42%;
+		}
+
 		&.right {
 			&>i {
-				margin: 230% 0 0 32%;
+				left: 65%;
 			}
 		}
 
 		&.left {
 			&>i {
-				margin: 230% 0 0 -32%;
-			}  	
+				left: 28%;
+			}
 		}
 	}
 
