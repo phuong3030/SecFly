@@ -181,5 +181,6 @@ DEPENDENCIES
   sdoc
   sitemap_generator
   sqlite3
+  thin
   uglifier (>= 1.3.0)
   websocket-rails!
