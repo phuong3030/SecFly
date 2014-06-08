@@ -11,5 +11,20 @@
  *= require_self
  *= require bootstrap.min
  *= require font-awesome.min
+//= require powertip 
  */
 
+#services-submenu, #powerTip {
+	background: #31353D;
+	position: absolute;
+	display: none;
+
+	ul {
+		li {
+			text-align: center;
+			a {
+				color: #445878;	
+			}
+		}
+	}
+}

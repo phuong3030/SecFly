@@ -11,21 +11,35 @@
 			<div class='collapse nav-collapse navHeader'>
 
 				<ul class="nav phone">
-					<%= nav_tab 'Home', root_path, current: current_tab %>
-					<%= nav_tab 'About', about_path, current: current_tab %>
-					<%= nav_tab 'Services', services_path, current: current_tab %>
-					<%= nav_tab 'Products', products_path, current: current_tab %>
-					<%= nav_tab 'Contacts', contacts_path, current: current_tab %>
+					<%= nav_tab 'Home', root_path, :current => current_tab %>
+					<%= nav_tab 'About', about_path, :current => current_tab %>
+					<%= nav_tab 'Services', services_path, :current => current_tab %>
+					<%= nav_tab 'Products', products_path, :current => current_tab %>
+					<%= nav_tab 'Contacts', contacts_path, :current => current_tab %>
 				</ul>
 
 			</div>
 
 			<ul class="nav nav-tabs desktop">
-				<%= nav_tab 'Home', root_path, current: current_tab %>
-				<%= nav_tab 'About', about_path, current: current_tab %>
-				<%= nav_tab 'Services', services_path, current: current_tab %>
-				<%= nav_tab 'Products', products_path, current: current_tab %>
-				<%= nav_tab 'Contacts', contacts_path, current: current_tab %>
+				<%= nav_tab 'Home', root_path, :current => current_tab, :id => 'home-nav-item' %>
+				<%= nav_tab 'About', about_path, :current =>  current_tab, :id => 'about-nav-item' %>
+				<%= nav_tab 'Services', services_path, :current => current_tab, :id => 'services-nav-item' %>
+				<%= nav_tab 'Products', products_path, :current => current_tab, :id => 'products-nav-item' %>
+				<%= nav_tab 'Contacts', contacts_path, :current => current_tab, :id => 'contacts-nav-item' %>
+			</ul>
+		</div>
+
+		<div id='services-submenu'>
+			<ul class='list-unstyled'>
+				<li>
+					<%= link_to 'IIT', security_devices_path %>
+				</li>
+				<li>
+					<%= link_to t('main_nav.Travel'), travel_path  %>
+				</li>
+				<li>
+					<%= link_to t('main_nav.Personal'), personal_finance_path %>
+				</li>
 			</ul>
 		</div>
 

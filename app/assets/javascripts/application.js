@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require powertip 
+
+(function ($) {
+
+	var servicesNavItem = $('#services-nav-item');
+
+	servicesNavItem.data('powertiptarget', 'services-submenu').powerTip({
+		placement: 's',
+		mouseOnToPopup: true,
+		fadeInTime: 100
+	});
+
+})(jQuery);

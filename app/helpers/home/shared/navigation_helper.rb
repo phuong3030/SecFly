@@ -8,7 +8,7 @@ module Home
 			end
 
 			def currently_at(tab)
-				render partial: 'shared/home/main_nav', locals: {current_tab: tab}
+				render partial: 'shared/home/main_nav', locals: { current_tab: tab }
 			end
 		end
 	end
