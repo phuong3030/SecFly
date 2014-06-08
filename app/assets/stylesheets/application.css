@@ -14,17 +14,8 @@
 //= require powertip 
  */
 
-#services-submenu, #powerTip {
+#services-submenu {
 	background: #31353D;
 	position: absolute;
 	display: none;
-
-	ul {
-		li {
-			text-align: center;
-			a {
-				color: #445878;	
-			}
-		}
-	}
 }
