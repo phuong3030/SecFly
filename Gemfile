@@ -11,6 +11,7 @@ end
 # Use postgreSQL as production database
 group :production, :staging do
 	gem 'pg'
+	gem 'thin'
 end
 
 # Use SCSS for stylesheets
