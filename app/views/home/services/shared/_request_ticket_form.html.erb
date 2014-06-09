@@ -2,61 +2,92 @@
 
 	<div class="row customer-info ">
 		<div class="form-group col-md-12 col-xs-12" >
-			<%= label_tag :name %><br>
+			<%= label_tag t('services.travel.Name') %><br>
 			<%= text_field_tag :name, nil, :class => 'form-control', :placeholder => 'Enter your name' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :email %><br>
+			<%= label_tag t('services.travel.Email') %><br>
 			<%= email_field_tag :email, nil, :class => 'form-control', :placeholder => 'Enter your email' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :phone %><br>
+			<%= label_tag t('services.travel.Phone') %><br>
 			<%= phone_field_tag :phone, nil, :class => 'form-control', :placeholder => 'Enter your phone number' %>
 		</div>
 	</div>
 
 	<div class="row place">
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :from %><br>
+			<%= label_tag t('services.travel.From') %><br>
 			<%= text_field_tag :from, nil, :class => 'form-control', :placeholder => 'Choose place' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :to %><br>
+			<%= label_tag t('services.travel.To') %><br>
 			<%= text_field_tag :to, nil, :class => 'form-control', :placeholder => 'Choose place' %>
 		</div>
 	</div>
 
 	<div class="row time">
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :depart %><br>
-			<%= text_field_tag :depart, nil, :class => 'form-control', :'data-field' => 'datetime', :placeholder => 'Enter datetime' %>
+			<%= label_tag t('services.travel.Depart') %><br>
+			<%= text_field_tag :depart, nil, :class => 'form-control', :'data-field' => 'date', :placeholder => 'Enter date' %>
 		</div>
 
 		<div class="form-group col-md-6 col-xs-12" >
-			<%= label_tag :return %><br>
-			<%= text_field_tag :return, nil, :class => 'form-control', :'data-field' => 'datetime', :placeholder => 'Enter datetime' %>
+			<%= label_tag t('services.travel.DepartTime') %><br>
+			<%= select_tag(
+				"departtime", 
+				options_for_select([ [t('services.travel.Morning'), 0], [t('services.travel.Afternoon'), 1] ]), 
+				:class => "form-control"
+			)%>
+		</div>
+	</div>
+
+	<div class="row time">
+		<div class="form-group col-md-6 col-xs-12" >
+			<%= label_tag t('services.travel.Return') %><br>
+			<%= text_field_tag :return, nil, :class => 'form-control', :'data-field' => 'date', :placeholder => 'Enter date' %>
 		</div>
 
-		<div id='dtBox'></div>
+		<div class="form-group col-md-6 col-xs-12" >
+			<%= label_tag t('services.travel.ReturnTime') %><br>
+			<%= select_tag(
+				"returntime", 
+				options_for_select([ [t('services.travel.Morning'), 0], [t('services.travel.Afternoon'), 1] ]), 
+				:class => "form-control"
+			)%>		
+		</div>
 	</div>
+
+	<div class="row payment-method">
+		<div class="form-group col-md-12 col-xs-12" >
+			<%= label_tag t('services.travel.Payment') %><br>
+			<%= select_tag(
+				"payment_method", 
+				options_for_select([ [t('services.travel.By_money'), 0], [t('services.travel.By_credit_card'), 1] ]), 
+				:class => "form-control"
+			)%>
+		</div>
+	</div>
+
+	<div id='dtBox'></div>
 
 	<div class="row quantity">
 		<div class="form-group col-md-4 col-xs-12" >
-			<%= label_tag :children %><br>
-			<%= number_field_tag "children", 0, :min => 0, :class => 'form-control' %>
-		</div>
-
-		<div class="form-group col-md-4 col-xs-12" >
-			<%= label_tag :adult %><br>
+			<%= label_tag t('services.travel.Adult') %><br>
 			<%= number_field_tag "adult", 0, :min => 0, :class => 'form-control' %>
 		</div>
 
 		<div class="form-group col-md-4 col-xs-12" >
-			<%= label_tag :senior %><br>
-			<%= number_field_tag "senior", 0, :min => 0, :class => 'form-control' %>
+			<%= label_tag t('services.travel.Children') %><br>
+			<%= number_field_tag "children", 0, :min => 0, :class => 'form-control' %>
+		</div>
+
+		<div class="form-group col-md-4 col-xs-12" >
+			<%= label_tag t('services.travel.Infant') %><br>
+			<%= number_field_tag "infant", 0, :min => 0, :class => 'form-control' %>
 		</div>
 	</div>
 

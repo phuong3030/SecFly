@@ -32,6 +32,7 @@ class Home::ServicesController < ApplicationController
 	def request_ticket
 		# just get, check customer information, store to database and subcribe to websocket channel 
 		customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name] })
+		binding.pry
 		order = Order.new(
 			{ 
 				:from => params[:from], 

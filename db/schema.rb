@@ -60,14 +60,16 @@ ActiveRecord::Schema.define(version: 20140529034419) do
 
   create_table "orders", force: true do |t|
     t.integer  "customer_id"
+    t.text     "name"
     t.text     "from"
     t.text     "to"
     t.datetime "depart"
     t.datetime "return"
     t.integer  "adult"
-    t.integer  "seniors"
     t.integer  "children"
-    t.integer  "status"
+    t.integer  "infant"
+    t.integer  "payment_method"
+    t.integer  "status",         default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
