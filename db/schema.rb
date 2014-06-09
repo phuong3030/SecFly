@@ -63,13 +63,16 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.text     "name"
     t.text     "from"
     t.text     "to"
-    t.datetime "depart"
-    t.datetime "return"
+    t.date     "depart_date"
+    t.integer  "depart_time_slot"
+    t.date     "return_date"
+    t.integer  "return_time_slot"
     t.integer  "adult"
     t.integer  "children"
     t.integer  "infant"
+    t.text     "ticket_name"
     t.integer  "payment_method"
-    t.integer  "status",         default: 0
+    t.integer  "status",           default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

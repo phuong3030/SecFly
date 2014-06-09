@@ -68,10 +68,10 @@
 					width: 100%;
 					text-align: center;
 					position: absolute;
-					transition: top 1.5s;
-					-moz-transition: top 1.5s;
-					-webkit-transition: top 1.5s;
-					-o-transition: top 1.5s;
+					transition: top 1.5s ease-in-out;
+					-moz-transition: top 1.5s ease-in-out;
+					-webkit-transition: top 1.5s ease-in-out;
+					-o-transition: top 1.5s ease-in-out;
 				}
 
 				&>h3 { 

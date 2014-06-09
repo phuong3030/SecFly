@@ -6,10 +6,10 @@ class CreateOrders < ActiveRecord::Migration
 			t.text :name
 			t.text :from
 			t.text :to
-			t.date :depart
-			t.integer :depart_time
-			t.date :return
-			t.integer :return_time
+			t.date :depart_date
+			t.integer :depart_time_slot
+			t.date :return_date
+			t.integer :return_time_slot
 			t.integer :adult
 			t.integer :children
 			t.integer :infant
