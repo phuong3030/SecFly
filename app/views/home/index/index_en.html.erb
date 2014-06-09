@@ -4,9 +4,13 @@
 	<%= stylesheet_link_tag "home/index", media: "all" %>
 <% end %>
 
+<% content_for :page_script do %>
+	<%= javascript_include_tag "home/index" %>
+<% end %>
+
 <%= currently_at 'Home' %>
 
-<%= render :partial => '/shared/home/banner' %>
+<%= render '/home/index/banner' %>
 
 <div class='content container'>
 
