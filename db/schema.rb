@@ -67,10 +67,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.integer  "depart_time_slot"
     t.date     "return_date"
     t.integer  "return_time_slot"
-    t.integer  "adult"
-    t.integer  "children"
-    t.integer  "infant"
-    t.text     "ticket_name"
+    t.text     "ticket_names"
     t.integer  "payment_method"
     t.integer  "status",           default: 0
     t.datetime "created_at"

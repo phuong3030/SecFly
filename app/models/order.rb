@@ -4,7 +4,6 @@ class Order < ActiveRecord::Base
    has_many :order_processings, :dependent => :destroy, :autosave => true
 
 	validates_presence_of(self.column_names - ["id"])
-	validates :adult, :children, :infant, :numericality => { only_integer: true }
 	validate :depart_date_cannot_be_greater_than_return_date 
 
 	def depart_date_cannot_be_greater_than_return_date
