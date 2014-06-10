@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
    has_many :accounts, :through => :order_processings
    has_many :order_processings, :dependent => :destroy, :autosave => true
 
-	validates_presence_of(self.column_names - ["id"])
+	validates_presence_of(self.column_names - ["id", "adult_names", "children_names", "infant_names"])
 	validate :depart_date_cannot_be_greater_than_return_date 
 
 	def depart_date_cannot_be_greater_than_return_date

@@ -76,19 +76,22 @@
 		<div class="form-group adult-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Adult') %><br>
 			<a class='new-adult-ticket' href='#'><%= t('services.travel.new-adult-ticket') %></a>
-			<%= text_field_tag :return, nil, :class => 'form-control adult-name', :placeholder => 'Enter name ' %>
+			<%= text_field_tag :'adult-name', nil, :class => 'form-control adult-name', :placeholder => 'Enter name ' %>
+			<%= hidden_field_tag 'adult_names' %>
 		</div>
 
 		<div class="form-group children-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Children') %><br>
 			<a class='new-children-ticket' href='#'><%= t('services.travel.new-children-ticket') %></a>
-			<%= text_field_tag :return, nil, :class => 'form-control children-name', :placeholder => "Enter children name" %>
+			<%= text_field_tag :'children-name', nil, :class => 'form-control children-name', :placeholder => "Enter children name" %>
+			<%= hidden_field_tag 'children_names' %>
 		</div>
 
 		<div class="form-group infant-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Infant') %><br>
 			<a class='new-infant-ticket' href='#'><%= t('services.travel.new-infant-ticket') %></a>
-			<%= text_field_tag :return, nil, :class => 'form-control infant-name', :placeholder => "Enter infant name" %>
+			<%= text_field_tag :'infant-name', nil, :class => 'form-control infant-name', :placeholder => "Enter infant name" %>
+			<%= hidden_field_tag 'infant_names' %>
 		</div>
 	</div>
 

@@ -30,31 +30,39 @@ class Home::ServicesController < ApplicationController
 
 	# POST /travel
 	def request_ticket
-		# just get, check customer information, store to database and subcribe to websocket channel 
-		customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name] })
-		binding.pry
-		order = Order.new(
-			{ 
-				:from => params[:from], 
-				:to => params[:to],
-				:depart => params[:depart],
-				:return => params[:return],
-				:children => params[:children],
-				:adult => params[:adult],
-				:seniors => params[:senior]
-			}
-		)
-		customer.orders << order	
-
-		if customer.save
-			# subcribe to company to process your request
-			WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 
-
-			flash[:notice] = 'Thank you for using our services. We have received your request and will sent confirmation email to you.'
-			redirect_to travel_path 
-		else 
+		# check all name are empty
+		if (params[:adult_names] == '' && params[:children_names] == '' && params[:infant_names] == '')
 			flash[:alert] = 'Your request is created failed! Please try again later.'
 			redirect_to travel_path 
+		else
+			# just get, check customer information, store to database and subcribe to websocket channel 
+			customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name] })
+			order = Order.new(
+				{ 
+					:from => params[:from], 
+					:to => params[:to],
+					:depart_time => params[:depart],
+					:depart_time_slot => params[:departtime],
+					:return_time => params[:return],
+					:return_time_slot => params[:returntime],
+					:adult_names => params[:adult-names],
+					:children_names => params[:children-names],
+					:infant_names => params[:infant-names],
+					:payment_method => params[:payment_method]
+				}
+			)
+			customer.orders << order	
+
+			if customer.save
+				# subcribe to company to process your request
+				WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 
+
+				flash[:notice] = 'Thank you for using our services. We have received your request and will sent confirmation email to you.'
+				redirect_to travel_path 
+			else 
+				flash[:alert] = 'Your request is created failed! Please try again later.'
+				redirect_to travel_path 
+			end
 		end
 	end
 

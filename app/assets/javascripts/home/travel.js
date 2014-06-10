@@ -93,4 +93,102 @@
 		});
 	});
 
+	// Hooking to submit event to validate data
+	$('form').submit(function(e) { 
+
+		var i = 0, length,
+			 customerName = $('#name').val(),
+		 	 customerEmail = $('#email').val(),
+			 customerPhone = /^\d+$/.test($('#phone').val()),
+			 from = $('#from').val(),
+			 to = $('#to').val(),
+			 depart = $('#depart').val(),
+			 adultName = $('.adult-name'),
+			 childrenName = $('.children-name'),
+			 infantName = $('.infant-name'),
+			 adultNameSum = '',
+			 childrenNameSum = '',
+			 infantNameSum = '',
+			 errors = '';
+
+		if (!customerName) {
+		
+			errors = errors + '<li>Customer Name is invalid!</li>';
+		}
+		if (!customerEmail) {
+
+			errors = errors + '<li>Email is invalid!</li>';
+		}
+		if (!customerPhone) {
+		
+			errors = errors + '<li>Phone number is invalid!</li>';
+		}
+		if (!from) {
+
+			errors = errors + '<li>From place is invalid!</li>';
+		}
+		if (!to) {
+
+			errors = errors + '<li>To place is invalid!</li>';
+		}
+		if (!depart) {
+	
+			errors = errors + '<li>Depart time is invalid!</li>';
+		}
+
+		if (!adultName[0].value && !childrenName[0].value && !infantName[0].value) {
+	
+			errors = errors + '<li>Please enter at least ticket personal name!</li>';
+		} else {
+			
+			adultNameSum = adultNameSum + adultName[0].value;
+			childrenNameSum = childrenNameSum + childrenName[0].value;
+			infantNameSum = infantNameSum + infantName[0].value;
+		}
+
+		for (i = 1, length = adultName.length; i < length; i++) {
+			if (!adultName[i].value) {
+
+				errors = errors + "<li>Please don't enter empty adult's name!</li>";
+			} else {
+				
+				adultNameSum = adultNameSum + ';' + adultName[i].value;
+			}
+		}
+
+		for (i = 1, length = childrenName.length; i < length; i++) {
+			if (!childrenName[i].value) {
+
+				errors = errors + "<li>Please don't enter empty children's name!</li>";
+			} else {
+
+				childrenNameSum = childrenNameSum + ';' + childrenName[i].value;
+			}
+		}
+
+		for (i = 1, length = infantName.length; i < length; i++) {
+			if (!infantName[i].value) {
+
+				errors = errors + "<li>Please don't enter empty infant's name!</li>";
+			} else {
+
+				infantNameSum = infantNameSum + ';' + infantName[i].value;
+			}
+		}
+		
+		if (errors) {
+
+			// Display errors to customer
+			console.log(errors);
+
+			return false;
+		} else {
+
+			$('#adult-names').val(adultNameSum);
+			$('#children-names').val(childrenNameSum);
+			$('#infant-names').val(infantNameSum);
+		}
+
+	});
+
 }) (jQuery);
