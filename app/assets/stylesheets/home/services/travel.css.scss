@@ -10,19 +10,20 @@
 		z-index: 1;
 	}
 
-	.addition-field {
-		float: left;
-	}
+	.addition-group {
+		position: relative;
 
-	.remove-field {
-		margin: 13px 0 0 10px;
-		color: #1C1D21;
-		margin-left: -32px;
-		z-index: 2;
-		cursor: pointer;
+		.remove-field {
+			top: 3px;
+			right: 12px;
+			position: absolute;
+			color: #1C1D21;
+			z-index: 2;
+			cursor: pointer;
 
-		&:hover, &:focus {
-			color: #31353D;
+			&:hover, &:focus {
+				color: #31353D;
+			}
 		}
 	}
 }

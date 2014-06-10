@@ -52,8 +52,8 @@
 	// Add new input name by clicking link
 	$('.new-adult-ticket').click(function(e) {
 
-		var new_input_field = '<input class="form-control adult-name addition-field" placeholder="Enter name" />'
-						+ '<i class="remove-field fa fa-times fa-2x"></i>';
+		var new_input_field = '<div class="addition-group"><input class="form-control adult-name addition-field" placeholder="Enter name" />'
+						+ '<i class="remove-field fa fa-times fa-2x"></i></div>';
 
 		$('.adult-group').append($(new_input_field));
 
@@ -61,8 +61,8 @@
 	});	
 	$('.new-children-ticket').click(function(e) {
 	
-		var new_input_field = '<input class="form-control children-name addition-field" placeholder="Enter children name" />'
-							+ '<i class="remove-field fa fa-times fa-2x"></i>';	
+		var new_input_field = '<div class="addition-group"><input class="form-control children-name addition-field" placeholder="Enter children name" />'
+							+ '<i class="remove-field fa fa-times fa-2x"></i></div>';	
 
 		$('.children-group').append($(new_input_field));
 
@@ -70,11 +70,27 @@
 	});
 	$('.new-infant-ticket').click(function(e) {
 	
-		var new_input_field = '<input class="form-control infant-name addition-field" placeholder="Enter infant name" />'		
-							+ '<i class="remove-field fa fa-times fa-2x"></i>';		
+		var new_input_field = '<div class="addition-group"><input class="form-control infant-name addition-field" placeholder="Enter infant name" />'		
+							+ '<i class="remove-field fa fa-times fa-2x"></i></div>';		
 
 		$('.infant-group').append($(new_input_field));
 
 		return false;
 	});
+	// Remove addition field name binding event
+	$('.ticket-names').delegate('.remove-field', 'click', function(e) {
+		var removeTarget = e.currentTarget.parentNode;
+
+		alertify.confirm('Are you want to delete this info?', function(e) {
+			if(e) {
+
+				$(removeTarget).remove();
+				alertify.success('Removed successful');
+			} else {
+
+				alertify.log('Canceled');
+			}
+		});
+	});
+
 }) (jQuery);
