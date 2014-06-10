@@ -4,7 +4,6 @@
 		 fromInputField = $("#from"),
 		 toInputField = $("#to");
 
-	$("#dtBox").DateTimePicker({});
 	$("#from").magnificPopup({
 		items: {
 			src: "#place-popup",
@@ -39,6 +38,14 @@
 		}
 
 		return false;
+	});
+	$('#depart').datepicker({
+		minDate: new Date(),
+		dateFormat: 'dd/mm/yy'
+	});
+	$('#return').datepicker({
+		minDate: new Date(),
+		dateFormat: 'dd/mm/yy'
 	});
 
 }) (jQuery);
