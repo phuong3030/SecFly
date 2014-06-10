@@ -4,6 +4,7 @@
 		 fromInputField = $("#from"),
 		 toInputField = $("#to");
 
+	// Show pop event binding and send data to input field
 	$("#from").magnificPopup({
 		items: {
 			src: "#place-popup",
@@ -39,6 +40,7 @@
 
 		return false;
 	});
+	// datetime picker event binding
 	$('#depart').datepicker({
 		minDate: new Date(),
 		dateFormat: 'dd/mm/yy'
@@ -47,5 +49,29 @@
 		minDate: new Date(),
 		dateFormat: 'dd/mm/yy'
 	});
+	// Add new input name by clicking link
+	$('.new-adult-ticket').click(function(e) {
 
+		var new_input_field = '<input class="form-control adult-name" placeholder="Enter name" />'		
+
+		$('.adult-group').append($(new_input_field));
+
+		return false;
+	});	
+	$('.new-children-ticket').click(function(e) {
+	
+		var new_input_field = '<input class="form-control children-name" placeholder="Enter children name" />'		
+
+		$('.children-group').append($(new_input_field));
+
+		return false;
+	});
+	$('.new-infant-ticket').click(function(e) {
+	
+		var new_input_field = '<input class="form-control infant-name" placeholder="Enter infant name" />'		
+
+		$('.infant-group').append($(new_input_field));
+
+		return false;
+	});
 }) (jQuery);

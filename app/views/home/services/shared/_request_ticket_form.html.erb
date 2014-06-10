@@ -72,25 +72,31 @@
 		</div>
 	</div>
 
-	<div class="row quantity">
-		<div class="form-group col-md-4 col-xs-12" >
+	<div class="row ticket-names">
+		<div class="form-group adult-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Adult') %><br>
-			<%= number_field_tag "adult", 0, :min => 0, :class => 'form-control' %>
+			<a class='new-adult-ticket' href='#'><%= t('services.travel.new-adult-ticket') %></a>
+			<%= text_field_tag :return, nil, :class => 'form-control adult-name', :placeholder => 'Enter name ' %>
 		</div>
 
-		<div class="form-group col-md-4 col-xs-12" >
+		<div class="form-group children-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Children') %><br>
-			<%= number_field_tag "children", 0, :min => 0, :class => 'form-control' %>
+			<a class='new-children-ticket' href='#'><%= t('services.travel.new-children-ticket') %></a>
+			<%= text_field_tag :return, nil, :class => 'form-control children-name', :placeholder => "Enter children name" %>
 		</div>
 
-		<div class="form-group col-md-4 col-xs-12" >
+		<div class="form-group infant-group col-md-12 col-xs-12" >
 			<%= label_tag t('services.travel.Infant') %><br>
-			<%= number_field_tag "infant", 0, :min => 0, :class => 'form-control' %>
+			<a class='new-infant-ticket' href='#'><%= t('services.travel.new-infant-ticket') %></a>
+			<%= text_field_tag :return, nil, :class => 'form-control infant-name', :placeholder => "Enter infant name" %>
 		</div>
 	</div>
 
 	<div class="actions">
-		<%= button_tag "Order ticket", :class => 'btn btn-primary' %>
+		<%= button_tag :class => 'btn btn-primary' do %>
+			 <%= content_tag :i, nil, :class => 'fa fa-plane fa-2x' %>
+			 <%= content_tag :strong, "Order tickets" %>
+		<% end %>
 	</div>
 
 <% end %>
