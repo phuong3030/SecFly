@@ -68,18 +68,18 @@
 					width: 100%;
 					text-align: center;
 					position: absolute;
-					transition: top 1.5s ease-in-out;
-					-moz-transition: top 1.5s ease-in-out;
-					-webkit-transition: top 1.5s ease-in-out;
-					-o-transition: top 1.5s ease-in-out;
+					transition: top 1s ease-in-out;
+					-moz-transition: top 1s ease-in-out;
+					-webkit-transition: top 1s ease-in-out;
+					-o-transition: top 1s ease-in-out;
 				}
 
 				&>h3 { 
-					top: -15%;	
+					top: -35%;	
 				}
 
 				&>p {
-					top: 110%;	
+					top: 130%;	
 				}
 			}
 		}
