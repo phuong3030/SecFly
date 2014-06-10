@@ -2,12 +2,14 @@
 	<title>Travel</title>
 	<%= stylesheet_link_tag "jquery-ui-custom", media: "all" %>
 	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
+	<%= stylesheet_link_tag "alertify.core", media: "all" %>
 	<%= stylesheet_link_tag "home/home", media: "all" %>
 	<%= stylesheet_link_tag "home/services/travel", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
 	<%= javascript_include_tag "jquery-ui-custom" %>
+	<%= javascript_include_tag "alertify" %>
 	<%= javascript_include_tag "magnific-popup" %>
 	<%= javascript_include_tag "home/travel" %>
 <% end %>

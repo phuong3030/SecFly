@@ -52,7 +52,8 @@
 	// Add new input name by clicking link
 	$('.new-adult-ticket').click(function(e) {
 
-		var new_input_field = '<input class="form-control adult-name" placeholder="Enter name" />'		
+		var new_input_field = '<input class="form-control adult-name addition-field" placeholder="Enter name" />'
+						+ '<i class="remove-field fa fa-times fa-2x"></i>';
 
 		$('.adult-group').append($(new_input_field));
 
@@ -60,7 +61,8 @@
 	});	
 	$('.new-children-ticket').click(function(e) {
 	
-		var new_input_field = '<input class="form-control children-name" placeholder="Enter children name" />'		
+		var new_input_field = '<input class="form-control children-name addition-field" placeholder="Enter children name" />'
+							+ '<i class="remove-field fa fa-times fa-2x"></i>';	
 
 		$('.children-group').append($(new_input_field));
 
@@ -68,7 +70,8 @@
 	});
 	$('.new-infant-ticket').click(function(e) {
 	
-		var new_input_field = '<input class="form-control infant-name" placeholder="Enter infant name" />'		
+		var new_input_field = '<input class="form-control infant-name addition-field" placeholder="Enter infant name" />'		
+							+ '<i class="remove-field fa fa-times fa-2x"></i>';		
 
 		$('.infant-group').append($(new_input_field));
 

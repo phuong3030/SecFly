@@ -6,6 +6,24 @@
 
 	.adult-name, .children-name, .infant-name {
 		margin-top: 10px;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.addition-field {
+		float: left;
+	}
+
+	.remove-field {
+		margin: 13px 0 0 10px;
+		color: #1C1D21;
+		margin-left: -32px;
+		z-index: 2;
+		cursor: pointer;
+
+		&:hover, &:focus {
+			color: #31353D;
+		}
 	}
 }
 
