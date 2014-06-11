@@ -11,8 +11,8 @@ en:
       Travel: "Travel Agency"
       Personal: "Personal Finance"
    footer:
-      Content: All Content
-      Design: Design & developed by
+      Content: "All Content by"
+      Design: "Design & developed by"
    products:
       ViewDetail: "View detail"
       Description: "Product description"
