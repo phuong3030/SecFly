@@ -49,6 +49,17 @@
 		minDate: new Date(),
 		dateFormat: 'dd/mm/yy'
 	});
+
+	// Video Guide
+	$('.popup-youtube').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+      fixedContentPos: false
+   });
+
 	// Add new input name by clicking link
 	$('.new-adult-ticket').click(function(e) {
 
@@ -184,9 +195,9 @@
 			return false;
 		} else {
 
-			$('#adult-names').val(adultNameSum);
-			$('#children-names').val(childrenNameSum);
-			$('#infant-names').val(infantNameSum);
+			$('#adult_names').val(adultNameSum);
+			$('#children_names').val(childrenNameSum);
+			$('#infant_names').val(infantNameSum);
 		}
 
 	});

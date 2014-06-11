@@ -36,23 +36,24 @@ class Home::ServicesController < ApplicationController
 			redirect_to travel_path 
 		else
 			# just get, check customer information, store to database and subcribe to websocket channel 
-			customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name] })
+			customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name], :group_id => (params[:group_id] ? params[:group_id] : 0) })
 			order = Order.new(
 				{ 
 					:from => params[:from], 
 					:to => params[:to],
-					:depart_time => params[:depart],
+					:depart_date => params[:depart],
 					:depart_time_slot => params[:departtime],
-					:return_time => params[:return],
+					:return_date => params[:return],
 					:return_time_slot => params[:returntime],
-					:adult_names => params[:adult-names],
-					:children_names => params[:children-names],
-					:infant_names => params[:infant-names],
+					:adult_names => params[:adult_names],
+					:children_names => params[:children_names],
+					:infant_names => params[:infant_names],
 					:payment_method => params[:payment_method]
 				}
 			)
 			customer.orders << order	
 
+			binding.pry
 			if customer.save
 				# subcribe to company to process your request
 				WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 

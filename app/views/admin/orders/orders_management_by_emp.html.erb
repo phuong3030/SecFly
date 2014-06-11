@@ -68,8 +68,12 @@
 				<tr>			
 					<td><%= order.from %></td>
 					<td><%= order.to %></td>
-					<td><%= order.depart.strftime('%d/%m/%Y %H:%M') %></td>
-					<td><%= order.return.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.depart_date.strftime('%d/%m/%Y %H:%M') %></td>
+					<% if order.return_date %>
+						<td><%= order.return_date.strftime('%d/%m/%Y %H:%M') %></td>
+					<% else %>
+						<td>&nbsp;</td>
+					<% end %>
 					<td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
 					<td>
 						<%= button_tag 'View detail', :class => 'view-order btn btn-primary btn-sm', :'data-order_id' => order.id %>

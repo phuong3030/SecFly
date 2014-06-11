@@ -27,6 +27,10 @@
 				{ :name => 'Đại lý bán vé máy bay, du lịch, visa' } 
 			]
 		)%>
+		<div class='col-xs-12 col-md-3 col-md-offset-9 header-hotline'>
+			<span class='blink-me'>HOTLINE: </span>
+			<span>04.85 820 820</span>
+		</div>
 	</div>
 
 	<div class='services-inner row'>
@@ -38,7 +42,7 @@
 		<% end %>
 
 		<% if flash.now[:alert] %>
-			<div class='col-xs-12 col-md-6'>
+			<div class='col-xs-12 col-md-12'>
 				<%= content_tag('div', flash.now[:alert], :class => 'alert alert-danger') %>
 			</div>
 		<% end %>
@@ -48,7 +52,38 @@
 		</div>
 
 		<div class='col-xs-12 col-md-6'>
-			<img class='img-responsive' src='/images/passport-map-travel.jpg' alt='Personal finance' />			
+			<div class='sale-banner'>
+				<img class='img-responsive' src='/images/passport-map-travel.jpg' alt='travel agency' />			
+			</div>
+			
+			<div class='how-to-request'>
+				<i class='fa fa-youtube fa-2x'></i>
+				<a class="popup-youtube" href="https://www.youtube.com/watch?v=Lz48U8npOgc">Hướng dẫn đặt vé máy bay</a>
+			</div>
+
+			<div class='recently-request'>
+				<h4>Vé máy bay khách mới đặt</h4>	
+				<ul class='list-unstyled'>
+				</ul>
+			</div>
+
+			<div class='contact-info'>
+				<div class='hotline'>
+					<h4>Đường dây nóng: 04.85 820 820</h4>	
+				</div>
+				<div class='yahoo'>
+					<a href = 'ymsgr:sendim?nacenopto_1'>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_1&m=g&t=2" border=0>
+					</a>
+					<a href = 'ymsgr:sendim?nacenopto_2'>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_2&m=g&t=2" border=0>
+					</a>
+					<a href = 'ymsgr:sendim?nacenopto_3'>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_3&m=g&t=2" border=0>
+					</a>
+				</div>
+			</div>
+
 		</div>
 
 	</div>

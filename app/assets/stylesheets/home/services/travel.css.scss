@@ -1,7 +1,48 @@
+// Header
+.header-hotline {
+	color: #92CDCF;
+	margin-top: -20px;
+	margin-bottom: 20px;
+
+	span {
+		color: #92CDCF;
+		font: 20px Helvetica107XBCN;
+	}
+}
+
+.blink-me {
+	-webkit-animation: blink 2s infinite steps(1, start);
+
+}
+@-webkit-keyframes blink {
+	0%,100%{
+		color: #445878;
+	}
+	50% {
+		color: #92CDCF;
+	}
+}
+
+i {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+// Content
 .services-inner { 
 	.img-responsive {
 		min-width: 100%;	
 		margin-bottom: 30px;
+	}
+
+	h4, label { 
+		color: #92CDCF;
+		font: 18px Helvetica107XBCN;
+	}
+
+	.sale-banner, .how-to-request, .recently-request, .contact-info {
+		padding: 15px 0;
+		border-bottom: 1px solid #92CDCF;
 	}
 
 	.adult-name, .children-name, .infant-name {
@@ -24,6 +65,19 @@
 			&:hover, &:focus {
 				color: #31353D;
 			}
+		}
+	}
+
+	.yahoo {
+		a {
+			display: inline-block;
+			margin: 5px 20px 0 0;
+		}
+	}
+
+	.btn {
+		strong {
+			font-size: 16px;
 		}
 	}
 }
@@ -78,5 +132,32 @@
 				}
 			}
 		}
+	}
+}
+
+// --- Responsive --- //
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+/* small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	.header-hotline {
+		margin-top: -145px;	
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+	.header-hotline {
+		margin-top: -145px;	
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+	.header-hotline {
+		margin-top: -145px;	
 	}
 }
