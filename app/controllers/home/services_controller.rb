@@ -21,6 +21,18 @@ class Home::ServicesController < ApplicationController
 
 	# GET /travel
 	def travel
+		orders = Order.first(5)
+		if orders.size > 0
+			@recently_orders = orders 
+			@customers = orders.map { |e| e.customer[:name] }  
+			@quantity = orders.map { 
+				|e| e[:adult_names].split(';').size + e[:children_names].split(';').size + e[:infant_names].split(';').size 
+			}
+		else
+			@recently_orders = []
+			@customers = [] 
+			@quantity = 0
+		end
 		if I18n.locale == :en
 			render :template => 'home/services/travel_en'
 		elsif I18n.locale == :vi
@@ -36,21 +48,24 @@ class Home::ServicesController < ApplicationController
 			redirect_to travel_path 
 		else
 			# just get, check customer information, store to database and subcribe to websocket channel 
-			customer = Customer.new({ :email => params[:email], :phone => params[:phone], :name => params[:name], :group_id => (params[:group_id] ? params[:group_id] : 0) })
-			order = Order.new(
-				{ 
-					:from => params[:from], 
-					:to => params[:to],
-					:depart_date => params[:depart],
-					:depart_time_slot => params[:departtime],
-					:return_date => params[:return],
-					:return_time_slot => params[:returntime],
-					:adult_names => params[:adult_names],
-					:children_names => params[:children_names],
-					:infant_names => params[:infant_names],
-					:payment_method => params[:payment_method]
-				}
-			)
+			customer = Customer.new({ 
+				:email => params[:email], 
+				:phone => params[:phone], 
+				:name => params[:name], 
+				:group_id => (params[:group_id] ? params[:group_id] : 0) 
+			})
+			order = Order.new({ 
+				:from => params[:from], 
+				:to => params[:to],
+				:depart_date => params[:depart],
+				:depart_time_slot => params[:departtime],
+				:return_date => params[:return],
+				:return_time_slot => params[:returntime],
+				:adult_names => params[:adult_names],
+				:children_names => params[:children_names],
+				:infant_names => params[:infant_names],
+				:payment_method => params[:payment_method]
+			})
 			customer.orders << order	
 
 			binding.pry

@@ -51,6 +51,10 @@
 
 	channel.bind('order_detail', function (data) {
 
+		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
+			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
+			 infant_tickets = data.order.infant_names !== '' ? data.order.infant_names.split(';') : [];
+
 		$('.customer_id').html(data.customer.id);
 		$('.customer_name').html(data.customer.name);
 		$('.customer_phone').html(data.customer.phone);
@@ -58,13 +62,11 @@
 
 		$('.order_from').html(data.order.from);
 		$('.order_to').html(data.order.to);
-		$('.order_depart').html(data.order.depart);
-		$('.order_return').html(data.order.return);
-		$('.order_quantity').html(
-			data.order.children + ' children tickets, ' 
-			+ data.order.adult + ' adult tickets, ' 
-			+ data.order.seniors + ' senior tickets '
-		);
+		$('.order_depart').html(data.order.depart_date);
+		$('.order_return').html(data.order.return_date || '&nbsp;');
+		$('.order_adult_tickets').html(adult_tickets.length + ' adult ticket(s): ' + '</br>' + adult_tickets.join('</br>'));
+		$('.order_children_tickets').html(children_tickets.length + ' children ticket(s): ' + '</br>' + children_tickets.join('</br>'));
+		$('.order_infant_tickets').html(infant_tickets.length + ' infant ticket(s): ' + '</br>' + infant_tickets.join('</br>'));
 
 		$.magnificPopup.open({
 			items: {

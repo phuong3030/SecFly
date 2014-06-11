@@ -63,7 +63,20 @@
 
 			<div class='recently-request'>
 				<h4>Vé máy bay khách mới đặt</h4>	
-				<ul class='list-unstyled'>
+				<ul>
+					<% if @recently_orders.size > 0 %>
+						<% @recently_orders.size.times do |i| %>
+							<%= 
+								content_tag :li do 
+									content_tag(:span, @customers[i] + ' đặt ' + @quantity[i].to_s + ' vé ') +
+									content_tag(:span, @recently_orders[i][:from] + ' - ' + @recently_orders[i][:to], :class => 'ticket-place') +
+									content_tag(:span, @recently_orders[i][:depart_date].strftime(' ngày %d/%m/%Y'), :class => 'ticket-time')
+								end
+							%>
+						<% end %>
+					<% else %>
+						<p>Không có vé vừa đặt trong ngày</p>
+					<% end %>
 				</ul>
 			</div>
 

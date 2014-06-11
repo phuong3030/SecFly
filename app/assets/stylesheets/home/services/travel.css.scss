@@ -71,13 +71,20 @@ i {
 	.yahoo {
 		a {
 			display: inline-block;
-			margin: 5px 20px 0 0;
+			margin: 5px 10px 0 0;
 		}
 	}
 
 	.btn {
 		strong {
 			font-size: 16px;
+		}
+	}
+
+	.recently-request {
+		.ticket-place {
+			font-size: 15px;
+			color: #92CDCF;
 		}
 	}
 }
