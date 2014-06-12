@@ -1,8 +1,7 @@
 (function ($, scope) {
 
-	// Create connection to server and subcribe to special channel
-	scope.dis = new WebSocketRails(scope.location.host + '/websocket');
-	scope.channel = dis.subscribe('orders_management_man');
+	// Subcribe to special channel
+	scope.order_man = dis.subscribe('orders_management_man');
 
 	// Binding event from user and send data to server
 	$('tbody').on('click', '.view-detail', function(e) {
@@ -27,12 +26,7 @@
 	});
 
 	// Listen event from server
-	dis.on_open = function(data) { 
-
-		console.log('Connection has been established: ', data); 
-	}; 
-
-	channel.bind('order_detail', function (data) {
+	order_man.bind('order_detail', function (data) {
 
 		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
 			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
@@ -63,7 +57,7 @@
 		});
 	});
 
-	channel.bind('view_order_logs', function (data) {
+	order_man.bind('view_order_logs', function (data) {
 
 		var i,
 		 	 accountMap = {},

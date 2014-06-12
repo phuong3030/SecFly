@@ -40,6 +40,7 @@
 
 		return false;
 	});
+
 	// datetime picker event binding
 	$('#depart').datepicker({
 		minDate: new Date(),

@@ -4,6 +4,7 @@
 	<%= stylesheet_link_tag "footable/footable.core", media: "all" %>
 	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
 	<%= stylesheet_link_tag "alertify.core", media: "all" %>
+	<%= stylesheet_link_tag "jquery-ui-custom", media: "all" %>
 	<%= stylesheet_link_tag "admin/order_emp", media: "all" %>
 <% end %>
 
@@ -16,6 +17,8 @@
 	<%= javascript_include_tag "footable/footable.paginate" %>
 	<%= javascript_include_tag "magnific-popup" %>
 	<%= javascript_include_tag "alertify" %>
+	<%= javascript_include_tag "jquery-ui-custom" %>
+	<%= javascript_include_tag "admin/order_common" %>
 	<%= javascript_include_tag "admin/order_emp" %>
 <% end %>
 
@@ -41,13 +44,8 @@
 <% content_for :maincontent do %>
 
 	<% if @orders.size > 0 %>
-
-		<div class="row search-region" >
-			<%= label_tag :search, "Search: ", :class => "col-md-1 col-xs-12"  %>
-			<div class="col-md-11 col-xs-12">
-				<%= text_field_tag :search, nil, :class => 'form-control', :placeholder => 'Enter keyword' %>
-			</div>
-		</div>
+		
+		<%= render 'admin/orders/shared/filter_data' %>
 
 		<table class='table footable' data-filter="#search" data-page-size="5">
 			<thead>

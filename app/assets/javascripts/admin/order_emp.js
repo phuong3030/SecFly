@@ -1,8 +1,7 @@
 (function ($, scope) {
 
-	// Create connection to server and subcribe to special channel
-	scope.dis = new WebSocketRails(scope.location.host + '/websocket');
-	scope.channel = dis.subscribe('orders_management_emp');
+	// Subcribe to special channel
+	scope.order_emp = dis.subscribe('orders_management_emp');
 
 	// Binding event from user and send data to server
 	$('tbody').on('click', '.view-order', function(e) {
@@ -44,12 +43,7 @@
 	});
 
 	// Listen event from server
-	dis.on_open = function(data) {
-
-		console.log('Connection has been established: ', data);
-	}
-
-	channel.bind('order_detail', function (data) {
+	order_emp.bind('order_detail', function (data) {
 
 		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
 			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
@@ -81,7 +75,7 @@
 
 	});
 
-	channel.bind('order_customer_preview_email', function (data) {
+	order_emp.bind('order_customer_preview_email', function (data) {
 		var order = data.order,
 			 customer = data.customer,
 			 adult = '',
@@ -128,17 +122,17 @@
 
 	});
 
-	channel.bind('order_customer_send_email', function (data) {
+	order_emp.bind('order_customer_send_email', function (data) {
 
 		console.log(data);
 	});
 
-	channel.bind('order_customer_tickets', function (data) {
+	order_emp.bind('order_customer_tickets', function (data) {
 
 		console.log(data);
 	});
 
-	channel.bind('new_request', function (data) {
+	order_emp.bind('new_request', function (data) {
 	
 		var footable = $('table').data('footable'),
 			 newRow;
@@ -164,13 +158,5 @@
 
 		$('.footable').trigger('footable_expand_first_row');
 	}).footable();
-	$('#status').change(function (e) {
-
-		e.preventDefault();
-
-		$('.footable').trigger('footable_filter', {
-			filter: $('#filter').val()
-		});
-	});
 
 })(jQuery, window);
