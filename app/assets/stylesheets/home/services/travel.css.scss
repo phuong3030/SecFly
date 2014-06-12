@@ -45,6 +45,18 @@ i {
 		border-bottom: 1px solid #92CDCF;
 	}
 
+	.error-details {
+		margin-top: -40px;
+
+		ol {
+			li {
+				color: red;
+				font-size: 14px;
+				font-weight: bold;
+			}
+		}
+	}
+
 	.adult-name, .children-name, .infant-name {
 		margin-top: 10px;
 		width: 100%;
