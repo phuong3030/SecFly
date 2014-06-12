@@ -82,18 +82,38 @@
 	});
 
 	channel.bind('order_customer_preview_email', function (data) {
+		var order = data.order,
+			 customer = data.customer,
+			 adult = '',
+			 children = '',
+			 infant = '';
 
-		$('.email_order_id').html(data.id);
-		$('.email_order_created_at').html(data.created_at);
-		$('.email_from').html(data.from);
-		$('.email_to').html(data.to);
-		$('.email_depart').html(data.depart);
-		$('.email_return').html(data.return);
-		$('.email_quantity').html(
-			data.children + ' children ticket(s), ' 
-			+ data.adult + ' adult ticket(s), ' 
-			+ data.seniors + ' senior ticket(s) '
-		);
+		adult = order.adult_names.split(';').map(function(e) { 
+			return '<p> Mr(s) ' + e + '</p>'; 
+		}).join('');
+
+		if (order.children_names !== '') {
+
+			children = order.children_names.split(';').map(function(e) {
+
+				return "<p> Child's name: " + e + '</p>'; 
+			}).join('');
+		}
+		if (order.infant_names !== '') {
+
+			infant = order.infant_names.split(';').map(function(e) {
+
+				return "<p> Infant's name: " + e + '</p>'; 
+			}).join('');
+		}
+
+		$('.email_order_id').html(order.id);
+		$('.email_customer_name').html(adult + children + infant);
+		$('.email_order_created_at').html(order.created_at);
+		$('.email_from').html(order.from);
+		$('.email_to').html(order.to);
+		$('.email_depart').html(order.depart_date);
+		$('.email_return').html(order.return_date);
 
 		$.magnificPopup.open({
 			items: {

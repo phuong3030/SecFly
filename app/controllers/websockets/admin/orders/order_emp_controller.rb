@@ -29,17 +29,10 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	def preview_email
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
-			if @order.status < 2
-				@order.status = 2
-			end
-			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
-			
-			if (@order.save && logging.save) 
 			WebsocketRails[:orders_management_emp].trigger(
 				:order_customer_preview_email, 
-				@order
+				{ :order => @order, :customer => @order.customer }
 			)
-			end
 		end
 	end
 
