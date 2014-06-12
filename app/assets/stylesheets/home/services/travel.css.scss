@@ -68,6 +68,15 @@ i {
 		}
 	}
 
+	.sale-banner-wrapper {
+		.carousel-control {
+			i { 
+				position: absolute;
+				top: 45%;
+			}
+		}		
+	}
+
 	.yahoo {
 		a {
 			display: inline-block;
