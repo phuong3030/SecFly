@@ -108,12 +108,12 @@
 	$('form').submit(function(e) { 
 
 		var i = 0, length,
-			 customerName = $('#name').val(),
-		 	 customerEmail = $('#email').val(),
-			 customerPhone = /^\d+$/.test($('#phone').val()),
-			 from = $('#from').val(),
-			 to = $('#to').val(),
-			 depart = $('#depart').val(),
+			 customerName = $('#name'),
+		 	 customerEmail = $('#email'),
+			 customerPhone = $('#phone'),
+			 from = $('#from'),
+			 to = $('#to'),
+			 depart = $('#depart'),
 			 adultName = $('.adult-name'),
 			 childrenName = $('.children-name'),
 			 infantName = $('.infant-name'),
@@ -122,33 +122,86 @@
 			 infantNameSum = '',
 			 errors = '';
 
-		if (!customerName) {
+		// Reset input background color field
+		customerName.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		customerEmail.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		customerPhone.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		from.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		to.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		depart.css({
+			'background-color': 'none',
+			color: '#555'
+		});
+		adultName[0].style.cssText += 'background-color: none; color: #555;';
+
+		// Validate input
+		if (!customerName.val()) {
 		
+			customerName.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>Customer Name is invalid!</li>';
 		}
-		if (!customerEmail) {
+		if (!customerEmail.val()) {
 
+			customerEmail.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>Email is invalid!</li>';
 		}
-		if (!customerPhone) {
+		if (!(/^\d+$/.test(customerPhone.val()))) {
 		
+			customerPhone.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>Phone number is invalid!</li>';
 		}
-		if (!from) {
+		if (!from.val()) {
 
+			from.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>From place is invalid!</li>';
 		}
-		if (!to) {
+		if (!to.val()) {
 
+			to.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>To place is invalid!</li>';
 		}
-		if (!depart) {
+		if (!depart.val()) {
 	
+			depart.css({
+				'background-color': '#445878',
+				color: '#EEEEF7'
+			});
 			errors = errors + '<li>Depart time is invalid!</li>';
 		}
 
 		if (!adultName[0].value && !childrenName[0].value && !infantName[0].value) {
-	
+			
+			adultName[0].style.cssText += 'background-color: #445878; color: #EEEEF7;';
 			errors = errors + '<li>Please enter at least ticket personal name!</li>';
 		} else {
 			
@@ -191,6 +244,7 @@
 
 			// Display errors to customer
 			console.log(errors);
+			$('.error-details ul').html(errors);
 
 			return false;
 		} else {
