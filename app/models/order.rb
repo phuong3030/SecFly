@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
    has_many :accounts, :through => :order_processings
    has_many :order_processings, :dependent => :destroy, :autosave => true
 
+   acts_as_xlsx
+
 	validates_presence_of(
 		self.column_names - [
 			"id", 

@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/straydogstudio/acts_as_xlsx.git
+  revision: d0a53af608cf03b1a3aedccf846140b4ce3efb05
+  specs:
+    acts_as_xlsx (1.0.6)
+      activerecord (>= 2.3.9)
+      axlsx (>= 1.0.13)
+      i18n (>= 0.4.1)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 98b31aa789a0d7f6a21c74ca32b8cc5aa94803cf
   specs:
@@ -52,6 +61,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -70,6 +83,7 @@ GEM
       websocket-driver (>= 0.3.1)
     hike (1.2.3)
     hiredis (0.5.2)
+    htmlentities (4.3.2)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -86,8 +100,13 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
+    nokogiri (1.6.2.1-x86-mingw32)
+      mini_portile (= 0.6.0)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.5)
@@ -124,6 +143,7 @@ GEM
     redis (3.0.7)
     redis-objects (0.9.1)
       redis (>= 3.0.2)
+    rubyzip (1.0.0)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -170,6 +190,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  acts_as_xlsx!
   jbuilder (~> 1.2)
   jquery-rails
   kaminari

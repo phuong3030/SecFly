@@ -38,7 +38,13 @@ class Admin::OrdersController < Admin::DashboardController
 
 		respond_to do |format|
 			format.html
-			format.xls
+			format.xlsx { 
+				send_data(
+					@orders.to_xlsx.to_stream.read, 
+					:filename => 'report.xlsx', 
+					:type => "application/vnd.openxmlformates-officedocument.spreadsheetml.sheet" 
+				)
+			}
 		end
 	end
 end

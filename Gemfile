@@ -6,6 +6,9 @@ gem 'rails'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
+
+	# Use for debug
+	gem 'pry'
 end
 
 # Use postgreSQL as production database
@@ -13,6 +16,9 @@ group :production, :staging do
 	gem 'pg'
 	gem 'thin'
 end
+
+# generate excel file
+gem 'acts_as_xlsx', git: 'git://github.com/straydogstudio/acts_as_xlsx.git'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -43,9 +49,6 @@ gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-# Use for debug
-gem 'pry'
 
 # File uploading plugin
 gem "paperclip", github: 'thoughtbot/paperclip'
