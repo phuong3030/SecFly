@@ -16,7 +16,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 					:emp_view_order, 
 					{ :order => @order, :customer => @order.customer }
 				)
-				WebsocketRails[:orders_management_emp].trigger(
+				WebsocketRails[@account[:username]].trigger(
 					:order_detail, 
 					{ :order => @order, :customer => @order.customer }
 				)
@@ -29,7 +29,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	def preview_email
 		# Create email form sent back to employee client and log employee action
 		if (@account != nil && @order != nil)	
-			WebsocketRails[:orders_management_emp].trigger(
+			WebsocketRails[@account[:username]].trigger(
 				:order_customer_preview_email, 
 				{ :order => @order, :customer => @order.customer }
 			)
@@ -45,7 +45,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
 			
 			if (@order.save && logging.save) 
-				WebsocketRails[:orders_management_emp].trigger(
+				WebsocketRails[@account[:username]].trigger(
 					:order_customer_send_email, 
 					{ :order => @order, :customer => @order.customer }
 				)
@@ -67,7 +67,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
 
 			if (@order.save && logging.save) 
-				WebsocketRails[:orders_management_emp].trigger(
+				WebsocketRails[@account[:username]].trigger(
 					:order_customer_email, 
 					{ :order => @order, :customer => @order.customer }
 				)

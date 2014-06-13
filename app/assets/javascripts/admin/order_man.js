@@ -1,7 +1,7 @@
 (function ($, scope) {
 
 	// Subcribe to special channel
-	scope.order_man = dis.subscribe('orders_management_man');
+	scope.orderMan = dis.subscribe('orders_management_man');
 
 	// Binding event from user and send data to server
 	$('tbody').on('click', '.view-detail', function(e) {
@@ -26,7 +26,7 @@
 	});
 
 	// Listen event from server
-	order_man.bind('order_detail', function (data) {
+	privateChannel.bind('order_detail', function (data) {
 
 		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
 			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
@@ -57,7 +57,7 @@
 		});
 	});
 
-	order_man.bind('view_order_logs', function (data) {
+	privateChannel.bind('view_order_logs', function (data) {
 
 		var i,
 		 	 accountMap = {},

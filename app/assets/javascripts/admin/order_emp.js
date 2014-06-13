@@ -1,7 +1,7 @@
 (function ($, scope) {
 
 	// Subcribe to special channel
-	scope.order_emp = dis.subscribe('orders_management_emp');
+	scope.orderEmp = dis.subscribe('orders_management_emp');
 
 	// Binding event from user and send data to server
 	$('tbody').on('click', '.view-order', function(e) {
@@ -43,7 +43,7 @@
 	});
 
 	// Listen event from server
-	order_emp.bind('order_detail', function (data) {
+	privateChannel.bind('order_detail', function (data) {
 
 		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
 			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
@@ -75,7 +75,7 @@
 
 	});
 
-	order_emp.bind('order_customer_preview_email', function (data) {
+	privateChannel.bind('order_customer_preview_email', function (data) {
 		var order = data.order,
 			 customer = data.customer,
 			 adult = '',
@@ -122,17 +122,17 @@
 
 	});
 
-	order_emp.bind('order_customer_send_email', function (data) {
+	privateChannel.bind('order_customer_send_email', function (data) {
 
 		console.log(data);
 	});
 
-	order_emp.bind('order_customer_tickets', function (data) {
+	privateChannel.bind('order_customer_tickets', function (data) {
 
 		console.log(data);
 	});
 
-	order_emp.bind('new_request', function (data) {
+	privateChannel.bind('new_request', function (data) {
 	
 		var footable = $('table').data('footable'),
 			 newRow;
