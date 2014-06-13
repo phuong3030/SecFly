@@ -21,7 +21,7 @@ class Home::ServicesController < ApplicationController
 
 	# GET /travel
 	def travel
-		orders = Order.first(5)
+		orders = Order.order('created_at desc').first(5)
 		if orders.size > 0
 			@recently_orders = orders 
 			@customers = orders.map { |e| e.customer[:name] }  
@@ -71,6 +71,7 @@ class Home::ServicesController < ApplicationController
 			if customer.save
 				# subcribe to company to process your request
 				WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 
+				WebsocketRails[:orders_management_man].trigger(:new_request, { :customer => customer, :order => order }) 
 
 				flash[:notice] = 'Thank you for using our services. We have received your request and will sent confirmation email to you.'
 				redirect_to travel_path 

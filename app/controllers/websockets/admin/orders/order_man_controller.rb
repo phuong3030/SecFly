@@ -32,6 +32,6 @@ class Websockets::Admin::Orders::OrderManController < WebsocketRails::BaseContro
 	# get order by order_id sent from client
 	def get_order_data
 		@order = Order.find(message[:order_id].to_i)
-		@account = Account.find_by_username(seesion[:current_user])
+		@account = Account.find_by_username(session[:current_user])
 	end
 end

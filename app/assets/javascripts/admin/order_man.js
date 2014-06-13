@@ -118,6 +118,34 @@
 		statusColumn.removeClass().addClass('order_status sent-tickets').html('SENT TICKETS');	
 	});
 
+	// Listen event new request ticket by customer
+	orderMan.bind('new_request', function (data) {
+	
+		var footable = $('table').data('footable'),
+			 newRow,
+			 statusMap = [
+				 "<span class='order_status new'>NEW</span>",
+			 	 "<span class='order_status view-order'>VIEW ORDER</span>",
+				 "<span class='order_status sent-email'>SENT EMAIL</span>",
+				 "<span class='order_status sent-tickets'>SENT TICKETS</span>"
+			 ];		
+	
+		newRow =	$(
+			'<tr><td>' + data.customer.name + '</td><td>'  
+			+ data.order.from + '</td><td>' + data.order.to + '</td><td>'
+			+ data.order.depart_date + '</td><td>' 
+			+ (data.order.return_date || '&nbsp;') + '</td><td>'
+			+ data.order.created_at + '</td><td>' 
+			+ statusMap[data.order.status] + '</td><td>' 
+			+ '<button class="view-detail btn btn-primary btn-sm" href="#" data-order_id="' 
+			+ data.order.id + '">View detail</button>' + '</td><td>'
+			+ '<button class="view-logs btn btn-primary btn-sm" href="#" data-order_id="' 
+			+ data.order.id + '">View logs</button>' + '</td><td>'
+		);
+
+	   footable.appendRow(newRow);
+	});
+
 	// Binding table and filter table event
 	$('.footable').bind('footable_breakpoint', function() {
 
