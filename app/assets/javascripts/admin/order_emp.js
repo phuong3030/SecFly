@@ -132,16 +132,23 @@
 		console.log(data);
 	});
 
-	privateChannel.bind('new_request', function (data) {
+	orderEmp.bind('new_request', function (data) {
 	
 		var footable = $('table').data('footable'),
-			 newRow;
+			 newRow,
+			 statusMap = [
+				 "NEW",
+			 	 "VIEW ORDER",
+				 "SENT EMAIL",
+				 "SENT TICKETS"
+			 ];
 
 		newRow =	$(
 			'<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
-			+ data.order.depart + '</td><td>' 
-			+ data.order.return + '</td><td>'
+			+ data.order.depart_date + '</td><td>' 
+			+ (data.order.return_date || '&nbsp;') + '</td><td>'
 			+ data.order.created_at + '</td><td>' 
+			+ statusMap[data.order.status] + '</td><td>' 
 			+ '<button class="view-order view-order btn btn-primary btn-sm" href="#" data-order_id="' 
 			+ data.order.id + '">View order</button>' + '</td><td>'
 			+ '<button class="send-email btn btn-primary btn-sm" href="#" data-order_id="' 

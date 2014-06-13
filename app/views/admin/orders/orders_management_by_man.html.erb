@@ -62,7 +62,7 @@
 
 			<tbody>
 			<% @orders.each do |order| %>
-				<tr>			
+				<%= content_tag :tr, :class => 'order_id_' + order.id.to_s do %>
 					<td><%= order.customer.name %></td>
 					<td><%= order.from %></td>
 					<td><%= order.to %></td>
@@ -88,7 +88,7 @@
 					<td>
 						<%= button_tag 'View logs', :class => 'view-logs btn btn-primary btn-sm', :'data-order_id' => order.id %>
 					</td>
-				</tr>
+				<% end %>
 			<% end %>
 			</tbody>
 			<tfoot class="hide-if-no-paging">

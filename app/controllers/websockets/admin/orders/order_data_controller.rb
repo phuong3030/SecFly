@@ -1,7 +1,7 @@
 class Websockets::Admin::Orders::OrderDataController < WebsocketRails::BaseController
 	def get_filtered_order_data
-		start_time = message[:start_time]
-		end_time = message[:end_time]
+		start_time = message[:start_time].to_date
+		end_time = message[:end_time].to_date
 		status = message[:status]
 		current_user = session[:current_user]	
 		order = []

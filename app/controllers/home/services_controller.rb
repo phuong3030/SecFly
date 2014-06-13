@@ -68,7 +68,6 @@ class Home::ServicesController < ApplicationController
 			})
 			customer.orders << order	
 
-			binding.pry
 			if customer.save
 				# subcribe to company to process your request
 				WebsocketRails[:orders_management_emp].trigger(:new_request, { :customer => customer, :order => order }) 

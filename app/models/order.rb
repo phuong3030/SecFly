@@ -18,7 +18,7 @@ class Order < ActiveRecord::Base
 
 	scope :filter_by_date_range_status, 
 		lambda { |start_time, end_time, status = 0| 
-			where('created_at > ? and created_at < ? and status = ?', start_time, end_time, status). 
+			where('created_at >= ? and created_at <= ? and status = ?', start_time, end_time + 1, status). 
 		 	order('created_at desc') }
 
 	scope :filter_by_status, 

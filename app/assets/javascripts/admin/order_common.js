@@ -35,7 +35,42 @@
 
 	privateChannel.bind('order_filtered', function(data) {
 
-		console.log(data);	
+		var i, length,
+			 footable = $('.footable').data('footable'),
+			 statusMap = [
+				 "NEW",
+			 	 "VIEW ORDER",
+				 "SENT EMAIL",
+				 "SENT TICKETS"
+			 ];
+
+		// Remove all row in table
+		$('.footable tbody tr').remove();
+
+		// Add new data to table
+		for (i = 0, length = data.length; i < length; i++) {
+			(function (index) {
+				var newRow = $(
+						'<tr><td>' + data[index].from 
+						+ '</td><td>' + data[index].to + '</td><td>'
+						+ data[index].depart_date + '</td><td>' 
+						+ (data[index].return_date || '&nbsp;') + '</td><td>'
+						+ data[index].created_at + '</td><td>' 
+						+ statusMap[data[index].status] + '</td><td>' 
+						+ '<button class="view-order view-order btn btn-primary btn-sm"' 
+						+ 'href="#" data-order_id="' 
+						+ data[index].id + '">View order</button>' + '</td><td>'
+						+ '<button class="send-email btn btn-primary btn-sm"'
+						+ 'href="#" data-order_id="' 
+						+ data[index].id + '">Send email</button>' + '</td><td>'
+						+ '<button class="send-ticket btn btn-primary btn-sm"' 
+						+ 'href="#" data-order_id="' 
+						+ data[index].id + '">Send ticket</button>' + '</td><td>'
+				);
+
+				footable.appendRow(newRow);
+			})(i);
+		}
 	});
 
 })(jQuery, window);
