@@ -33,7 +33,6 @@
 		alertify.confirm("Has customer already get tickets? System will delete this row.", function (e) {
 			if (e) {
 				window.dis.trigger('send_ticket', data);
-				alertify.success("Send tickets successful!");
 			} else {
 				alertify.error("Cancel action send tickets!", "", 0);
 			}
@@ -113,10 +112,6 @@
 			items: {
 				src: ".preview-email-wrap",
 				type: "inline"
-			},
-			callbacks: {
-				beforeClose: function() {
-				}
 			}
 		});
 
@@ -124,14 +119,29 @@
 
 	privateChannel.bind('order_customer_send_email', function (data) {
 
-		console.log(data);
+		alertify.success("Send email successful!");
 	});
 
-	privateChannel.bind('order_customer_tickets', function (data) {
+	privateChannel.bind('order_customer_send_tickets', function (data) {
 
-		console.log(data);
+		alertify.success("Send tickets successful!");
 	});
 
+	// Listen event by another employee
+	orderEmp.bind('order_other_emp_view_order', function(data) {
+
+		$('#order_id_' + data.id + ' .order_status');	
+	});
+	orderEmp.bind('order_other_emp_send_email', function(data) {
+	
+		$('#order_id_' + data.id + ' .order_status');	
+	});
+	orderEmp.bind('order_other_emp_send_ticket', function(data) {
+	
+		$('#order_id_' + data.id + ' .order_status');	
+	});
+
+	// Listen event new request ticket by customer
 	orderEmp.bind('new_request', function (data) {
 	
 		var footable = $('table').data('footable'),

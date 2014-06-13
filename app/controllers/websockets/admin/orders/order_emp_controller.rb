@@ -11,14 +11,18 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	
 			# check account is saved, send data back to employee client
 			# and trigger event to logging data 
-			if @account.save
-				WebsocketRails[:orders_management_man].trigger(
-					:emp_view_order, 
-					{ :order => @order, :customer => @order.customer }
-				)
+			if @account.save && @order.save
 				WebsocketRails[@account[:username]].trigger(
 					:order_detail, 
 					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_man].trigger(
+					:order_emp_view_order, 
+					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_other_emp_view_order, 
+					@order
 				)
 			end
 		else
@@ -50,8 +54,12 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 					{ :order => @order, :customer => @order.customer }
 				)
 				WebsocketRails[:orders_management_man].trigger(
-					:send_email, 
+					:order_emp_send_email, 
 					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_other_emp_send_email, 
+					@order
 				)
 			end
 		end
@@ -68,12 +76,16 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 
 			if (@order.save && logging.save) 
 				WebsocketRails[@account[:username]].trigger(
-					:order_customer_email, 
+					:order_customer_send_tickets, 
 					{ :order => @order, :customer => @order.customer }
 				)
 				WebsocketRails[:orders_management_man].trigger(
-					:send_ticket, 
+					:order_emp_send_ticket, 
 					{ :order => @order, :customer => @order.customer }
+				)
+				WebsocketRails[:orders_management_emp].trigger(
+					:order_other_emp_send_ticket, 
+					@order
 				)
 			end
 		end
