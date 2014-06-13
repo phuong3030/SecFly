@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
    include PasswordHash
 
+	belongs_to :group
    has_many :roles, :through => :account_in_roles 
    has_many :account_in_roles
    has_many :orders, :through => :order_processings 

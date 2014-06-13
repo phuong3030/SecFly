@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529034419) do
+ActiveRecord::Schema.define(version: 20140613141913) do
 
   create_table "account_in_roles", force: true do |t|
     t.integer "account_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140529034419) do
   add_index "account_in_roles", ["role_id"], name: "index_account_in_roles_on_role_id"
 
   create_table "accounts", force: true do |t|
+    t.integer  "group_id"
     t.string   "email"
     t.string   "username"
     t.string   "password_hash"
@@ -42,6 +43,13 @@ ActiveRecord::Schema.define(version: 20140529034419) do
     t.text     "phone"
     t.text     "name"
     t.string   "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.text     "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
