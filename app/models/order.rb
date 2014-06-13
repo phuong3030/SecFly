@@ -16,6 +16,12 @@ class Order < ActiveRecord::Base
 	)
 	validate :depart_date_cannot_be_greater_than_return_date 
 
+	scope :report_by_emp_date_range, 
+		lambda { |start_time, end_time, emp_id|		
+			joins[:account].
+			where('created_at >= ? and created_at <= ? and status = 3 and account.id = ?', start_time, end_time + 1, emp_id). 
+		 	order('created_at desc') }
+
 	scope :filter_by_date_range_status, 
 		lambda { |start_time, end_time, status = 0| 
 			where('created_at >= ? and created_at <= ? and status = ?', start_time, end_time + 1, status). 

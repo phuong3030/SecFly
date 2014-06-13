@@ -11,6 +11,11 @@ class Account < ActiveRecord::Base
    validates :username, :email, :password_hash, presence: true
    validates :username, :email, uniqueness: { case_sensitive: false }
 
+	scope :get_by_group, lambda { |group_name = 'employee'| 
+			joins(:group).
+			where('groups.name' => group_name) 
+		}
+
 	def self.create_account(username, email, password)
       password_hash = PasswordHash::create_hash(password)
       account = Account.create(:username => username, :email => email, :password_hash => password_hash)

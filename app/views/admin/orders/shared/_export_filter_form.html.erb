@@ -10,14 +10,13 @@
 	</div>
 	<div class="col-md-3 col-xs-12">
 		<%= label_tag :employee %><br>
-		<%= select_tag(
-			"Employee", 
-			options_for_select([ 
-				['New', 0], 
-				['Viewed', 1],
-				['Sent email', 2],
-				['Sent tickets', 3]
-			]), 
+		<%= collection_select(
+			nil, 
+			:employee, 
+			@employees, 
+			:id, 
+			:username, 
+			{ :prompt => true },
 			:class => "form-control"
 		)%>
 	</div>

@@ -66,13 +66,13 @@
 					<td><%= order.customer.name %></td>
 					<td><%= order.from %></td>
 					<td><%= order.to %></td>
-					<td><%= order.depart_date.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.depart_date.strftime('%d/%m/%Y') %></td>
 					<% if order.return_date %>
-						<td><%= order.return_date.strftime('%d/%m/%Y %H:%M') %></td>
+						<td><%= order.return_date.strftime('%d/%m/%Y') %></td>
 					<% else %>
 						<td>&nbsp;</td>
 					<% end %>
-					<td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+					<td><%= order.created_at.strftime('%d/%m/%Y') %></td>
 					<% if order.status == 1 %>
 						<td><span class='order_status viewed'>VIEWED</span></td>
 					<% elsif order.status == 2 %>
