@@ -137,12 +137,12 @@
 		var footable = $('table').data('footable'),
 			 newRow,
 			 statusMap = [
-				 "NEW",
-			 	 "VIEW ORDER",
-				 "SENT EMAIL",
-				 "SENT TICKETS"
-			 ];
-
+				 "<span class='order_status new'>NEW</span>",
+			 	 "<span class='order_status view-order'>VIEW ORDER</span>",
+				 "<span class='order_status sent-email'>SENT EMAIL</span>",
+				 "<span class='order_status sent-tickets'>SENT TICKETS</span>"
+			 ];		
+	
 		newRow =	$(
 			'<tr><td>' + data.order.from + '</td><td>' + data.order.to + '</td><td>'
 			+ data.order.depart_date + '</td><td>' 

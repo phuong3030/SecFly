@@ -38,10 +38,10 @@
 		var i, length,
 			 footable = $('.footable').data('footable'),
 			 statusMap = [
-				 "NEW",
-			 	 "VIEW ORDER",
-				 "SENT EMAIL",
-				 "SENT TICKETS"
+				 "<span class='order_status new'>NEW</span>",
+			 	 "<span class='order_status view-order'>VIEW ORDER</span>",
+				 "<span class='order_status sent-email'>SENT EMAIL</span>",
+				 "<span class='order_status sent-tickets'>SENT TICKETS</span>"
 			 ];
 
 		// Remove all row in table

@@ -9,25 +9,4 @@
 	}
 }
 
-.order_status {
-	color: #EEEEF7;
-	padding: 2px 5px;
-	text-align: center;
-	display: inline-block;
 
-	&.new {
-		background: #428bca;
-	}
-
-	&.viewed {
-		background: #ed9c28;
-	}
-
-	&.sent-email {
-		background: #d2322d;
-	}
-
-	&.sent-tickets {
-		background: #5cb85c;
-	}
-}
