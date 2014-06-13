@@ -14,6 +14,7 @@ SecFly::Application.routes.draw do
 				get "/" => "orders#index", :as => "orders"
 				get "/orders-management-emp" => "orders#orders_management_by_emp"
 				get "/orders-management-man" => "orders#orders_management_by_man"
+				get "/orders-man-report" => "orders#orders_man_report"
 			end
 
 			resources :resources
