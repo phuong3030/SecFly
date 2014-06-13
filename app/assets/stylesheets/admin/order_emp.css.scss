@@ -1,8 +1,17 @@
 .maincontent {
 	table { 
-		tr {
-			td {
-				vertical-align: middle;
+		tbody {
+			tr {
+				td {
+					vertical-align: middle;
+				}
+			}
+		}
+		tfoot {
+			tr {
+				td {
+					border-top: 0;
+				}
 			}
 		}
 	}

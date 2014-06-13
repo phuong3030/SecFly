@@ -130,15 +130,21 @@
 	// Listen event by another employee
 	orderEmp.bind('order_other_emp_view_order', function(data) {
 
-		$('#order_id_' + data.id + ' .order_status');	
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status viewed').html('VIEWED');	
 	});
 	orderEmp.bind('order_other_emp_send_email', function(data) {
 	
-		$('#order_id_' + data.id + ' .order_status');	
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status sent-email').html('SENT EMAIL');	
 	});
 	orderEmp.bind('order_other_emp_send_ticket', function(data) {
 	
-		$('#order_id_' + data.id + ' .order_status');	
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status sent-tickets').html('SENT TICKETS');	
 	});
 
 	// Listen event new request ticket by customer

@@ -98,6 +98,26 @@
 		});
 	});
 
+	// Listen event from employee
+	orderMan.bind('order_emp_view_order', function(data) {
+
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status viewed').html('VIEWED');	
+	});
+	orderMan.bind('order_emp_send_email', function(data) {
+	
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status sent-email').html('SENT EMAIL');	
+	});
+	orderMan.bind('order_emp_send_ticket', function(data) {
+	
+		var statusColumn = $('.order_id_' + data.id + ' .order_status');
+
+		statusColumn.removeClass().addClass('order_status sent-tickets').html('SENT TICKETS');	
+	});
+
 	// Binding table and filter table event
 	$('.footable').bind('footable_breakpoint', function() {
 

@@ -6,25 +6,28 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 	def view_order
 		if (@account != nil && @order != nil)
 			# update current status for order and mapping account with order
-			@order.status = 1
-			@account.orders << @order
-	
-			# check account is saved, send data back to employee client
-			# and trigger event to logging data 
-			if @account.save && @order.save
-				WebsocketRails[@account[:username]].trigger(
-					:order_detail, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_man].trigger(
-					:order_emp_view_order, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_emp].trigger(
-					:order_other_emp_view_order, 
-					@order
-				)
+			if @order.status < 1
+				@order.status = 1
+				@account.orders << @order
+
+				# Only saved and trigger event to logging data when status is valid 
+				if @account.save && @order.save
+					WebsocketRails[:orders_management_man].trigger(
+						:order_emp_view_order, 
+						@order
+					)
+					WebsocketRails[:orders_management_emp].trigger(
+						:order_other_emp_view_order, 
+						@order
+					)
+				end
 			end
+
+			# Always send information to employee if data existed 
+			WebsocketRails[@account[:username]].trigger(
+				:order_detail, 
+				{ :order => @order, :customer => @order.customer }
+			)
 		else
 			WebsocketRails[:orders_management_emp].trigger(:error, "Account or order not found")
 		end
@@ -45,23 +48,27 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		if (@account != nil && @order != nil)	
 			if @order.status < 2
 				@order.status = 2
+
+				logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
+
+				# Only saved and trigger event to logging data when status is valid 
+				if (@order.save && logging.save) 
+					WebsocketRails[:orders_management_man].trigger(
+						:order_emp_send_email, 
+						@order
+					)
+					WebsocketRails[:orders_management_emp].trigger(
+						:order_other_emp_send_email, 
+						@order
+					)
+				end
 			end
-			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
-			
-			if (@order.save && logging.save) 
-				WebsocketRails[@account[:username]].trigger(
-					:order_customer_send_email, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_man].trigger(
-					:order_emp_send_email, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_emp].trigger(
-					:order_other_emp_send_email, 
-					@order
-				)
-			end
+
+			# Always send information to employee if data existed 
+			WebsocketRails[@account[:username]].trigger(
+				:order_customer_send_email, 
+				{ :order => @order, :customer => @order.customer }
+			)
 		end
 	end
 
@@ -71,23 +78,27 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		if (@account != nil && @order != nil)	
 			if @order.status < 3
 				@order.status = 3
-			end
-			logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
 
-			if (@order.save && logging.save) 
-				WebsocketRails[@account[:username]].trigger(
-					:order_customer_send_tickets, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_man].trigger(
-					:order_emp_send_ticket, 
-					{ :order => @order, :customer => @order.customer }
-				)
-				WebsocketRails[:orders_management_emp].trigger(
-					:order_other_emp_send_ticket, 
-					@order
-				)
+				logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 3)
+
+				# Only saved and trigger event to logging data when status is valid 
+				if (@order.save && logging.save) 
+					WebsocketRails[:orders_management_man].trigger(
+						:order_emp_send_ticket, 
+						@order
+					)
+					WebsocketRails[:orders_management_emp].trigger(
+						:order_other_emp_send_ticket, 
+						@order
+					)
+				end
 			end
+
+			# Always send information to employee if data existed 
+			WebsocketRails[@account[:username]].trigger(
+				:order_customer_send_tickets, 
+				{ :order => @order, :customer => @order.customer }
+			)
 		end
 	end
 
