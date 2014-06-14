@@ -20,9 +20,9 @@ class Order < ActiveRecord::Base
 
 	scope :report_by_emp_date_range, 
 		lambda { |start_time, end_time, emp_id|		
-			joins[:account].
-			where('created_at >= ? and created_at <= ? and status = 3 and account.id = ?', start_time, end_time + 1, emp_id). 
-		 	order('created_at desc') }
+			joins(:accounts).
+			where('orders.created_at >= ? and orders.created_at <= ? and orders.status = 3 and accounts.id = ?', start_time, end_time + 1, emp_id). 
+			order('orders.created_at desc') }
 
 	scope :filter_by_date_range_status, 
 		lambda { |start_time, end_time, status = 0| 
