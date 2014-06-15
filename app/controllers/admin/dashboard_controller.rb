@@ -1,6 +1,7 @@
 class Admin::DashboardController < ApplicationController
-	before_filter :checkAuthorization
+
 	layout 'admin'
+	before_filter :checkAuthorization
 
 	def index 
 	end
@@ -9,4 +10,5 @@ class Admin::DashboardController < ApplicationController
 	def checkAuthorization
 		redirect_to admin_login_path unless session[:logged_in] 
 	end
+
 end

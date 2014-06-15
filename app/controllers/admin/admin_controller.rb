@@ -1,4 +1,5 @@
 class Admin::AdminController < ApplicationController
+
 	layout 'admin'
 
 	# Login page
@@ -34,4 +35,5 @@ class Admin::AdminController < ApplicationController
 			redirect_to admin_login_path
 		end
 	end
+
 end

@@ -1,4 +1,5 @@
 class Admin::OrdersController < Admin::DashboardController
+
 	# Get customer orders summary page
 	def index 
 	end
@@ -46,4 +47,5 @@ class Admin::OrdersController < Admin::DashboardController
 			}
 		end
 	end
+
 end

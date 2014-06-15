@@ -1,4 +1,5 @@
 class Admin::CategoriesController < Admin::DashboardController
+
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/categories
@@ -26,7 +27,7 @@ class Admin::CategoriesController < Admin::DashboardController
 		if @category.save
 			redirect_to admin_category_path(@category.id), notice: 'Category was successfully created.' 
 		else
-			render action: 'new' 
+			render 'new' 
 		end
 	end
 
@@ -35,7 +36,7 @@ class Admin::CategoriesController < Admin::DashboardController
 		if @category.update(category_params)
 			redirect_to admin_category_path(@category.id), notice: 'Category was successfully updated.' 
 		else
-			render action: 'edit' 
+			render 'edit' 
 		end
 	end
 
@@ -58,4 +59,5 @@ class Admin::CategoriesController < Admin::DashboardController
 	def category_params
 		params.require(:category).permit(:name, :description)
 	end
+
 end

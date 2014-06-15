@@ -1,4 +1,5 @@
 class Home::HomeController < ApplicationController
+
 	# GET /
 	def index
 		if I18n.locale == :en
@@ -29,10 +30,8 @@ class Home::HomeController < ApplicationController
 	# GET /sitemap
 	def sitemap
 		respond_to do |format|
-			#format :html { render :template => 'home/sitemap/sitemap' }
-			format.xml do 
-				
-			end
+			format.xml 
 		end
 	end	
+
 end

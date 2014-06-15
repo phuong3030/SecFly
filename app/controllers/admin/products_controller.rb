@@ -1,19 +1,18 @@
 class Admin::ProductsController < Admin::DashboardController
+
 	before_action :set_admin_product, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/products
-	# GET /admin/products.json
 	def index
 		@products = []
 		category = Category.find_by_id(params[:category_id])
 
 		if category
-			@products = category.product 
+			@products = category.products
 		end
 	end
 
-	# GET /admin/products/1
-	# GET /admin/products/1.json
+	# GET /admin/products/:id
 	def show
 	end
 
@@ -22,50 +21,36 @@ class Admin::ProductsController < Admin::DashboardController
 		@product = Product.new
 	end
 
-	# GET /admin/products/1/edit
+	# GET /admin/products/:id/edit
 	def edit
 	end
 
 	# POST /admin/products
-	# POST /admin/products.json
 	def create
 		category = Category.find_by_id(params[:category_id])
 		@product = Product.new(admin_product_params)
 		category.product << @product
 
-		respond_to do |format|
-			if category.save
-				format.html { redirect_to admin_category_product_path(@product.category_id, @product.id), notice: 'Product was successfully created.' }
-				format.json { render action: 'show', status: :created, location: @product }
-			else
-				format.html { render action: 'new' }
-				format.json { render json: @product.errors, status: :unprocessable_entity }
-			end
+		if category.save
+			redirect_to admin_category_product_path(@product.category_id, @product.id), notice: 'Product was successfully created.' 
+		else
+			render 'new' 
 		end
 	end
 
-	# PATCH/PUT /admin/products/1
-	# PATCH/PUT /admin/products/1.json
+	# PATCH/PUT /admin/products/:id
 	def update
-		respond_to do |format|
-			if @product.update(admin_product_params)
-				format.html { redirect_to admin_category_product_path(@product.category_id, @product.id), notice: 'Product was successfully updated.' }
-				format.json { head :no_content }
-			else
-				format.html { render action: 'edit' }
-				format.json { render json: @product.errors, status: :unprocessable_entity }
-			end
+		if @product.update(admin_product_params)
+			redirect_to admin_category_product_path(@product.category_id, @product.id), notice: 'Product was successfully updated.' 
+		else
+			render 'edit'
 		end
 	end
 
-	# DELETE /admin/products/1
-	# DELETE /admin/products/1.json
+	# DELETE /admin/products/:id
 	def destroy
 		@product.destroy
-		respond_to do |format|
-			format.html { redirect_to admin_category_products_path(@product.category_id) }
-			format.json { head :no_content }
-		end
+		redirect_to admin_category_products_path(@product.category_id)
 	end
 
 	private
@@ -81,4 +66,5 @@ class Admin::ProductsController < Admin::DashboardController
 	def admin_product_params
 		params.require(:product).permit(:name, :description, :image)
 	end
+
 end

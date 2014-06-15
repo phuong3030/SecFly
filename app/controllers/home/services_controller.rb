@@ -1,4 +1,5 @@
 class Home::ServicesController < ApplicationController
+
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 	# GET / index action 
@@ -42,12 +43,12 @@ class Home::ServicesController < ApplicationController
 
 	# POST /travel
 	def request_ticket
-		# check all name are empty
+		# Check all name are empty
 		if (params[:adult_names] == '' && params[:children_names] == '' && params[:infant_names] == '')
 			flash[:alert] = 'Your request is created failed! Please try again later.'
 			redirect_to travel_path 
 		else
-			# just get, check customer information, store to database and subcribe to websocket channel 
+			# Just get, check customer information, store to database and subcribe to websocket channel 
 			customer = Customer.new({ 
 				:email => params[:email], 
 				:phone => params[:phone], 

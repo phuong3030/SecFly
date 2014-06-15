@@ -1,4 +1,5 @@
 class Websockets::Admin::Orders::OrderDataController < WebsocketRails::BaseController
+
 	def get_filtered_order_data
 		start_time = message[:start_time]
 		end_time = message[:end_time]
@@ -14,4 +15,5 @@ class Websockets::Admin::Orders::OrderDataController < WebsocketRails::BaseContr
 
 		WebsocketRails[current_user].trigger(:order_filtered, orders)
 	end
+
 end

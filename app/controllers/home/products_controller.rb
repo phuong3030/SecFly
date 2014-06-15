@@ -1,9 +1,9 @@
 class Home::ProductsController < ApplicationController
+
 	layout 'application'
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 	# GET /products
-	# GET /products.json
 	def index
 		page = params[:page] || 1
 		@number_of_item = params[:_number_of_item] || 8
@@ -24,7 +24,6 @@ class Home::ProductsController < ApplicationController
 	end
 
 	# GET /products/1
-	# GET /products/1.json
 	def show
 		render :template => 'home/products/show'
 	end
@@ -42,4 +41,5 @@ class Home::ProductsController < ApplicationController
 	def product_params
 		params.require(:product).permit(:name, :description, :category_id, :image)
 	end
+
 end

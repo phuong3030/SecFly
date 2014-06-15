@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+
 	belongs_to :category
 
 	validates :name, :presence => true
@@ -13,4 +14,5 @@ class Product < ActiveRecord::Base
 	def to_param
 		name
 	end
+
 end

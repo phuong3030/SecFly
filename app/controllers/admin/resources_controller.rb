@@ -1,13 +1,13 @@
 class Admin::ResourcesController < Admin::DashboardController
+
 	before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/resources
-	# GET /admin/resources.json
 	def index
 		@resource = Resource.all
 	end
 
-	# GET /admin/resources/1
+	# GET /admin/resources/:id
 	def show
 	end
 
@@ -16,7 +16,7 @@ class Admin::ResourcesController < Admin::DashboardController
 		@resource = Resource.new
 	end
 
-	# GET /admin/resources/1/edit
+	# GET /admin/resources/:id/edit
 	def edit
 	end
 
@@ -24,32 +24,26 @@ class Admin::ResourcesController < Admin::DashboardController
 	def create
 		@resource = Resource.new(resource_params)
 
-		respond_to do |format|
-			if @resource.save
-				format.html { redirect_to admin_resource_path(@resource.id), notice: 'Resource was successfully created.' }
-			else
-				format.html { render action: 'new' }
-			end
+		if @resource.save
+			redirect_to admin_resource_path(@resource.id), notice: 'Resource was successfully created.'
+		else
+			render 'new'
 		end
 	end
 
-	# PATCH/PUT /admin/resources/1
+	# PATCH/PUT /admin/resources/:id
 	def update
-		respond_to do |format|
-			if @resource.update(resource_params)
-				format.html { redirect_to admin_resource_path(@resource.id), notice: 'Resource was successfully updated.' }
-			else
-				format.html { render action: 'edit' }
-			end
+		if @resource.update(resource_params)
+			redirect_to admin_resource_path(@resource.id), notice: 'Resource was successfully updated.'
+		else
+			render 'edit' 
 		end
 	end
 
-	# DELETE /admin/resources/1
+	# DELETE /admin/resources/:id
 	def destroy
 		@resource.destroy
-		respond_to do |format|
-			format.html { redirect_to admin_resources_url }
-		end
+		redirect_to admin_resources_url 
 	end
 
 	private
@@ -65,4 +59,5 @@ class Admin::ResourcesController < Admin::DashboardController
 	def resource_params
 		params.require(:resource).permit(:name, :description, :resource_type, :image)
 	end
+
 end

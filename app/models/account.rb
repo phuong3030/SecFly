@@ -1,4 +1,5 @@
 class Account < ActiveRecord::Base
+
    include PasswordHash
 
 	belongs_to :group
@@ -24,4 +25,5 @@ class Account < ActiveRecord::Base
 	def check_user_credential(password)
       PasswordHash::validate_password(password, self.password_hash)
    end
+
 end

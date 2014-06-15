@@ -107,4 +107,5 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 		@order = Order.find(message[:order_id].to_i)
 		@account = Account.find_by_username(session[:current_user])
 	end
+
 end

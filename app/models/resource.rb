@@ -1,4 +1,5 @@
 class Resource < ActiveRecord::Base
+
 	has_attached_file :image, :style => { :medium => "300x300" }, 
 		:path => ":rails_root/public/images/resources_image/:basename.:extension",
 		:url => "/images/resources_image/:basename.:extension"
