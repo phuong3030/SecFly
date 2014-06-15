@@ -29,7 +29,7 @@ class Admin::ProductsController < Admin::DashboardController
 	def create
 		category = Category.find_by_id(params[:category_id])
 		@product = Product.new(admin_product_params)
-		category.product << @product
+		category.products << @product
 
 		if category.save
 			redirect_to admin_category_product_path(@product.category_id, @product.id), notice: 'Product was successfully created.' 

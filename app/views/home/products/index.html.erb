@@ -28,15 +28,17 @@
 			<%= paginate @products %>
 		</div>
 
-		<div id='category-filter' class='filter-params col-xs-12 col-md-5'>
-			<%= label_tag 'category_id', t('products.Category_name').to_s %>
-			<%= render_categories_selector(@categories, @filtered_category_id) %>
-		</div>
+		<% if @products.size > 0 %>
+			<div id='category-filter' class='filter-params col-xs-12 col-md-5'>
+				<%= label_tag 'category_id', t('products.Category_name').to_s %>
+				<%= render_categories_selector(@categories, @filtered_category_id) %>
+			</div>
 
-		<div id='display-filter' class='filter-params col-xs-12 col-md-3'>
-			<%= label_tag 'number_of_item', t('products.Display').to_s %>
-			<%= render_number_of_item_selector(@number_of_item) %>
-		</div>
+			<div id='display-filter' class='filter-params col-xs-12 col-md-3'>
+				<%= label_tag 'number_of_item', t('products.Display').to_s %>
+				<%= render_number_of_item_selector(@number_of_item) %>
+			</div>
+		<% end %>
 
 	</div>
 		

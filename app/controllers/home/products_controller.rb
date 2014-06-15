@@ -14,18 +14,15 @@ class Home::ProductsController < ApplicationController
 			filtered_category = Category.find_by_id(@filtered_category_id)		
 		end 
 
-		if filtered_category && filtered_category.product.size > 0  
-			@products = filtered_category.product.page(page).per(@number_of_item)
+		if filtered_category && filtered_category.products.size > 0  
+			@products = filtered_category.products.page(page).per(@number_of_item)
 		else 
 			@products = Product.all.page(page).per(@number_of_item)
 		end 
-
-		render :template => 'home/products/list_products'
 	end
 
 	# GET /products/1
 	def show
-		render :template => 'home/products/show'
 	end
 
 	private
