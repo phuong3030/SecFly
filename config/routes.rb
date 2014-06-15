@@ -53,6 +53,6 @@ SecFly::Application.routes.draw do
 	end
 
 	match '', to: redirect("/#{I18n.default_locale}"), :via => [:get]
-	#match '*a' => "errors#show", :code => 500, :via => [:get]
+	#match '^((?!websocket).)*$' => "errors#show", :code => 500, :via => [:get]
 
 end

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SecFly::Application.config.secret_key_base = '7fef843fbf92078b1eed8608a50b0e03868564a1e9db9ca144c5f3fc210bb3d0e5f78c6bf746c30057f338acc2a6e1c62b6b12538b4d2c22b1930853e603b76f'
+SecFly::Application.config.secret_key_base = 'e105dc5465d2ccd2852e8b48c3e7a87ddd34f95e07b6627b8c918ac15cc5169a89801ea722e425440f7173a8201d0849f8bb9630b2e29d476b13e6cbe4586d13'
