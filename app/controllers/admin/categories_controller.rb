@@ -2,13 +2,11 @@ class Admin::CategoriesController < Admin::DashboardController
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/categories
-	# GET /admin/categories.json
 	def index
 		@category = Category.all
 	end
 
-	# GET /admin/categories/1
-	# GET /admin/categories/1.json
+	# GET /admin/categories/:id
 	def show
 	end
 
@@ -17,48 +15,34 @@ class Admin::CategoriesController < Admin::DashboardController
 		@category = Category.new
 	end
 
-	# GET /admin/categories/1/edit
+	# GET /admin/categories/:id/edit
 	def edit
 	end
 
 	# POST /admin/categories
-	# POST /admin/categories.json
 	def create
 		@category = Category.new(category_params)
 
-		respond_to do |format|
-			if @category.save
-				format.html { redirect_to admin_category_path(@category.id), notice: 'Category was successfully created.' }
-				format.json { render action: 'show', status: :created, location: @category }
-			else
-				format.html { render action: 'new' }
-				format.json { render json: @category.errors, status: :unprocessable_entity }
-			end
+		if @category.save
+			redirect_to admin_category_path(@category.id), notice: 'Category was successfully created.' 
+		else
+			render action: 'new' 
 		end
 	end
 
-	# PATCH/PUT /admin/categories/1
-	# PATCH/PUT /admin/categories/1.json
+	# PATCH/PUT /admin/categories/:id
 	def update
-		respond_to do |format|
-			if @category.update(category_params)
-				format.html { redirect_to admin_category_path(@category.id), notice: 'Category was successfully updated.' }
-				format.json { head :no_content }
-			else
-				format.html { render action: 'edit' }
-				format.json { render json: @category.errors, status: :unprocessable_entity }
-			end
+		if @category.update(category_params)
+			redirect_to admin_category_path(@category.id), notice: 'Category was successfully updated.' 
+		else
+			render action: 'edit' 
 		end
 	end
 
-	# DELETE /admin/categories/1
-	# DELETE /admin/categories/1.json
+	# DELETE /admin/categories/:id
 	def destroy
 		@category.destroy
-		respond_to do |format|
-			format.html { redirect_to admin_categories_url }
-			format.json { head :no_content }
-		end
+		redirect_to admin_categories_url
 	end
 
 	private

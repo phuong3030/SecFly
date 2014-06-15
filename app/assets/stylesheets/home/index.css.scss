@@ -151,6 +151,12 @@
 			position: absolute;
 			top: 45%;
 		}
+
+		&.right {
+			i { 
+				right: 50%;
+			}
+		}	
 	}
 
 	.carousel-indicators {

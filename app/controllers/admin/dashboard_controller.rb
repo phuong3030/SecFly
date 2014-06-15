@@ -5,6 +5,7 @@ class Admin::DashboardController < ApplicationController
 	def index 
 	end
 
+	private
 	def checkAuthorization
 		redirect_to admin_login_path unless session[:logged_in] 
 	end
