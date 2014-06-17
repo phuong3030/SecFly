@@ -52,7 +52,8 @@ class Home::ServicesController < ApplicationController
 			customer = Customer.new({ 
 				:email => params[:email], 
 				:phone => params[:phone], 
-				:name => params[:name] 
+				:name => params[:name], 
+				:group_id => ''
 			})
 			order = Order.new({ 
 				:from => params[:from], 

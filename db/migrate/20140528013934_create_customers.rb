@@ -4,7 +4,7 @@ class CreateCustomers < ActiveRecord::Migration
 			t.text :email
 			t.text :phone
 			t.text :name
-			t.string :group_id
+			t.string :group_id, :default => ''
 			t.timestamps
 		end
 	end

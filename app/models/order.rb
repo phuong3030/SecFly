@@ -34,6 +34,16 @@ class Order < ActiveRecord::Base
 		lambda { |status = 0|
 			where('status = ?', status).
 			order('created_at desc') }
+	
+	def self.get_filter_data(start_time, end_time, status)
+		order = []
+
+		if start_time && end_time
+			orders = Order.filter_by_date_range_status(start_time.to_date, end_time.to_date, status)
+		else 
+			orders = Order.filter_by_status(status)
+		end
+	end
 
 	def self.create_report(start_time, end_time, emp_id) 
 		orders = []
