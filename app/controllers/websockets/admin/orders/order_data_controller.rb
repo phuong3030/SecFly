@@ -4,7 +4,6 @@ class Websockets::Admin::Orders::OrderDataController < WebsocketRails::BaseContr
 		start_time = message[:start_time]
 		end_time = message[:end_time]
 		status = message[:status]
-		current_user = session[:current_user]	
 		order = []
 
 		if start_time && end_time
@@ -13,7 +12,7 @@ class Websockets::Admin::Orders::OrderDataController < WebsocketRails::BaseContr
 			orders = Order.filter_by_status(status)
 		end
 
-		WebsocketRails[current_user].trigger(:order_filtered, orders)
+		WebsocketRails[session[:current_user]].trigger(:order_filtered, orders)
 	end
 
 end

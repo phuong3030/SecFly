@@ -35,6 +35,25 @@ class Order < ActiveRecord::Base
 			where('status = ?', status).
 			order('created_at desc') }
 
+	def self.create_report(start_time, end_time, emp_id) 
+		orders = []
+
+		# Order filter and get data to export to excel
+		if start_time && start_time != "" && end_time && end_time != ""
+			if emp_id && emp_id != "" 
+				orders = Order.report_by_emp_date_range(start_time.to_date, end_time.to_date, emp_id)
+			else
+				orders = Order.filter_by_date_range_status(start_time.to_date, end_time.to_date, 3)
+			end
+		else
+			if emp_id && emp_id != "" 
+				orders = Order.report_by_emp_date_range(30.days.ago, Date.today, emp_id)
+			else
+				orders = Order.filter_by_date_range_status(30.days.ago, Date.today, 3)
+			end
+		end
+	end
+
 	def depart_date_cannot_be_greater_than_return_date
 		if (return_date)
 			if depart_date > return_date
