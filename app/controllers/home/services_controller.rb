@@ -23,6 +23,7 @@ class Home::ServicesController < ApplicationController
 	# GET /travel
 	def travel
 		orders = Order.order('created_at desc').first(5)
+
 		if orders.size > 0
 			@recently_orders = orders 
 			@customers = orders.map { |e| e.customer[:name] }  
@@ -34,6 +35,7 @@ class Home::ServicesController < ApplicationController
 			@customers = [] 
 			@quantity = 0
 		end
+
 		if I18n.locale == :en
 			render :template => 'home/services/travel_en'
 		elsif I18n.locale == :vi
