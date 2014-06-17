@@ -18,21 +18,18 @@ class Admin::AdminController < ApplicationController
 			session[:logged_in] = true
 			redirect_to admin_dashboard_index_path
 		else 
-			flash[:notice] = "Invalid username or password"
-			redirect_to admin_login_path
+			redirect_to admin_login_path, :notice => "Invalid username or password"
 		end
 	end
 
 	# GET logout
 	def logout
 		if session[:logged_in]
-			redirect_to admin_login_path
-			flash[:notice] = "Logout successful!"
+			redirect_to admin_login_path, :notice => "Logout successful!"
 			session[:logged_in] = false
 			session[:current_user] = nil
 		else 
-			flash[:notice] = "You haven't logged in system!"
-			redirect_to admin_login_path
+			redirect_to admin_login_path, :notice => "You haven't logged in system!"
 		end
 	end
 

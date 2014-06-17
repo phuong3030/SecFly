@@ -244,7 +244,6 @@
 		if (errors) {
 
 			// Display errors to customer
-			console.log(errors);
 			$('.error-details ol').html(errors);
 
 			return false;

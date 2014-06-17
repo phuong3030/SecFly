@@ -5,20 +5,15 @@ class Home::ProductsController < ApplicationController
 
 	# GET /products
 	def index
-		page = params[:page] || 1
 		@number_of_item = params[:_number_of_item] || 8
 		@filtered_category_id = params[:_category_id]
 		
 		@categories = Category.select(:id, :name).order(:name)
-		if @filtered_category_id
-			filtered_category = Category.find_by_id(@filtered_category_id)		
-		end 
-
-		if filtered_category && filtered_category.products.size > 0  
-			@products = filtered_category.products.page(page).per(@number_of_item)
-		else 
-			@products = Product.all.page(page).per(@number_of_item)
-		end 
+		@products = Product.get_filter_paging_data(
+			@filtered_category_id,
+			params[:page] || 1,
+			@number_of_item
+		)
 	end
 
 	# GET /products/1
