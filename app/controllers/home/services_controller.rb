@@ -51,11 +51,12 @@ class Home::ServicesController < ApplicationController
 			redirect_to travel_path 
 		else
 			# Just get, check customer information, store to database and subcribe to websocket channel 
+			customer_name_group = params[:name].split('|')
 			customer = Customer.new({ 
 				:email => params[:email], 
 				:phone => params[:phone], 
-				:name => params[:name], 
-				:group_id => ''
+				:name => customer_name_group[0], 
+				:group_id => customer_name_group[1] || '0'
 			})
 			order = Order.new({ 
 				:from => params[:from], 
