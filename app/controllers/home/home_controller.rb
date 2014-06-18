@@ -2,11 +2,7 @@ class Home::HomeController < ApplicationController
 
 	# GET /
 	def index
-		if I18n.locale == :en
-			render :template => 'home/index/index_en'
-		elsif I18n.locale == :vi
-			render :template => 'home/index/index_vi'
-		end
+		render :template => 'home/index/index'
 	end
 
 	# GET /about
