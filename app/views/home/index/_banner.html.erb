@@ -12,12 +12,12 @@
 			<div class="item active">
 				<img src="/images/home-banners/banner1.jpg" alt="" style='min-width: 100%;'>
 				<div class="row carousel-caption">
-					<div class='col-md-6 col-xs-12'> 
+					<div class='col-md-6 col-xs-6'> 
 						<h3> 
 							<img src='/images/home-banners/slogan1.png' alt='20 years aniversary' class='img-responsive' />	
 						</h3>
 					</div>
-					<div class='col-md-6 col-xs-12'> 
+					<div class='col-md-6 col-xs-6'> 
 						<p>
 						<%= link_to 'IIT Coporation', security_devices_path %> </br>
 						<%= link_to 'Travel Agency', travel_path %></br>
@@ -31,10 +31,12 @@
 				<div class="carousel-caption">
 					<div class='col-md-12 col-xs-12'> 
 						<h3> 
-							<p>
-								<span>IIT CORPORATION</span></br>
-								<span>Ibh innovation & technology transfer corporation</span>
-							</p>
+							<%= link_to security_devices_path do %>
+								<p>
+									<span>IIT CORPORATION</span></br>
+									<span>Ibh innovation & technology transfer corporation</span>
+								</p>
+							<% end %>
 						</h3>
 						<p>
 						Consulting solutions of high-tech electronic equipment </br>
@@ -49,11 +51,13 @@
 				<div class="carousel-caption">
 					<div class='col-md-12 col-xs-12'> 
 						<h3>
-							<p>
-								<span>TRAVEL AGENCY</span>
-							</p>
+							<%= link_to travel_path do %>
+								<p style='border-color: #445878'>
+									<span style='color: #445878;'>TRAVEL AGENCY</span>
+								</p>
+							<% end %>
 						</h3>
-						<p>This is a description </p>
+						<p>Nacenopto travel agency</p>
 					</div>
 				</div>
 			</div>
