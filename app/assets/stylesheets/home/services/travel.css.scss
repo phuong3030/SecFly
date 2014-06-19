@@ -1,7 +1,7 @@
 // Header
 .header-hotline {
 	color: #92CDCF;
-	margin-top: -20px;
+	margin-top: -40px;
 	margin-bottom: 20px;
 
 	span {
@@ -46,7 +46,7 @@ i {
 	}
 
 	.error-details {
-		margin-top: -40px;
+		margin-top: -20px;
 
 		ol {
 			li {
@@ -103,6 +103,8 @@ i {
 	}
 
 	.btn {
+		margin-bottom: 15px;
+
 		strong {
 			font-size: 16px;
 		}
@@ -177,6 +179,12 @@ $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 /* small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
+	.services-inner { 
+		.error-details {
+			margin-top: -40px;
+		}
+	}
+
 	.header-hotline {
 		margin-top: -145px;	
 	}
@@ -184,6 +192,12 @@ $screen-lg-min: 1200px;
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
+	.services-inner { 
+		.error-details {
+			margin-top: -40px;
+		}
+	}
+
 	.header-hotline {
 		margin-top: -145px;	
 	}
@@ -191,6 +205,12 @@ $screen-lg-min: 1200px;
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) { 
+	.services-inner { 
+		.error-details {
+			margin-top: -40px;
+		}
+	}
+
 	.header-hotline {
 		margin-top: -145px;	
 	}
