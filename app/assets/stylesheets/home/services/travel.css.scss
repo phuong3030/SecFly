@@ -7,12 +7,16 @@ body {
 	background-size: cover;
 }
 
-.topbar, .footer {
-	background: transparent;
+.topbar, .footer, .pageheader .breadcrumb,  {
+	background: rgba(0, 0, 0, 0.1);
 }
 
-.pageheader .breadcrumb {
-	background: rgba(0, 0, 0, 0.1);
+.topbar .dropdown .dropdown-menu {
+	background: navy;
+}
+
+.form-control { 
+	background: rgba(238, 238, 238, 0.9);
 }
 
 .pageheader h1 {
