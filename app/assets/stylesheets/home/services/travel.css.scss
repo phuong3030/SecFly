@@ -7,6 +7,28 @@ body {
 	background-size: cover;
 }
 
+.pageheader h1 {
+	color: yellow;
+}
+
+body, .services-inner, .pageheader .breadcrumb li, 
+.main_nav ul.nav-tabs.desktop li, .topbar .dropdown .dropdown-menu li,
+.footer .nav-tabs li {
+	a {
+		color: yellow;
+
+		&:hover, &:focus {
+			color: #EEEEF7;
+		}
+	}
+}
+
+.main_nav ul.nav-tabs.desktop li.active {
+	a {
+		color: #EEEEF7;
+	}
+}
+
 // Header
 .header-hotline {
 	color: yellow;
@@ -40,14 +62,6 @@ i {
 // Content
 .services-inner { 
 	color: yellow;
-
-	a {
-		color: yellow;
-
-		&:hover, &:focus {
-			color: #EEEEF7;
-		}
-	}
 
 	.img-responsive {
 		min-width: 100%;	
