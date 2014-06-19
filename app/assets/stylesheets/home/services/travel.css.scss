@@ -7,6 +7,14 @@ body {
 	background-size: cover;
 }
 
+.topbar, .footer {
+	background: transparent;
+}
+
+.pageheader .breadcrumb {
+	background: rgba(0, 0, 0, 0.1);
+}
+
 .pageheader h1 {
 	color: yellow;
 }
