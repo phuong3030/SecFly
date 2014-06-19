@@ -51,8 +51,8 @@
 			-o-transition: opacity 1.5s ease-out;
 
 			&>img {
-				height: 200px;
-				min-height: 200px;
+				height: 550px;
+				min-height: 550px;
 			}
 
 			&>.carousel-caption {
@@ -68,7 +68,7 @@
 					height: 100%;
 					position: relative;
 
-					h3, p {
+					&>h3, &>p {
 						width: 100%;
 						text-align: center;
 						position: absolute;
@@ -78,11 +78,26 @@
 						-o-transition: top 0.8s ease-in-out;
 					}
 
-					h3 { 
+					&>h3 { 
 						top: -35%;	
+
+						&>p {
+							display: inline-block;
+							padding: 18px;
+							border-top: 1px solid #EEEEF7;
+							border-bottom: 1px solid #EEEEF7;
+
+							span {
+								&:first-child {
+									margin-bottom: 18px;
+									font: 75px Helvetica107XBCN;
+									line-height: 78px;
+								}
+							}
+						}
 					}
 
-					p {
+					&>p {
 						top: 130%;	
 						color: #92CDCF;
 						font-size: 20px;
@@ -93,12 +108,13 @@
 			&:first-child { 
 				&>.carousel-caption {
 					&>div {
-						h3 {
+						&>h3 {
 							top: -80%;
 							left: 50%;
+							border: 0;
 						}
 
-						p {
+						&>p {
 							width: auto;
 							color: #92CDCF;
 							font-size: 20px;
@@ -121,11 +137,11 @@
 
 				.carousel-caption {
 					&>div {
-						h3 {
-							top: 20%;	
+						&>h3 {
+							top: 10%;	
 						}
 
-						p {
+						&>p {
 							top: 70%;	
 						}
 					}
@@ -134,11 +150,11 @@
 				&:first-child { 
 					&>.carousel-caption {
 						&>div {
-							h3 { 
-								top: 15%;
+							&>h3 { 
+								top: 12%;
 							}
 
-							p {
+							&>p {
 								top: 70%;
 							}
 						}
