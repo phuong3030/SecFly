@@ -1,11 +1,20 @@
+// Special style for only this page
+body { 
+	background: url(/images/travel_bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 // Header
 .header-hotline {
-	color: #92CDCF;
+	color: yellow;
 	margin-top: -40px;
 	margin-bottom: 20px;
 
 	span {
-		color: #92CDCF;
+		color: yellow;
 		font: 20px Helvetica107XBCN;
 	}
 }
@@ -16,10 +25,10 @@
 }
 @-webkit-keyframes blink {
 	0%,100%{
-		color: #445878;
+		color: #EEEEF7;
 	}
 	50% {
-		color: #92CDCF;
+		color: yellow;
 	}
 }
 
@@ -30,19 +39,29 @@ i {
 
 // Content
 .services-inner { 
+	color: yellow;
+
+	a {
+		color: yellow;
+
+		&:hover, &:focus {
+			color: #EEEEF7;
+		}
+	}
+
 	.img-responsive {
 		min-width: 100%;	
 		margin-bottom: 30px;
 	}
 
 	h4, label { 
-		color: #92CDCF;
+		color: yellow;
 		font: 18px Helvetica107XBCN;
 	}
 
 	.sale-banner, .how-to-request, .recently-request {
 		padding: 15px 0;
-		border-bottom: 1px solid #92CDCF;
+		border-bottom: 1px solid yellow;
 	}
 
 	.error-details {
@@ -113,7 +132,7 @@ i {
 	.recently-request {
 		.ticket-place {
 			font-size: 15px;
-			color: #92CDCF;
+			color: yellow;
 		}
 	}
 }
