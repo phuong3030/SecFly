@@ -1,9 +1,8 @@
 class CreateRoles < ActiveRecord::Migration
 	def self.up
 		create_table :roles do |t|
-			t.integer :type
+			t.integer :role_type
 			t.text :description
-			t.timestamps
 		end
 	end
 

@@ -1,5 +1,6 @@
 class Admin::ProductsController < Admin::DashboardController
 
+	before_filter :check_role
 	before_action :set_admin_product, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/products
@@ -65,6 +66,18 @@ class Admin::ProductsController < Admin::DashboardController
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def admin_product_params
 		params.require(:product).permit(:name, :description, :image)
+	end
+
+	# Check role to access this controller
+	def check_role
+		account = Account.find_by_username(session[:current_user])
+
+		if account.get_role > 2
+			redirect_to(
+				admin_dashboard_index_path, 
+				:notice => "You don't have permission to access this page"
+			)
+		end
 	end
 
 end

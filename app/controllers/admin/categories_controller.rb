@@ -1,5 +1,6 @@
 class Admin::CategoriesController < Admin::DashboardController
 
+	before_filter :check_role
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 	# GET /admin/categories
@@ -59,5 +60,18 @@ class Admin::CategoriesController < Admin::DashboardController
 	def category_params
 		params.require(:category).permit(:name, :description)
 	end
+
+	# Check role to access this controller
+	def check_role
+		account = Account.find_by_username(session[:current_user])
+
+		if account.get_role > 2
+			redirect_to(
+				admin_dashboard_index_path, 
+				:notice => "You don't have permission to access this page"
+			)
+		end
+	end
+
 
 end

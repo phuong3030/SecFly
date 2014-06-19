@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140613141913) do
     t.text     "email"
     t.text     "phone"
     t.text     "name"
-    t.string   "group_id"
+    t.string   "group_id",   default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,10 +106,8 @@ ActiveRecord::Schema.define(version: 20140613141913) do
   end
 
   create_table "roles", force: true do |t|
-    t.integer  "type"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "role_type"
+    t.text    "description"
   end
 
 end

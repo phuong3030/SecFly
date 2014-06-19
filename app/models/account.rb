@@ -26,4 +26,12 @@ class Account < ActiveRecord::Base
       PasswordHash::validate_password(password, self.password_hash)
    end
 
+	def get_role
+		if self.roles[0]	
+			self.roles[0].role_type 
+		else
+			0
+		end
+	end
+
 end
