@@ -40,9 +40,12 @@
 		<% end %>
 		<div class='col-xs-12 col-md-8'>
 			<h3><%= t('products.Description').to_s %></h3>
-			<%= content_tag(:p, @product.description) %>
+			<% unless @description_list.empty? && @description_list.first.empty? %>
+				<ul>
+					<% @description_list.each do |line| %>						
+						<%= content_tag :li, line %>
+					<% end %>
+				</ul>
+			</div>
 		</div>
-
 	</div>
-
-</div>

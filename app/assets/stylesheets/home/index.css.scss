@@ -27,13 +27,12 @@
 	}
 }
 
-@mixin banner-large-screen() {
+@mixin banner-large-screen($banner-height: 560px) {
 	#banner {	
 		.carousel-inner { 
 			.item {
 				&>img {
-					height: 560px;
-					min-height: 560px;
+					height: $banner-height;
 				}
 
 				&>.carousel-caption {
@@ -376,6 +375,7 @@ h2 {
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
+$screen-sp-lg-min: 1600px;
 /* small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
 	@include responsive-partners();
@@ -400,6 +400,20 @@ $screen-lg-min: 1200px;
 @media (min-width: $screen-lg-min) { 
 	@include responsive-partners();
 	@include banner-large-screen();
+
+	.services-description { 
+		min-height: 220px;
+	}
+
+	.companyinfo .contacts .office {
+		float: left;
+	}
+}
+
+/* Super large devices (super large desktops, 1600px and up) */
+@media (min-width: $screen-lg-min) { 
+	@include responsive-partners();
+	@include banner-large-screen(700px);
 
 	.services-description { 
 		min-height: 220px;

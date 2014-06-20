@@ -18,6 +18,7 @@ class Home::ProductsController < ApplicationController
 
 	# GET /products/1
 	def show
+		@description_list = @product.description.split(/\r?\n/)
 	end
 
 	private
