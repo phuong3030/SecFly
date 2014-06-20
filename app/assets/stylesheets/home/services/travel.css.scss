@@ -19,8 +19,12 @@ body {
 	background: rgba(238, 238, 238, 0.9);
 }
 
-.pageheader h1 {
-	color: yellow;
+.pageheader {
+	padding-right: 0px;
+
+	h1 {
+		color: yellow;
+	}
 }
 
 body, .services-inner, .pageheader .breadcrumb li, 
@@ -85,7 +89,7 @@ i {
 		font: 18px Helvetica107XBCN;
 	}
 
-	.sale-banner, .how-to-request, .recently-request {
+	.sale-text-region, .sale-banner, .how-to-request, .recently-request {
 		padding: 15px 0;
 		border-bottom: 1px solid yellow;
 	}
