@@ -27,7 +27,7 @@
 	<div class='product-detail-inner row'>
 
 		<% if @product.image.exists? %>
-			<div class='col-xs-12 col-md-4'>
+			<div class='col-xs-12 col-md-3'>
 				<%= image_tag(
 					@product.image.url,
 					:alt => @product.name, 
@@ -38,7 +38,7 @@
 				)%>
 			</div>
 		<% end %>
-		<div class='col-xs-12 col-md-8'>
+		<div class='col-xs-12 col-md-9'>
 			<h3><%= t('products.Description').to_s %></h3>
 			<% unless @description_list.empty? && @description_list.first.empty? %>
 				<ul>
