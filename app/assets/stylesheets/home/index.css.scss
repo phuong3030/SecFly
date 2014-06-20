@@ -411,7 +411,7 @@ $screen-sp-lg-min: 1600px;
 }
 
 /* Super large devices (super large desktops, 1600px and up) */
-@media (min-width: $screen-lg-min) { 
+@media (min-width: $screen-sp-lg-min) { 
 	@include responsive-partners();
 	@include banner-large-screen(700px);
 
