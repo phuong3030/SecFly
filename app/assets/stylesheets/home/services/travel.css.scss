@@ -7,7 +7,8 @@ body {
 	background-size: cover;
 }
 
-.topbar, .footer, .pageheader .breadcrumb,  {
+.topbar, .nav-button.phone, .footer, .pageheader .breadcrumb, 
+.main_nav .nav-collapse ul li > a:hover, .main_nav .nav-collapse ul li > a:focus {
 	background: rgba(0, 0, 0, 0.1);
 }
 
@@ -29,7 +30,7 @@ body {
 
 body, .services-inner, .pageheader .breadcrumb li, 
 .main_nav ul.nav-tabs.desktop li, .topbar .dropdown .dropdown-menu li,
-.footer .nav-tabs li {
+.footer .nav-tabs li, .main_nav .nav-collapse ul li {
 	a {
 		color: yellow;
 
@@ -39,7 +40,7 @@ body, .services-inner, .pageheader .breadcrumb li,
 	}
 }
 
-.main_nav ul.nav-tabs.desktop li.active {
+.main_nav ul.nav-tabs.desktop li.active, .main_nav .nav-collapse ul li.active {
 	a {
 		color: #EEEEF7;
 	}

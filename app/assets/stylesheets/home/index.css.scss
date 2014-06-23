@@ -413,7 +413,18 @@ $screen-sp-lg-min: 1600px;
 /* Super large devices (super large desktops, 1600px and up) */
 @media (min-width: $screen-sp-lg-min) { 
 	@include responsive-partners();
-	@include banner-large-screen(700px);
+	@include banner-large-screen(750px);
+
+	#banner .carousel-inner .item.active:first-child {
+		&>.carousel-caption {
+			&>div {
+				&>h3 {
+					top: 20%;
+					left: 60%;
+				}
+			}
+		}
+	}
 
 	.services-description { 
 		min-height: 220px;
