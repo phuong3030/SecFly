@@ -14,7 +14,7 @@
 					<%= nav_tab 'Home', root_path, :current => current_tab %>
 					<%= nav_tab 'About', about_path, :current => current_tab %>
 					<%= nav_tab 'Services', services_path, :current => current_tab %>
-					<%= nav_tab 'Products', products_path, :current => current_tab %>
+					<%= nav_tab 'Subsidiary', iit_corp_path, :current => current_tab %>
 					<%= nav_tab 'Contacts', contacts_path, :current => current_tab %>
 				</ul>
 
@@ -24,7 +24,7 @@
 				<%= nav_tab 'Home', root_path, :current => current_tab, :id => 'home-nav-item' %>
 				<%= nav_tab 'About', about_path, :current =>  current_tab, :id => 'about-nav-item' %>
 				<%= nav_tab 'Services', services_path, :current => current_tab, :id => 'services-nav-item' %>
-				<%= nav_tab 'Products', products_path, :current => current_tab, :id => 'products-nav-item' %>
+				<%= nav_tab 'Subsidiary', iit_corp_path, :current => current_tab, :id => 'subsidiary-nav-item' %>
 				<%= nav_tab 'Contacts', contacts_path, :current => current_tab, :id => 'contacts-nav-item' %>
 			</ul>
 		</div>
@@ -32,13 +32,24 @@
 		<div id='services-submenu'>
 			<ul class='list-unstyled'>
 				<li>
-					<%= link_to 'IIT Corp', security_devices_path %>
+					<%= link_to t('main_nav.Electronics'), products_path %>
 				</li>
 				<li>
 					<%= link_to t('main_nav.Travel'), travel_path  %>
 				</li>
 				<li>
 					<%= link_to t('main_nav.Personal'), personal_finance_path %>
+				</li>
+			</ul>
+		</div>
+	
+		<div id='subsidiary-submenu'>
+			<ul class='list-unstyled'>
+				<li>
+					<%= link_to 'IIT Corporation', iit_corp_path  %>
+				</li>
+				<li>
+					<%= link_to 'NACENOPTO Travel', travel_path %>
 				</li>
 			</ul>
 		</div>

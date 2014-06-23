@@ -33,7 +33,6 @@ SecFly::Application.routes.draw do
 			get "/contacts" => "home#contacts"
 			scope :services do 
 				get "/" => "services#index", :as => "services"
-				get "/security-devices" => "services#security_devices"
 				get "/travel" => "services#travel"
 				get "/personal-finance" => "services#personal_finance"
 				post "/travel" => "services#request_ticket"
@@ -41,6 +40,9 @@ SecFly::Application.routes.draw do
 			scope :products do
 				get "/" => "products#index", :as => "products"
 				get "/:id" => "products#show", :as => "show_product"
+			end
+			scope :subsidiary do 
+				get "/iit-corporation" => "subsidiary#iit_corp", :as => "iit_corp"
 			end
 			#%w( 404 422 500 ).each do |code|
 			#	get code, :to => "errors#show", :code => code

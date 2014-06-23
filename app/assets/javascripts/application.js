@@ -17,15 +17,23 @@
 
 (function ($) {
 
-	var servicesNavItem = $('#services-nav-item');
+	var servicesNavItem = $('#services-nav-item'),
+		 subsidiaryNav = $('#subsidiary-nav-item');
 
+	// Sub-menu powertip listener
 	servicesNavItem.data('powertiptarget', 'services-submenu').powerTip({
 		placement: 's',
 		mouseOnToPopup: true,
 		fadeInTime: 100
 	});
 
-	// language dropdown slide effect
+	subsidiaryNav.data('powertiptarget', 'subsidiary-submenu').powerTip({
+		placement: 's',
+		mouseOnToPopup: true,
+		fadeInTime: 100
+	});
+
+	// Language dropdown slide effect
 	$('.dropdown').on('show.bs.dropdown', function (e) {
 		$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
 	});

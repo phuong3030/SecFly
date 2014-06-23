@@ -11,15 +11,6 @@ class Home::ServicesController < ApplicationController
 		end
 	end
 
-	# GET /security-devices
-	def security_devices
-		if I18n.locale == :en
-			render :template => 'home/services/security_devices_en'
-		elsif I18n.locale == :vi
-			render :template => 'home/services/security_devices_vi'
-		end
-	end
-
 	# GET /travel
 	def travel
 		orders = Order.order('created_at desc').first(5)

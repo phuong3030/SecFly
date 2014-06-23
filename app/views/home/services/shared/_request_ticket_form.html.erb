@@ -39,7 +39,12 @@
 			<%= label_tag t('services.travel.DepartTime') %><br>
 			<%= select_tag(
 				"departtime", 
-				options_for_select([ [t('services.travel.Morning'), 0], [t('services.travel.Afternoon'), 1] ]), 
+				options_for_select([ 
+					[t('services.travel.Morning'), 0], 
+					[t('services.travel.Midday'), 1], 
+					[t('services.travel.Afternoon'), 2],
+					[t('services.travel.Evening'), 3] 
+				]), 
 				:class => "form-control"
 			)%>
 		</div>
@@ -55,7 +60,12 @@
 			<%= label_tag t('services.travel.ReturnTime') %><br>
 			<%= select_tag(
 				"returntime", 
-				options_for_select([ [t('services.travel.Morning'), 0], [t('services.travel.Afternoon'), 1] ]), 
+				options_for_select([
+					[t('services.travel.Morning'), 0], 
+					[t('services.travel.Midday'), 1], 
+					[t('services.travel.Afternoon'), 2],
+					[t('services.travel.Evening'), 3] 
+				]), 
 				:class => "form-control"
 			)%>		
 		</div>
