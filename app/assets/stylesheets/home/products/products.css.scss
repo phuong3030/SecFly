@@ -15,6 +15,7 @@
 
 	.filter-params { 
 		margin-bottom: 20px;
+		padding: 0;
 		color: #92CDCF;
 
 		select {
@@ -56,6 +57,8 @@
 .list-product-inner { 
 
 	.lst-product {
+		padding: 0;
+
 		.product-view { 
 			display: inline-block;
 			vertical-align: top;
