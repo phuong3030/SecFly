@@ -48,15 +48,19 @@ body, .services-inner, .pageheader .breadcrumb li,
 }
 
 // Header
-.header-hotline {
+.hotline, .header-hotline {
 	color: red;
-	margin-top: -40px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 
 	span {
 		color: yellow;
 		font: 20px Helvetica107XBCN;
 	}
+}
+
+.header-hotline {
+	margin-top: -40px;
+	margin-bottom: 20px;
 }
 
 .blink-me {
