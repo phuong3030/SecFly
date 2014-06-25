@@ -14,10 +14,14 @@
 
 <div class='content container'>
 
-	<%= render :partial => 'home/shared/services_en' %>
-
-	<%= render :partial => 'home/shared/partners_en' %>
-
-	<%= render :partial => 'home/shared/companyinfo_en' %>
+	<% if I18n.locale == :en %>
+		<%= render :partial => 'home/shared/services_en' %>
+		<%= render :partial => 'home/shared/partners_en' %>
+		<%= render :partial => 'home/shared/companyinfo_en' %>
+	<% elsif I18n.locale == :vi %>
+		<%= render :partial => 'home/shared/services_vi' %>
+		<%= render :partial => 'home/shared/partners_vi' %>
+		<%= render :partial => 'home/shared/companyinfo_vi' %>
+	<% end %>
 
 </div>	<!-- end content -->
