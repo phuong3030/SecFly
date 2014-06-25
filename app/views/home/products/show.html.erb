@@ -1,5 +1,5 @@
 <% content_for :page_spec do %>
-	<title>Products</title>
+	<title><%= @product.name %></title>
 	<%= stylesheet_link_tag "home/home", media: "all" %>
 	<%= stylesheet_link_tag "home/products/product_detail", media: "all" %>
 <% end %>
@@ -16,7 +16,7 @@
 	<div class='row'>
 
 		<%= render_page_header(
-			@product.name.upcase ,
+			@product.name.upcase,
 			[{:name => 'Home', :path => root_path},
 	 		{:name => 'Products', :path => products_path},
 	 		{:name => @product.name}] 
