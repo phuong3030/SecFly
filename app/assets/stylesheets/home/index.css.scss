@@ -27,7 +27,7 @@
 	}
 }
 
-@mixin banner-large-screen($banner-height: 560px) {
+@mixin banner-large-screen($banner-height: 560px, $pSize: 20px) {
 	#banner {	
 		.carousel-inner { 
 			.item {
@@ -52,7 +52,7 @@
 						&>p {
 							top: 130%;	
 							color: #92CDCF;
-							font-size: 20px;
+							font-size: $pSize;
 						}
 
 					}
@@ -66,7 +66,7 @@
 							}
 
 							&>p {
-								font-size: 20px;
+								font-size: $pSize;
 								left: 30%;
 							}
 						}
@@ -182,7 +182,7 @@
 				.carousel-caption {
 					&>div {
 						&>h3 {
-							top: 12%;	
+							top: 30%;	
 						}
 
 						&>p {
@@ -379,13 +379,13 @@ $screen-sp-lg-min: 1600px;
 /* small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
 	@include responsive-partners();
-	@include banner-large-screen();
+	@include banner-large-screen(560px, 24px);
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
 	@include responsive-partners();
-	@include banner-large-screen();
+	@include banner-large-screen(560px, 30px);
 
 	.services-description { 
 		min-height: 220px;
@@ -399,7 +399,7 @@ $screen-sp-lg-min: 1600px;
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) { 
 	@include responsive-partners();
-	@include banner-large-screen();
+	@include banner-large-screen(560px, 30px);
 
 	.services-description { 
 		min-height: 220px;
@@ -413,7 +413,7 @@ $screen-sp-lg-min: 1600px;
 /* Super large devices (super large desktops, 1600px and up) */
 @media (min-width: $screen-sp-lg-min) { 
 	@include responsive-partners();
-	@include banner-large-screen(750px);
+	@include banner-large-screen(750px, 30px);
 
 	#banner .carousel-inner .item.active:first-child {
 		&>.carousel-caption {
