@@ -42,38 +42,6 @@
 	});
 
 	// Listen event from server
-	privateChannel.bind('order_detail', function (data) {
-
-		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
-			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
-			 infant_tickets = data.order.infant_names !== '' ? data.order.infant_names.split(';') : [];
-
-		$('.customer_id').html(data.customer.id);
-		$('.customer_name').html(data.customer.name);
-		$('.customer_phone').html(data.customer.phone);
-		$('.customer_email').html(data.customer.email);
-
-		$('.order_from').html(data.order.from);
-		$('.order_to').html(data.order.to);
-		$('.order_depart').html(data.order.depart_date);
-		$('.order_return').html(data.order.return_date || '&nbsp;');
-		$('.order_adult_tickets').html(adult_tickets.length + ' adult ticket(s): ' + '</br>' + adult_tickets.join('</br>'));
-		$('.order_children_tickets').html(children_tickets.length + ' children ticket(s): ' + '</br>' + children_tickets.join('</br>'));
-		$('.order_infant_tickets').html(infant_tickets.length + ' infant ticket(s): ' + '</br>' + infant_tickets.join('</br>'));
-
-		$.magnificPopup.open({
-			items: {
-				src: ".order-detail",
-				type: "inline"
-			},
-			callbacks: {
-				beforeClose: function() {
-				}
-			}
-		});
-
-	});
-
 	privateChannel.bind('order_customer_preview_email', function (data) {
 		var order = data.order,
 			 customer = data.customer,
@@ -102,7 +70,7 @@
 
 		$('.email_order_id').html(order.id);
 		$('.email_customer_name').html(adult + children + infant);
-		$('.email_order_created_at').html(order.created_at);
+		$('.email_order_created_at').html(new Date(order.created_at).toLocaleString());
 		$('.email_from').html(order.from);
 		$('.email_to').html(order.to);
 		$('.email_depart').html(order.depart_date);
@@ -164,7 +132,7 @@
 			+ data.order.to + '</td><td>'
 			+ data.order.depart_date + '</td><td>' 
 			+ (data.order.return_date || '&nbsp;') + '</td><td>'
-			+ data.order.created_at + '</td><td>' 
+			+ new Date(data.order.created_at).toLocaleString() + '</td><td>' 
 			+ statusMap[data.order.status] + '</td><td>' 
 			+ '<button class="view-order view-order btn btn-primary btn-sm"' 
 			+ 'href="#" data-order_id="' 

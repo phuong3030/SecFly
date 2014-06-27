@@ -10,27 +10,40 @@
 		console.log('Connection has been established: ', data); 
 	}; 
 
-	// Datetime picker event binding
-	$('#start').datepicker({
-		dateFormat: 'dd/mm/yy'
-	});
-	$('#end').datepicker({
-		dateFormat: 'dd/mm/yy'
-	});
+	privateChannel.bind('order_detail', function (data) {
 
-	$('.get-data').click(function(e) {
-		var start_time = $('#start').val(),
-			 end_time = $('#end').val(),
-			 status = $('#status').val();
+		var adult_tickets = data.order.adult_names !== '' ? data.order.adult_names.split(';') : [],
+			 children_tickets = data.order.children_names !== '' ? data.order.children_names.split(';') : [],
+			 infant_tickets = data.order.infant_names !== '' ? data.order.infant_names.split(';') : [],
+			 time_slot_map = ['Morning', 'Mid day', 'Afternoon', 'Evening'],
+			 payment_method = ['By money at office', 'By credit card'];
 
-		window.dis.trigger(
-			'get_filtered_order_data', 
-			{ 
-				start_time: start_time === '' ? null : start_time,
-				end_time: end_time === '' ? null : end_time,
-				status: status === '' ? null : status
+		$('.customer_id').html(data.customer.id);
+		$('.customer_group').html(data.customer.group_id);
+		$('.customer_name').html(data.customer.name);
+		$('.customer_phone').html(data.customer.phone);
+		$('.customer_email').html(data.customer.email);
+
+		$('.order_from').html(data.order.from);
+		$('.order_to').html(data.order.to);
+		$('.order_depart').html(data.order.depart_date + ' - ' + time_slot_map[data.order.depart_time_slot]);
+		$('.order_return').html((data.order.return_date + ' - ' + time_slot_map[data.order.return_time_slot]) || '&nbsp;');
+		$('.payment_method').html(payment_method[data.order.payment_method]);
+		$('.order_adult_tickets').html(adult_tickets.length + ' adult ticket(s): ' + '</br>' + adult_tickets.join('</br>'));
+		$('.order_children_tickets').html(children_tickets.length + ' children ticket(s): ' + '</br>' + children_tickets.join('</br>'));
+		$('.order_infant_tickets').html(infant_tickets.length + ' infant ticket(s): ' + '</br>' + infant_tickets.join('</br>'));
+
+		$.magnificPopup.open({
+			items: {
+				src: ".order-detail",
+				type: "inline"
+			},
+			callbacks: {
+				beforeClose: function() {
+				}
 			}
-		);
+		});
+
 	});
 
 	privateChannel.bind('order_filtered', function(data) {
@@ -55,7 +68,7 @@
 						+ '</td><td>' + data[index].to + '</td><td>'
 						+ data[index].depart_date + '</td><td>' 
 						+ (data[index].return_date || '&nbsp;') + '</td><td>'
-						+ data[index].created_at + '</td><td>' 
+						+ new Date(data[index].created_at).toLocaleString() + '</td><td>' 
 						+ statusMap[data[index].status] + '</td><td>' 
 						+ '<button class="view-order view-order btn btn-primary btn-sm"' 
 						+ 'href="#" data-order_id="' 
@@ -71,6 +84,29 @@
 				footable.appendRow(newRow);
 			})(i);
 		}
+	});
+
+	// Datetime picker event binding
+	$('#start').datepicker({
+		dateFormat: 'dd/mm/yy'
+	});
+	$('#end').datepicker({
+		dateFormat: 'dd/mm/yy'
+	});
+
+	$('.get-data').click(function(e) {
+		var start_time = $('#start').val(),
+			 end_time = $('#end').val(),
+			 status = $('#status').val();
+
+		window.dis.trigger(
+			'get_filtered_order_data', 
+			{ 
+				start_time: start_time === '' ? null : start_time,
+				end_time: end_time === '' ? null : end_time,
+				status: status === '' ? null : status
+			}
+		);
 	});
 
 })(jQuery, window);

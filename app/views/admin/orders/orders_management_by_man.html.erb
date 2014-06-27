@@ -48,7 +48,6 @@
 		<table class='table footable' data-filter="#search" data-page-size="5">
 			<thead>
 				<tr>
-					<th>Customer</th>
 					<th>From</th>
 					<th>To</th>
 					<th data-hide="phone,tablet">Depart</th>
@@ -63,7 +62,6 @@
 			<tbody>
 			<% @orders.each do |order| %>
 				<%= content_tag :tr, :class => 'order_id_' + order.id.to_s do %>
-					<td><%= order.customer.name %></td>
 					<td><%= order.from %></td>
 					<td><%= order.to %></td>
 					<td><%= order.depart_date %></td>

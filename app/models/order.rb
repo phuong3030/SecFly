@@ -14,6 +14,7 @@ class Order < ActiveRecord::Base
 			"infant_names", 
 			"return_date",  
 			"created_at", 
+			"return_time_slot",
 			"updated_at", 
 			"customer_id"]
 	)
