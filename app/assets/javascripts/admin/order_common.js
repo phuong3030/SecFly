@@ -52,7 +52,7 @@
 			 footable = $('.footable').data('footable'),
 			 statusMap = [
 				 "<span class='order_status new'>NEW</span>",
-			 	 "<span class='order_status view-order'>VIEW ORDER</span>",
+			 	 "<span class='order_status viewed'>VIEWED</span>",
 				 "<span class='order_status sent-email'>SENT EMAIL</span>",
 				 "<span class='order_status sent-tickets'>SENT TICKETS</span>"
 			 ];
@@ -64,7 +64,7 @@
 		for (i = 0, length = data.length; i < length; i++) {
 			(function (index) {
 				var newRow = $(
-						'<tr><td>' + data[index].from 
+						'<tr class="order_id_' + data[index].id + '"><td>' + data[index].from 
 						+ '</td><td>' + data[index].to + '</td><td>'
 						+ data[index].depart_date + '</td><td>' 
 						+ (data[index].return_date || '&nbsp;') + '</td><td>'

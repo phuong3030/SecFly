@@ -63,6 +63,11 @@
 			
 			<div class='sale-text-region'>
 				<h4>Sale region</h4>	
+				<ul class='list-unstyled'>
+					<% @sale_text.collect do |text| %>
+					<%= content_tag :li, text.description %>
+					<% end %>
+				</ul>
 			</div>
 
 			<div class='how-to-request'>

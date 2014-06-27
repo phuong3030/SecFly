@@ -14,6 +14,8 @@ class Home::ServicesController < ApplicationController
 	# GET /travel
 	def travel
 		orders = Order.order('created_at desc').first(5)
+		@sale_banners = Resource.get_sale_banner
+		@sale_text = Resource.get_sale_text
 
 		if orders.size > 0
 			@recently_orders = orders 

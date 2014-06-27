@@ -23,18 +23,29 @@ class Order < ActiveRecord::Base
 	scope :report_by_emp_date_range, 
 		lambda { |start_time, end_time, emp_id|		
 			joins(:accounts).
-			where('orders.created_at >= ? and orders.created_at <= ? and orders.status = 3 and accounts.id = ?', start_time, end_time + 1, emp_id). 
-			order('orders.created_at desc') }
+			where(
+				:orders => { 
+					:created_at => (start_time.to_date)..((end_time + 1).to_date), 
+					:status => 3 
+				}, 
+				:accounts => { :id => emp_id }
+			). 
+			order(:orders.created_at => :desc) }
 
 	scope :filter_by_date_range_status, 
 		lambda { |start_time, end_time, status = 0| 
-			where('created_at >= ? and created_at <= ? and status = ?', start_time, end_time + 1, status). 
-		 	order('created_at desc') }
+		   where(
+		   	:orders => { 
+		   		:created_at => (start_time.to_date)..((end_time + 1).to_date), 
+		   		:status => status 
+		   	}
+		   ). 
+		   order(:created_at => :desc) }
 
 	scope :filter_by_status, 
 		lambda { |status = 0|
-			where('status = ?', status).
-			order('created_at desc') }
+			where(:status => status).
+			order(:created_at => :desc) }
 	
 	def self.get_filter_data(start_time, end_time, status)
 		order = []
