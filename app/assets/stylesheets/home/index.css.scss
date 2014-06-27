@@ -80,6 +80,7 @@
 // banner
 #banner {	
 	.carousel-inner { 
+		// Change banner slide animation to opacity animation
 		.item {
 			opacity: 0;
 			transition: opacity 1.5s ease-out;
@@ -120,16 +121,13 @@
 
 						a {
 							color: #EEEEF7;
-							
-							&:hover, &:focus {
-								color: #FFFFFF;
-							}
 
 							&>p {
 								display: inline-block;
 								padding: 18px;
 								border-top: 1px solid #EEEEF7;
 								border-bottom: 1px solid #EEEEF7;
+								background: rgba(0, 0, 0, .2);
 
 								span {
 									&:first-child {
@@ -150,6 +148,7 @@
 				}
 			}
 
+			// Special style for first banner item
 			&:first-child { 
 				&>.carousel-caption {
 					&>div {
@@ -170,6 +169,25 @@
 				}
 			}
 
+			// Caption style when hover to banner area
+			&:hover, &:focus {
+				&>.carousel-caption {
+					&>div {
+						&>h3 {
+
+							a {
+								color: #FFF8DC;
+
+								&>p {
+									background: rgba(0, 0, 0, .4);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// Style when this banner item active
 			&.active {
 				opacity: 1;
 
@@ -233,6 +251,10 @@
 	}
 
 	.carousel-indicators {
+		left: 48%;
+		margin: 0;
+		width: auto;
+
 		&>li {
 			border: 0 !important;
 			background: #445878;
