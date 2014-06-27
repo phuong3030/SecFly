@@ -13,7 +13,7 @@ body {
 }
 
 .topbar .dropdown .dropdown-menu {
-	background: navy;
+	background: blue;
 }
 
 .form-control { 
@@ -29,11 +29,21 @@ body {
 	}
 }
 
-body, .services-inner, .pageheader .breadcrumb li, 
-.main_nav ul.nav-tabs.desktop li, .topbar .dropdown .dropdown-menu li,
+.pageheader .breadcrumb li, 
+.topbar .dropdown .dropdown-menu li,
 .footer .nav-tabs li, .main_nav .nav-collapse ul li {
 	a {
-		color: rgba(0, 0, 0, .8);
+		color: yellow;
+
+		&:hover, &:focus {
+			color: #EEEEF7;
+		}
+	}
+}
+
+body, .services-inner, .main_nav ul.nav-tabs.desktop li {
+	a {
+		color: rgba(0, 0, 0, 1);
 
 		&:hover, &:focus {
 			color: #EEEEF7;
@@ -65,8 +75,8 @@ body, .services-inner, .pageheader .breadcrumb li,
 
 .blink-me {
 	-webkit-animation: blink 2s infinite steps(1, start);
-
 }
+
 @-webkit-keyframes blink {
 	0%,100%{
 		color: #EEEEF7;
