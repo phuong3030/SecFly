@@ -25,7 +25,7 @@ body {
 	padding-right: 0px;
 
 	h1 {
-		color: yellow;
+		color: rgba(0, 0, 0, .8);
 	}
 }
 
@@ -33,7 +33,7 @@ body, .services-inner, .pageheader .breadcrumb li,
 .main_nav ul.nav-tabs.desktop li, .topbar .dropdown .dropdown-menu li,
 .footer .nav-tabs li, .main_nav .nav-collapse ul li {
 	a {
-		color: yellow;
+		color: rgba(0, 0, 0, .8);
 
 		&:hover, &:focus {
 			color: #EEEEF7;
@@ -53,8 +53,8 @@ body, .services-inner, .pageheader .breadcrumb li,
 	margin-bottom: 10px;
 
 	span {
-		color: yellow;
-		font: 20px Helvetica107XBCN;
+		color: rgba(0, 0, 0, .8);
+		font: 22px Helvetica107XBCN;
 	}
 }
 
@@ -69,7 +69,7 @@ body, .services-inner, .pageheader .breadcrumb li,
 }
 @-webkit-keyframes blink {
 	0%,100%{
-		color: yellow;
+		color: #EEEEF7;
 	}
 	50% {
 		color: red;
@@ -83,7 +83,7 @@ i {
 
 // Content
 .services-inner { 
-	color: yellow;
+	color: rgba(0, 0, 0, .8);
 
 	.img-responsive {
 		min-width: 100%;	
@@ -91,7 +91,7 @@ i {
 	}
 
 	h4, label { 
-		color: yellow;
+		color: rgba(0, 0, 0, .8);
 		font: 18px Helvetica107XBCN;
 	}
 
