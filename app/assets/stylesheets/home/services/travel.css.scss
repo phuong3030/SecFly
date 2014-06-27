@@ -29,7 +29,7 @@ body {
 	}
 }
 
-.pageheader .breadcrumb li, 
+body, .services-inner, .pageheader .breadcrumb li, 
 .topbar .dropdown .dropdown-menu li,
 .footer .nav-tabs li, .main_nav .nav-collapse ul li {
 	a {
@@ -41,13 +41,9 @@ body {
 	}
 }
 
-body, .services-inner, .main_nav ul.nav-tabs.desktop li {
+.main_nav ul.nav-tabs.desktop li {
 	a {
 		color: rgba(0, 0, 0, 1);
-
-		&:hover, &:focus {
-			color: #EEEEF7;
-		}
 	}
 }
 
