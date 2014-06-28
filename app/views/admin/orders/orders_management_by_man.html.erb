@@ -1,6 +1,5 @@
 <% content_for :page_spec do %>
 	<title>Customer orders</title>
-	<%= stylesheet_link_tag "admin/dashboard", media: "all" %>
 	<%= stylesheet_link_tag "footable/footable.core", media: "all" %>
 	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
 	<%= stylesheet_link_tag "jquery-ui-custom", media: "all" %>
@@ -9,7 +8,6 @@
 <% end %>
 
 <% content_for :page_script do %>
-	<%= javascript_include_tag "admin/panel_nav_toggle" %>
 	<%= javascript_include_tag "footable/footable" %>
 	<%= javascript_include_tag "footable/footable.sort" %>
 	<%= javascript_include_tag "footable/footable.paginate" %>

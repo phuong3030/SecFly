@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <%= stylesheet_link_tag "application", :media => "all" %>
+   <%= stylesheet_link_tag "admin/shared/dashboard", :media => "all" %>
 	<%= yield :page_spec %>
    <%= csrf_meta_tags %>
 </head>
@@ -12,6 +13,7 @@
    <%= yield %>
 
    <%= javascript_include_tag "application" %>
+   <%= javascript_include_tag "admin/shared/panel_nav_toggle" %>
 	<%= yield :page_script %>
 </body>
 </html>
