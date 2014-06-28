@@ -1,21 +1,10 @@
 <% content_for :page_spec do %>
 	<title>Customer orders</title>
-	<%= stylesheet_link_tag "footable/footable.core", media: "all" %>
-	<%= stylesheet_link_tag "magnific-popup", media: "all" %>
-	<%= stylesheet_link_tag "jquery-ui-custom", media: "all" %>
-	<%= stylesheet_link_tag "admin/order_emp", media: "all" %>
-	<%= stylesheet_link_tag "admin/order_man", media: "all" %>
+	<%= stylesheet_link_tag "admin/order/order_man", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
-	<%= javascript_include_tag "footable/footable" %>
-	<%= javascript_include_tag "footable/footable.sort" %>
-	<%= javascript_include_tag "footable/footable.paginate" %>
-	<%= javascript_include_tag "magnific-popup" %>
-	<%= javascript_include_tag "websockets/websockets" %>
-	<%= javascript_include_tag "jquery-ui-custom" %>
-	<%= javascript_include_tag "admin/order_common" %>
-	<%= javascript_include_tag "admin/order_man" %>
+	<%= javascript_include_tag "admin/order/order_man_func" %>
 <% end %>
 
 <% content_for :breadcrumbs do %>

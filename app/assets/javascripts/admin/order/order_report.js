@@ -1,3 +1,5 @@
+//= require jquery-ui-custom
+
 (function($, scope) { 
 
 	// Datetime picker event binding

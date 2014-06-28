@@ -1,12 +1,10 @@
 <% content_for :page_spec do %>
 	<title>Customer orders</title>
-	<%= stylesheet_link_tag "jquery-ui-custom", media: "all" %>
-	<%= stylesheet_link_tag "admin/order_report", media: "all" %>
+	<%= stylesheet_link_tag "admin/order/order_report", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
-	<%= javascript_include_tag "jquery-ui-custom" %>
-	<%= javascript_include_tag "admin/order_report" %>
+	<%= javascript_include_tag "admin/order/order_report" %>
 <% end %>
 
 <% content_for :breadcrumbs do %>
