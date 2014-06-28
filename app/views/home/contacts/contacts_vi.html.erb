@@ -1,7 +1,6 @@
 <% content_for :page_spec do %>
 	<title>Contacts</title>
-	<%= stylesheet_link_tag "home/home", media: "all" %>
-	<%= stylesheet_link_tag "home/contacts", media: "all" %>
+	<%= stylesheet_link_tag "home/contact/contacts", media: "all" %>
 <% end %>
 
 <%= currently_at "Contacts" %>
@@ -11,7 +10,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVgvvWayy8jqwz0qqKjJ5_Q8jCHq81VoU&sensor=false">
 	</script>
 
-	<%= javascript_include_tag "home/contacts" %>
+	<%= javascript_include_tag "home/contact/contacts" %>
 <% end %>
 
 <div class='contacts container'>

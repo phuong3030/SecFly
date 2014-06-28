@@ -1,12 +1,10 @@
 <% content_for :page_spec do %>
 	<title><%= @product.name %></title>
-	<%= stylesheet_link_tag "home/home", media: "all" %>
-	<%= stylesheet_link_tag "home/products/product_detail", media: "all" %>
+	<%= stylesheet_link_tag "home/product/product_detail", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
-	<%= javascript_include_tag "zoomsl-3.0.min.js"  %>
-	<%= javascript_include_tag "home/product-detail.js"  %>
+	<%= javascript_include_tag "home/product/product-detail.js"  %>
 <% end %>
 
 <%= currently_at 'Products' %>

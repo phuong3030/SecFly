@@ -1,11 +1,10 @@
 <% content_for :page_spec do %>
 	<title>Home</title>
-	<%= stylesheet_link_tag "home/home", media: "all" %>
-	<%= stylesheet_link_tag "home/index", media: "all" %>
+	<%= stylesheet_link_tag "home/index/index", media: "all" %>
 <% end %>
 
 <% content_for :page_script do %>
-	<%= javascript_include_tag "home/index" %>
+	<%= javascript_include_tag "home/index/index" %>
 <% end %>
 
 <%= currently_at 'Home' %>

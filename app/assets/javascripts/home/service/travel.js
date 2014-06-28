@@ -1,3 +1,7 @@
+//= require jquery-ui-custom
+//= require alertify
+//= require magnific-popup
+
 (function ($) {
 	
 	var placeTitle = $(".place-title>h2"),
