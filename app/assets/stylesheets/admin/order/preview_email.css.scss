@@ -1,0 +1,43 @@
+.mfp-content {
+	padding: 1px;
+	background: #1C1D21;
+	color: #EEEEF7;
+	width: auto !important;
+	border: 1px solid #31353D;
+
+	.travel-logo {
+		width: 60%;
+	}
+
+	.order-detail {
+		padding: 10px 20px;
+		dt {
+			color: #445878;
+		}
+	}
+
+	.preview-email-content { 
+		max-width: 500px;
+		padding: 10px;
+	}
+
+	h3 {
+		color: #92CDCF;
+		font: 20px Helvetica107XBCn; 
+		text-align: center;
+	}
+
+	h4 { 
+		margin-top: 20px;
+		font-size: 14px;
+		color: #92CDCF;
+	}
+
+	.email_order_info {
+		color: #445878;
+	}
+
+	.mfp-close {
+		color: #EEEEF7;
+	}	
+}

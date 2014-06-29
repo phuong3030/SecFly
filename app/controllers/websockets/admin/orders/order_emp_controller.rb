@@ -49,7 +49,17 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			if @order.status < 2
 				@order.status = 2
 
-				logging = OrderProcessing.new(:order_id => @order.id, :account_id => @account.id, :status => 2)
+				OrderMailer.deliver_confirmation_order_email(
+					@order.customer.email, 
+					@order, 
+					@order.customer
+				)
+				
+				logging = OrderProcessing.new(
+					:order_id => @order.id, 
+					:account_id => @account.id, 
+					:status => 2
+				)
 
 				# Only saved and trigger event to logging data when status is valid 
 				if (@order.save && logging.save) 
