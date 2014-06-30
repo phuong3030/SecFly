@@ -51,9 +51,9 @@ gem "paperclip", github: 'thoughtbot/paperclip'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
