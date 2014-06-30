@@ -1,9 +1,11 @@
 require 'bundler/capistrano'
+require 'rvm/capistrano'
 
 set :application, "SecFly"
 set :repository, "git@github.com:phuong3030/SecFly.git"
 
 set :scm, :git
+set :rvm_bin_path, "/usr/local/rvm/bin"
 
 set(:env, 'production') unless exists?(:env)
 set(:branch, 'master') unless exists?(:branch)
@@ -29,10 +31,6 @@ namespace :deploy do
 			sudo "/etc/init.d/nginx #{t}"
 			sudo "/etc/init.d/thin #{t}"
 		end
-	end
-
-	task :precompile do
-		run "cd #{release_path}; source $HOME/.bash_profile && bundle exec rake assets:precompile RAILS_ENV=production"
 	end
 
 	task :migration do

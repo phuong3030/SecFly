@@ -52,8 +52,7 @@ gem "paperclip", github: 'thoughtbot/paperclip'
 # gem 'unicorn'
 
 gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
+gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
