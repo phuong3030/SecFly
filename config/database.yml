@@ -23,9 +23,9 @@ test:
 production:
    adapter: postgresql
    encoding: unicode
-   host: ec2-54-243-48-227.compute-1.amazonaws.com
+   host: localhost
    port: 5432
-   database: d43p0kjorf47o2
+   database: nacenopto
    pool: 5
-   username: hdjcfbxjxktcmu
-   password: jb_-wrAiTnFAn26wO-Bzkvgddp
+   username: nacenopto
+   password:
