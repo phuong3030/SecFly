@@ -29,7 +29,6 @@ set :scm_verbose, true
 
 after "deploy", "deploy:bundle_gems"
 after "deploy", "deploy:migrate"
-after "deploy:migrate", "deploy:restart"
 
 namespace :deploy do
 	[:start, :stop, :restart].each do |t|
@@ -41,11 +40,10 @@ namespace :deploy do
 	end
 
 	task :bundle_gems do 
-		run "cd #{deploy_to}/current && bundle install vendor/gems"
+		run "cd #{deploy_to}/current && bundle install"
 	end
 
 	task :migration do
 		run "cd #{release_path}; source $HOME/.bash_profile && bundle exec rake db:migrate RAILS_ENV=production"
 	end
-
 end
