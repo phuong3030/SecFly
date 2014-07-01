@@ -28,14 +28,15 @@ set :git_shallow_clone, 1
 set :scm_verbose, true
 
 after "deploy", "deploy:bundle_gems"
-after "deploy", "deploy:migrate"
+#after "deploy", "deploy:migrate"
+after "deploy", "deploy:bundle_gems"
 
 namespace :deploy do
 	[:start, :stop, :restart].each do |t|
 		desc "#{t} server"
 		task t, :roles => :app do
-			sudo "/etc/init.d/nginx #{t}"
-			#sudo "/etc/init.d/thin #{t}"
+			run "sudo /etc/init.d/nginx"
+			run "rvmsudo /etc/init.d/thin restart"
 		end
 	end
 
