@@ -28,4 +28,4 @@ production:
    database: nacenopto
    pool: 5
    username: nacenopto
-   password: hinh3hoa
+   password: 
