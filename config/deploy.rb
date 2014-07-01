@@ -35,8 +35,8 @@ namespace :deploy do
 	[:start, :stop, :restart].each do |t|
 		desc "#{t} server"
 		task t, :roles => :app do
-			run "sudo /etc/init.d/nginx"
-			run "rvmsudo /etc/init.d/thin restart"
+			#run "sudo /etc/init.d/nginx"
+			#run "rvmsudo /etc/init.d/thin restart"
 		end
 	end
 
