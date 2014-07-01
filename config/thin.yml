@@ -10,7 +10,7 @@ max_persistent_conns: 512
 threaded: true
 no-epoll: true
 daemonize: true
-socket: tmp/sockets/thin.sock
+socket: /home/deploy/nacenopto/sockets/thin.sock
 chdir: /home/deploy/nacenopto/current
 tag: SecFly 
 address: 0.0.0.0
