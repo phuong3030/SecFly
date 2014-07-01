@@ -1,4 +1,4 @@
-pid: tmp/pids/thin.pid
+pid: /home/deploy/nacenopto/pids/thin.pid
 port: 3000
 timeout: 30
 wait: 30
