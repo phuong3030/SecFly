@@ -35,7 +35,7 @@ namespace :deploy do
 		desc "#{t} server"
 		task t, :roles => :app do
 			sudo "/etc/init.d/nginx #{t}"
-			rvmsudo "/etc/init.d/thin #{t}"
+			#sudo "/etc/init.d/thin #{t}"
 		end
 	end
 
