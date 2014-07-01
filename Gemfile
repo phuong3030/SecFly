@@ -42,17 +42,12 @@ gem 'websocket-rails', :git => 'https://github.com/websocket-rails/websocket-rai
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'execjs'
+
+gem 'therubyracer'
+
 # File uploading plugin
 gem "paperclip", github: 'thoughtbot/paperclip'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
 gem 'capistrano'
 gem 'rvm-capistrano'
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
