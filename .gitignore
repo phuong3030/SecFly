@@ -8,7 +8,6 @@
 /.bundle
 
 Capfile
-/config/deploy.rb
 /config/database.yml
 
 # Ignore the default SQLite database.

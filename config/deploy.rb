@@ -35,7 +35,7 @@ namespace :deploy do
 		desc "#{t} server"
 		task t, :roles => :app do
 			sudo "/etc/init.d/nginx #{t}"
-			sudo "/etc/init.d/thin #{t}"
+			rvmsudo "/etc/init.d/thin #{t}"
 		end
 	end
 
@@ -43,7 +43,7 @@ namespace :deploy do
 		run "cd #{deploy_to}/current && bundle install"
 	end
 
-	task :migration do
-		run "cd #{release_path}; source $HOME/.bash_profile && bundle exec rake db:migrate RAILS_ENV=production"
-	end
+#	task :migration do
+#		run "cd #{release_path}; source $HOME/.bash_profile && bundle exec rake db:migrate RAILS_ENV=production"
+#	end
 end
