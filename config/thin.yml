@@ -11,6 +11,6 @@ threaded: true
 no-epoll: true
 daemonize: true
 socket: tmp/sockets/thin.sock
-chdir: /home/deploy/SecFly
+chdir: /home/deploy/nacenopto/current
 tag: SecFly 
 address: 0.0.0.0
