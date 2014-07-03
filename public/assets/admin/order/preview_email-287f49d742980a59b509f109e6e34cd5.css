@@ -1,0 +1,45 @@
+/* line 1, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content {
+  padding: 1px;
+  background: #1C1D21;
+  color: #EEEEF7;
+  width: auto !important;
+  border: 1px solid #31353D;
+}
+/* line 8, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .travel-logo {
+  width: 60%;
+}
+/* line 12, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .order-detail {
+  padding: 10px 20px;
+}
+/* line 14, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .order-detail dt {
+  color: #445878;
+}
+/* line 19, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .preview-email-content {
+  max-width: 500px;
+  padding: 10px;
+}
+/* line 24, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content h3 {
+  color: #92CDCF;
+  font: 20px Helvetica107XBCn;
+  text-align: center;
+}
+/* line 30, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content h4 {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #92CDCF;
+}
+/* line 36, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .email_order_info {
+  color: #445878;
+}
+/* line 40, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/admin/order/preview_email.css.scss */
+.mfp-content .mfp-close {
+  color: #EEEEF7;
+}

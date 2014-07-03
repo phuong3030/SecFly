@@ -1,1 +1,0 @@
-!function(e){e(".cms-panel-navigation .dropdown > a").click(function(n){var t=n.currentTarget.parentElement.getElementsByTagName("ul")[0];return e(t).slideToggle(400),!1})}(jQuery);
