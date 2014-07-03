@@ -54,7 +54,7 @@
 				<%= render 'home/services/shared/sale_banner' %>
 			</div>
 			
-			<div class='sale-text-region'>
+			<div class='travel-info-region sale-text-region'>
 				<h4>Sale region</h4>	
 				<ul class='list-unstyled'>
 					<% @sale_text.collect do |text| %>
@@ -63,12 +63,12 @@
 				</ul>
 			</div>
 
-			<div class='how-to-request'>
+			<div class='travel-info-region how-to-request'>
 				<i class='fa fa-youtube fa-2x'></i>
 				<a class="popup-youtube" href="https://www.youtube.com/watch?v=Lz48U8npOgc">Guide to request tickets</a>
 			</div>
 
-			<div class='recently-request'>
+			<div class='travel-info-region recently-request'>
 				<h4>Recently requested</h4>	
 				<ul>
 					<% if @recently_orders.size > 0 %>
@@ -87,23 +87,26 @@
 				</ul>
 			</div>
 
-			<div class='contact-info'>
+			<div class='travel-info-region contact-info'>
 				<div class='hotline'>
 					<span class='blink-me'>HOTLINE: </span>
 					<span>+84-4-85 820 820</span>
 				</div>
 				<div class='yahoo'>
 					<a href = 'ymsgr:sendim?nacenopto_1'>
-						<img src="http://opi.yahoo.com/online?u=nacenopto_1&m=g&t=2" border=0>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_1&t=2" border=0>
 					</a>
 					<a href = 'ymsgr:sendim?nacenopto_2'>
-						<img src="http://opi.yahoo.com/online?u=nacenopto_2&m=g&t=2" border=0>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_2&t=2" border=0>
 					</a>
 					<a href = 'ymsgr:sendim?nacenopto_3'>
-						<img src="http://opi.yahoo.com/online?u=nacenopto_3&m=g&t=2" border=0>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_3&t=2" border=0>
 					</a>
 					<a href = 'ymsgr:sendim?nacenopto_4'>
-						<img src="http://opi.yahoo.com/online?u=nacenopto_4&m=g&t=2" border=0>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_4&t=2" border=0>
+					</a>
+					<a href = 'ymsgr:sendim?nacenopto_5'>
+						<img src="http://opi.yahoo.com/online?u=nacenopto_5&t=2" border=0>
 					</a>
 				</div>
 			</div>

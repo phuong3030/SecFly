@@ -10,11 +10,115 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+
+	color: #000000;
 }
 
-.topbar, .nav-button.phone, .footer, .pageheader .breadcrumb, 
-.main_nav .nav-collapse ul li > a:hover, .main_nav .nav-collapse ul li > a:focus {
-	background: rgba(0, 0, 0, 0.1);
+.topbar, .logo-region, .nav-button.phone, .main_nav .nav-collapse ul li > a:hover, 
+.main_nav .nav-collapse ul li > a:focus {
+	background: #003c7b;
+}
+
+.topbar {
+	.container {
+		padding: 0;
+	}
+}
+
+.breadcrumb>li+li:before {
+	content: "|";
+	padding: 0 20px;
+	color: #ccc;
+}
+
+.pageheader .breadcrumb {
+	background: #5f5f5f;
+}
+
+.footer {
+	background: none;
+	color: #000000;	
+
+	.nav-tabs {
+		li {
+			a { 
+				color: #000000;
+
+				&:hover, &:focus {
+					color: #f4831d;
+				}
+			}
+		}
+	}
+}
+
+@mixin footer-desktop-device () {
+	.footer {
+		.container {
+			&>.row {
+				border-top: 1px solid #000000;
+				margin-left: 0;
+				margin-right: 0;
+
+				.col-xs-12 {
+					margin-left: 0;
+					margin-right: 0;
+					padding: 0;
+
+					.nav-tabs {
+						margin-top: 0;
+						margin-left: -45px;
+
+						li {
+							width: 15%;
+
+							a { 
+								color: #000000;
+
+								&:hover, &:focus {
+									color: #f4831d;
+								}
+
+								&:before {
+									content: ' |';
+									padding-right: 15px;
+								}
+							}
+
+							&:first-child {
+								a {
+									margin-left: 15px;
+
+									&:before {
+										content: '';
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								margin-left: -10px;
+							}
+						}
+					}
+
+					.copyright {
+						p {
+							margin-top: 10px;
+							text-align: right;
+
+							&:first-child, &:last-child {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn-danger {
+	float: right;
 }
 
 .topbar .dropdown .dropdown-menu {
@@ -22,8 +126,8 @@ body {
 }
 
 .form-control { 
-	background: rgba(238, 238, 238, 0.9);
-	color: #000000;
+	background: #003c7b;
+	color: #EEEEF7;
 }
 
 .pageheader {
@@ -34,9 +138,17 @@ body {
 	}
 }
 
-body, .services-inner, .pageheader .breadcrumb li, 
+.services-inner a {
+	color: #000000;
+
+	&:hover, &:focus {
+		color: #003c7b;
+	}
+}
+
+.pageheader .breadcrumb li, 
 .topbar .dropdown .dropdown-menu li,
-.footer .nav-tabs li, .main_nav .nav-collapse ul li {
+.main_nav .nav-collapse ul li {
 	a {
 		color: yellow;
 
@@ -47,14 +159,34 @@ body, .services-inner, .pageheader .breadcrumb li,
 }
 
 .main_nav ul.nav-tabs.desktop li {
-	a {
-		color: rgba(0, 0, 0, 1);
-	}
-}
-
-.main_nav ul.nav-tabs.desktop li.active, .main_nav .nav-collapse ul li.active {
-	a {
+	&>a {
 		color: #EEEEF7;
+		font: 16px Helvetica;
+		padding-right: 0;
+
+		&:before {
+			content: '|';
+			padding-right: 12px;
+		}
+
+		&:hover, &:focus {
+			color: yellow;
+		}
+	}
+
+	&:first-child {
+		a {
+			&:before {
+				content: '';
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.active {
+		a {
+			color: yellow;
+		}
 	}
 }
 
@@ -64,14 +196,15 @@ body, .services-inner, .pageheader .breadcrumb li,
 	margin-bottom: 10px;
 
 	span {
-		color: #EEEEF7;
-		font: 22px Helvetica107XBCN;
+		color: #000000;
+		font-size: 16px;
 	}
 }
 
 .header-hotline {
 	margin-top: -40px;
 	margin-bottom: 20px;
+	text-align: right;
 }
 
 .blink-me {
@@ -104,9 +237,19 @@ i {
 		font: 18px Helvetica107XBCN;
 	}
 
+	.travel-info-region {
+		background: rgba(255, 255, 255, 0.5);
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.sale-text-region {
+		margin-top: 20px;
+	}
+
 	.sale-text-region, .sale-banner, .how-to-request, .recently-request {
-		padding: 15px 0;
-		border-bottom: 1px solid yellow;
+		padding: 15px 0 10px 15px;
+		border-bottom: 1px solid #003c7b;
 	}
 
 	.error-details {
@@ -177,7 +320,7 @@ i {
 	.recently-request {
 		.ticket-place {
 			font-size: 15px;
-			color: yellow;
+			color: #003c7b;
 		}
 	}
 }
@@ -250,8 +393,14 @@ $screen-lg-min: 1200px;
 	}
 
 	.header-hotline {
-		margin-top: -145px;	
+		margin-top: -88px;	
+
+		span { 
+			color: #EEEEF7;
+		}
 	}
+
+	@include footer-desktop-device (); 
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -263,8 +412,14 @@ $screen-lg-min: 1200px;
 	}
 
 	.header-hotline {
-		margin-top: -145px;	
+		margin-top: -88px;	
+
+		span { 
+			color: #EEEEF7;
+		}
 	}
+
+	@include footer-desktop-device (); 
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -276,6 +431,12 @@ $screen-lg-min: 1200px;
 	}
 
 	.header-hotline {
-		margin-top: -145px;	
+		margin-top: -88px;	
+
+		span { 
+			color: #EEEEF7;
+		}
 	}
+
+	@include footer-desktop-device (); 
 }
