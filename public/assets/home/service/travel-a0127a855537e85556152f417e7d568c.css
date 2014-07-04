@@ -844,68 +844,69 @@ a:hover, a:focus, a:active {
 }
 /* line 204, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .pageheader h1 {
+  text-transform: uppercase;
   color: #92CDCF;
   font: 36px Helvetica107XBCn;
   margin-bottom: 20px;
 }
-/* line 210, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 211, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .pageheader .breadcrumb {
   background: #1C1D21;
   border: 0;
   border-radius: 0;
 }
-/* line 215, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 216, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .pageheader .breadcrumb li {
   color: #EEEEF7;
 }
-/* line 218, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 219, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .pageheader .breadcrumb li a {
   color: #445878;
 }
-/* line 221, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 222, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .pageheader .breadcrumb li a:hover, .pageheader .breadcrumb li a:focus {
   color: #EEEEF7;
   text-decoration: none;
 }
 
-/* line 231, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 232, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer {
   background: #31353D;
   width: 100%;
   margin-top: 150px;
 }
-/* line 236, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 237, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .nav-tabs {
   border: 0;
   margin: 18px 0 20px 0;
 }
-/* line 240, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 241, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .nav-tabs li {
   width: 100%;
   float: none;
 }
-/* line 244, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 245, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .nav-tabs li > a {
   text-align: center;
   color: #92CDCF;
   border: 0;
   white-space: nowrap;
 }
-/* line 250, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 251, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .nav-tabs li > a:hover, .footer .nav-tabs li > a:focus, .footer .nav-tabs li > a.active {
   background: none;
   color: #EEEEF7;
 }
-/* line 258, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 259, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .copyright {
   border-left: 1px solid #EEEEF7;
   padding-left: 15px;
 }
-/* line 262, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 263, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .copyright p {
   margin: 0;
 }
-/* line 265, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+/* line 266, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
 .footer .copyright p:first-child {
   margin: 2px 0 0 0;
   font: 24px Helvetica107XBCn;
@@ -915,22 +916,22 @@ a:hover, a:focus, a:active {
 /* No media query since this is the default in Bootstrap */
 /* small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  /* line 281, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 282, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .phone {
     display: none !important;
   }
 
-  /* line 285, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 286, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .desktop {
     display: block !important;
   }
 
-  /* line 290, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 291, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .logo-region #logo {
     margin: -40px 0 0 0;
   }
 
-  /* line 297, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 298, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .footer .nav-tabs li {
     float: left;
     width: 18%;
@@ -938,26 +939,26 @@ a:hover, a:focus, a:active {
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 307, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 308, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .phone {
     display: none !important;
   }
 
-  /* line 311, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 312, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .desktop {
     display: block !important;
   }
 
-  /* line 316, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 317, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .logo-region #logo {
     margin: -40px 0 0 0;
   }
 
-  /* line 321, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 322, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .footer .nav-tabs {
     margin: 18px 0 0 0;
   }
-  /* line 324, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 325, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .footer .nav-tabs li {
     float: left;
     width: 18%;
@@ -965,32 +966,40 @@ a:hover, a:focus, a:active {
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 333, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 334, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .phone {
     display: none !important;
   }
 
-  /* line 337, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 338, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .desktop {
     display: block !important;
   }
 
-  /* line 342, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 343, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .logo-region #logo {
     margin: -40px 0 0 0;
   }
 
-  /* line 347, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 348, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .footer .nav-tabs {
     margin: 18px 0 0 0;
   }
-  /* line 350, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
+  /* line 351, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/shared/home.css.scss */
   .footer .nav-tabs li {
     float: left;
     width: 18%;
   }
 }
-/* line 7, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+@font-face {
+  font-family: 'Helvetica-light';
+  src: url("/fonts/helvetica-neue-ultra-light.eot?v=4.0.3");
+  src: url("/fonts/helvetica-neue-ultra-light.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("/fonts/helvetica-neue-ultra-light.woff?v=4.0.3") format("woff"), url("/fonts/helvetica-neue-ultra-light.ttf?v=4.0.3") format("truetype"), url("/fonts/helvetica-neue-ultra-light.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 18, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 body {
   background: url(/images/travel_bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -1000,84 +1009,97 @@ body {
   color: #000000;
 }
 
-/* line 18, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 29, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .topbar, .logo-region, .nav-button.phone, .main_nav .nav-collapse ul li > a:hover,
 .main_nav .nav-collapse ul li > a:focus {
   background: #003c7b;
 }
 
-/* line 23, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 33, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.logo-region {
+  padding-bottom: 0;
+}
+
+/* line 38, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .topbar .container {
   padding: 0;
 }
 
-/* line 28, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 43, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .breadcrumb > li + li:before {
   content: "|";
   padding: 0 20px;
   color: #ccc;
 }
 
-/* line 34, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 49, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .pageheader .breadcrumb {
   background: #5f5f5f;
+  margin-bottom: 0;
 }
 
-/* line 38, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 54, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .footer {
   background: none;
   color: #000000;
 }
-/* line 44, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 60, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .footer .nav-tabs li a {
   color: #000000;
 }
-/* line 47, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 63, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .footer .nav-tabs li a:hover, .footer .nav-tabs li a:focus {
-  color: #f4831d;
+  color: #ff9000;
 }
 
-/* line 120, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 136, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .btn-danger {
   float: right;
 }
 
-/* line 124, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 140, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .topbar .dropdown .dropdown-menu {
-  background: blue;
+  background: #003c7b;
 }
 
-/* line 128, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 144, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .form-control {
   background: #003c7b;
   color: #EEEEF7;
 }
 
-/* line 133, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.pageheader {
-  padding-right: 0px;
+/* line 149, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.pre-header {
+  background: #003c7b;
 }
-/* line 136, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.pageheader h1 {
-  color: rgba(0, 0, 0, 0.8);
+/* line 152, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.pre-header .pageheader {
+  padding-right: 0;
+  margin-bottom: 0;
+}
+/* line 156, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.pre-header .pageheader h1 {
+  text-transform: none;
+  color: #EEEEF7;
+  font: 55px Helvetica-light;
 }
 
-/* line 141, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 164, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .services-inner a {
   color: #000000;
 }
-/* line 144, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 167, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .services-inner a:hover, .services-inner a:focus {
-  color: #003c7b;
+  color: #ff9000;
 }
 
-/* line 152, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 175, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .pageheader .breadcrumb li a,
 .topbar .dropdown .dropdown-menu li a,
 .main_nav .nav-collapse ul li a {
-  color: yellow;
+  color: #ff9000;
 }
-/* line 155, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 178, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .pageheader .breadcrumb li a:hover, .pageheader .breadcrumb li a:focus,
 .topbar .dropdown .dropdown-menu li a:hover,
 .topbar .dropdown .dropdown-menu li a:focus,
@@ -1086,119 +1108,123 @@ body {
   color: #EEEEF7;
 }
 
-/* line 162, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 185, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .main_nav ul.nav-tabs.desktop li > a {
   color: #EEEEF7;
   font: 16px Helvetica;
   padding-right: 0;
 }
-/* line 167, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 190, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .main_nav ul.nav-tabs.desktop li > a:before {
   content: '|';
   padding-right: 12px;
 }
-/* line 172, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 195, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .main_nav ul.nav-tabs.desktop li > a:hover, .main_nav ul.nav-tabs.desktop li > a:focus {
-  color: yellow;
+  color: #ff9000;
 }
-/* line 179, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 202, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .main_nav ul.nav-tabs.desktop li:first-child a:before {
   content: '';
   padding-right: 0;
 }
-/* line 187, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 210, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .main_nav ul.nav-tabs.desktop li.active a {
-  color: yellow;
+  color: #ff9000;
 }
 
-/* line 194, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 217, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .hotline, .header-hotline {
   color: red;
   margin-bottom: 10px;
 }
-/* line 198, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 221, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .hotline span, .header-hotline span {
   color: #000000;
   font-size: 16px;
 }
 
-/* line 204, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 227, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .header-hotline {
-  margin-top: -40px;
+  margin-top: -60px;
   margin-bottom: 20px;
   text-align: right;
 }
 
-/* line 210, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 233, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .blink-me {
   -webkit-animation: blink 2s infinite steps(1, start);
 }
 
 @-webkit-keyframes blink {
-  /* line 215, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 238, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   0%,100% {
     color: #EEEEF7;
   }
 
-  /* line 218, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 241, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   50% {
     color: red;
   }
 }
 
-/* line 223, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 246, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 i {
   vertical-align: middle;
   margin-right: 5px;
 }
 
-/* line 230, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .img-responsive {
+/* line 252, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content {
+  margin-top: 60px;
+}
+/* line 256, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .img-responsive {
   min-width: 100%;
   margin-bottom: 30px;
 }
-/* line 235, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner h4, .services-inner label {
+/* line 261, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner h4, .content .services-inner label {
   color: rgba(0, 0, 0, 0.8);
   font: 18px Helvetica107XBCN;
 }
-/* line 240, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .travel-info-region {
+/* line 266, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .travel-info-region {
   background: rgba(255, 255, 255, 0.5);
   margin-left: -15px;
   margin-right: -15px;
 }
-/* line 246, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .sale-text-region {
+/* line 272, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .sale-text-region {
   margin-top: 20px;
 }
-/* line 250, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .sale-text-region, .services-inner .sale-banner, .services-inner .how-to-request, .services-inner .recently-request {
+/* line 276, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .sale-text-region, .content .services-inner .sale-banner, .content .services-inner .how-to-request, .content .services-inner .recently-request {
   padding: 15px 0 10px 15px;
   border-bottom: 1px solid #003c7b;
 }
-/* line 255, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .error-details {
+/* line 281, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .error-details {
   margin-top: -20px;
 }
-/* line 259, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .error-details ol li {
+/* line 285, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .error-details ol li {
   color: red;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 267, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .adult-name, .services-inner .children-name, .services-inner .infant-name {
+/* line 293, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .adult-name, .content .services-inner .children-name, .content .services-inner .infant-name {
   margin-top: 10px;
   width: 100%;
   z-index: 1;
 }
-/* line 273, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .addition-group {
+/* line 299, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .addition-group {
   position: relative;
 }
-/* line 276, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .addition-group .remove-field {
+/* line 302, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .addition-group .remove-field {
   top: 3px;
   right: 12px;
   position: absolute;
@@ -1206,44 +1232,44 @@ i {
   z-index: 2;
   cursor: pointer;
 }
-/* line 284, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .addition-group .remove-field:hover, .services-inner .addition-group .remove-field:focus {
+/* line 310, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .addition-group .remove-field:hover, .content .services-inner .addition-group .remove-field:focus {
   color: #31353D;
 }
-/* line 292, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .sale-banner-wrapper .carousel-control i {
+/* line 318, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .sale-banner-wrapper .carousel-control i {
   position: absolute;
   top: 45%;
 }
-/* line 298, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .sale-banner-wrapper .carousel-control.right i {
+/* line 324, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .sale-banner-wrapper .carousel-control.right i {
   right: 45%;
 }
-/* line 306, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .yahoo a {
+/* line 332, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .yahoo a {
   display: inline-block;
   margin: 5px 10px 0 0;
 }
-/* line 312, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .btn {
+/* line 338, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .btn {
   margin-bottom: 15px;
 }
-/* line 315, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .btn strong {
+/* line 341, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .btn strong {
   font-size: 16px;
 }
-/* line 321, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
-.services-inner .recently-request .ticket-place {
+/* line 347, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+.content .services-inner .recently-request .ticket-place {
   font-size: 15px;
   color: #003c7b;
 }
 
-/* line 328, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 355, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 .alertify-message {
   color: #31353D;
 }
 
-/* line 332, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 359, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup {
   z-index: 100;
   color: #EEEEF7;
@@ -1252,18 +1278,18 @@ i {
   border-top: 3px solid #445878;
   border-bottom: 3px solid #445878;
 }
-/* line 340, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 367, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup .mfp-close {
   color: #EEEEF7;
   margin: 3px 0 0 0;
 }
-/* line 345, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 372, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup .place-title {
   background: #31353D;
   padding-bottom: 12px;
   height: 44px;
 }
-/* line 350, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 377, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup .place-title h2 {
   font: 24px Helvetica107XBCN;
   color: #92CDCF;
@@ -1271,21 +1297,21 @@ i {
   padding: 0 0 0 15px;
   margin: 6px 0 0 0;
 }
-/* line 359, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 386, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup h4 {
   color: #92CDCF;
   margin-left: 40px;
 }
-/* line 364, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 391, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup ul {
   list-style: none;
 }
-/* line 368, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 395, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup ul li span {
   font-size: 14px;
   color: #EEEEF7;
 }
-/* line 372, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+/* line 399, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
 #place-popup ul li span:hover, #place-popup ul li span:focus {
   cursor: pointer;
   color: #92CDCF;
@@ -1295,216 +1321,219 @@ i {
 /* No media query since this is the default in Bootstrap */
 /* small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  /* line 390, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 417, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .services-inner .error-details {
     margin-top: -40px;
   }
 
-  /* line 395, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 422, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline {
-    margin-top: -88px;
+    margin-top: -28px;
+    margin-bottom: 0;
   }
-  /* line 398, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 426, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline span {
     color: #EEEEF7;
   }
 
-  /* line 58, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 74, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row {
     border-top: 1px solid #000000;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 63, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 79, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
   }
-  /* line 68, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 84, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs {
     margin-top: 0;
     margin-left: -45px;
   }
-  /* line 72, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 88, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li {
     width: 15%;
   }
-  /* line 75, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 91, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a {
     color: #000000;
   }
-  /* line 78, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 94, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:hover, .footer .container > .row .col-xs-12 .nav-tabs li a:focus {
     color: #f4831d;
   }
-  /* line 82, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:before {
     content: ' |';
     padding-right: 15px;
   }
-  /* line 89, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a {
     margin-left: 15px;
   }
-  /* line 92, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 108, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a:before {
     content: '';
   }
-  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 114, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:nth-child(2) {
     margin-left: -10px;
   }
-  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 121, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p {
     margin-top: 10px;
     text-align: right;
   }
-  /* line 109, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 125, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p:first-child, .footer .container > .row .col-xs-12 .copyright p:last-child {
     display: none;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 409, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 437, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .services-inner .error-details {
     margin-top: -40px;
   }
 
-  /* line 414, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 442, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline {
-    margin-top: -88px;
+    margin-top: -28px;
+    margin-bottom: 0;
   }
-  /* line 417, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 446, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline span {
     color: #EEEEF7;
   }
 
-  /* line 58, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 74, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row {
     border-top: 1px solid #000000;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 63, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 79, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
   }
-  /* line 68, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 84, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs {
     margin-top: 0;
     margin-left: -45px;
   }
-  /* line 72, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 88, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li {
     width: 15%;
   }
-  /* line 75, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 91, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a {
     color: #000000;
   }
-  /* line 78, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 94, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:hover, .footer .container > .row .col-xs-12 .nav-tabs li a:focus {
     color: #f4831d;
   }
-  /* line 82, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:before {
     content: ' |';
     padding-right: 15px;
   }
-  /* line 89, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a {
     margin-left: 15px;
   }
-  /* line 92, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 108, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a:before {
     content: '';
   }
-  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 114, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:nth-child(2) {
     margin-left: -10px;
   }
-  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 121, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p {
     margin-top: 10px;
     text-align: right;
   }
-  /* line 109, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 125, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p:first-child, .footer .container > .row .col-xs-12 .copyright p:last-child {
     display: none;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 428, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 457, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .services-inner .error-details {
     margin-top: -40px;
   }
 
-  /* line 433, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 462, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline {
-    margin-top: -88px;
+    margin-top: -28px;
+    margin-bottom: 0;
   }
-  /* line 436, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 466, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .header-hotline span {
     color: #EEEEF7;
   }
 
-  /* line 58, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 74, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row {
     border-top: 1px solid #000000;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 63, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 79, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
   }
-  /* line 68, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 84, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs {
     margin-top: 0;
     margin-left: -45px;
   }
-  /* line 72, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 88, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li {
     width: 15%;
   }
-  /* line 75, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 91, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a {
     color: #000000;
   }
-  /* line 78, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 94, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:hover, .footer .container > .row .col-xs-12 .nav-tabs li a:focus {
     color: #f4831d;
   }
-  /* line 82, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li a:before {
     content: ' |';
     padding-right: 15px;
   }
-  /* line 89, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a {
     margin-left: 15px;
   }
-  /* line 92, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 108, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:first-child a:before {
     content: '';
   }
-  /* line 98, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 114, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .nav-tabs li:nth-child(2) {
     margin-left: -10px;
   }
-  /* line 105, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 121, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p {
     margin-top: 10px;
     text-align: right;
   }
-  /* line 109, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
+  /* line 125, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/service/travel.css.scss */
   .footer .container > .row .col-xs-12 .copyright p:first-child, .footer .container > .row .col-xs-12 .copyright p:last-child {
     display: none;
   }
