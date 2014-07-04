@@ -23,7 +23,7 @@ module Home
 					'shared/home/pageheader', 
 					:links => links, 
 					:header => ((header_translated.include? 'class="translation_missing"') ? header \
-									: header_translated).mb_chars.upcase.to_s
+									: header_translated).mb_chars.to_s
 				)
 			end
 		end

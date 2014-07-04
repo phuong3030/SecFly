@@ -1,5 +1,5 @@
 <% content_for :page_spec do %>
-	<title>Travel</title>
+	<title>Travel agency</title>
 	<%= stylesheet_link_tag "home/service/travel", media: "all" %>
 <% end %>
 
@@ -9,24 +9,26 @@
 
 <%= currently_at 'Services' %>
 
-<div class='content container'>
-	
-	<div class='row'>	
-		<%= render_page_header(
-			'Travel',
-			[
-				{ :name => 'Home', :path => root_path },
-				{ :name => 'Services', :path => services_path },
-				{ :name => 'Travel' } 
-			]
-		)%>
-
-		<div class='col-xs-12 col-md-3 col-md-offset-9 header-hotline'>
-			<span class='blink-me'>HOTLINE: </span>
-			<span>+84-4-85 820 820</span>
+<div class='pre-header container-fluid'> 
+	<div class='container'>
+		<div class='row'>	
+			<%= render_page_header(
+				'Travel',
+				[
+					{ :name => 'Home', :path => root_path },
+					{ :name => 'Services', :path => services_path },
+					{ :name => 'Travel' } 
+				]
+			)%>
+			<div class='col-xs-12 col-md-3 col-md-offset-9 header-hotline'>
+				<span class='blink-me'>HOTLINE: </span>
+				<span>+84-4-85 820 820</span>
+			</div>
 		</div>
 	</div>
+</div>
 
+<div class='content container'>
 	<div class='services-inner row'>
 		<% if flash[:notice] %>
 			<div class='col-xs-12 col-md-12'>
