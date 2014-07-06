@@ -383,30 +383,32 @@ a:hover, a:focus, a:active {
 }
 /* line 44, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .services-head-info h5 {
-  margin-top: 0;
+  margin-top: 20px;
+  font-style: italic;
   color: #EEEEF7;
+  font-size: 16px;
 }
-/* line 50, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 52, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile {
   -moz-box-shadow: 3px 3px 5px 6px #445878;
   -webkit-box-shadow: 3px 3px 5px 6px #445878;
   box-shadow: 3px 3px 5px 6px #445878;
   padding: 25px 40px 40px 40px;
 }
-/* line 54, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 56, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner {
   border-left: 2px solid #1C1D21;
   border-right: 2px solid #1C1D21;
   border-bottom: 4px solid #31354A;
 }
-/* line 59, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 61, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner hr {
   margin: 0;
   padding: 0;
   height: 4px;
   border-top: 4px solid #445878;
 }
-/* line 66, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 68, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner h3 {
   font: 24px Helvetica107XBCn;
   color: #EEEEF7;
@@ -414,15 +416,15 @@ a:hover, a:focus, a:active {
   margin-top: 0px;
   padding-top: 10px;
 }
-/* line 74, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 76, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner p {
   padding: 0 15px;
 }
-/* line 78, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 80, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner ul {
   list-style: none;
 }
-/* line 81, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
+/* line 83, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/subsidiary/iit.css.scss */
 .services-inner .profile .profile-inner ul li:before {
   content: "-";
   margin-right: 8px;

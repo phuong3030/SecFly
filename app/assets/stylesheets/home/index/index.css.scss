@@ -171,6 +171,7 @@
 				}
 			}
 
+
 			// Caption style when hover to banner area
 			&:hover, &:focus {
 				&>.carousel-caption {
@@ -220,6 +221,17 @@
 
 							&>p {
 								top: 75%;
+							}
+						}
+					}
+				}
+			
+				&.products { 
+					&>.carousel-caption {
+						&>div {
+							&>h3 {
+								top: 12%;
+								left: 12%;
 							}
 						}
 					}

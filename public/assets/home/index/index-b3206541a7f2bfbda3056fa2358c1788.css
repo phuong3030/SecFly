@@ -425,49 +425,54 @@ a:hover, a:focus, a:active {
   text-align: left;
   font-size: 14px;
 }
-/* line 180, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 181, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item:hover > .carousel-caption > div > h3 a, #banner .carousel-inner .item:focus > .carousel-caption > div > h3 a {
   color: #FFF8DC;
 }
-/* line 183, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 184, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item:hover > .carousel-caption > div > h3 a > p, #banner .carousel-inner .item:focus > .carousel-caption > div > h3 a > p {
   background: rgba(0, 0, 0, 0.4);
 }
-/* line 193, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 194, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active {
   opacity: 1;
 }
-/* line 196, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 197, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active .left, #banner .carousel-inner .item.active .right {
   left: 0;
   opacity: 0;
   z-index: 1000;
 }
-/* line 204, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 205, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active .carousel-caption > div > h3 {
   top: 30%;
 }
-/* line 208, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 209, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active .carousel-caption > div > p {
   top: 70%;
 }
-/* line 217, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 218, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active:first-child > .carousel-caption > div > h3 {
   top: 12%;
 }
-/* line 221, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 222, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .item.active:first-child > .carousel-caption > div > p {
   top: 75%;
 }
-/* line 230, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 232, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+#banner .carousel-inner .item.active.products > .carousel-caption > div > h3 {
+  top: 12%;
+  left: 12%;
+}
+/* line 242, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-inner .next.left, #banner .carousel-inner .prev.right {
   opacity: 1;
 }
-/* line 235, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 247, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-control {
   z-index: 2000;
 }
-/* line 239, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 251, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-control {
   background: transparent;
   opacity: .3;
@@ -478,44 +483,44 @@ a:hover, a:focus, a:active {
   opacity: .9;
   filter: alpha(opacity=90);
 }
-/* line 243, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 255, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-control > i {
   position: absolute;
   top: 45%;
 }
-/* line 249, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 261, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-control.right i {
   right: 50%;
 }
-/* line 255, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 267, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-indicators {
   left: 48%;
   margin: 0;
   width: auto;
 }
-/* line 260, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 272, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-indicators > li {
   border: 0 !important;
   background: #445878;
 }
-/* line 264, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 276, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 #banner .carousel-indicators > li.active {
   background: #31353D;
 }
 
-/* line 272, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 284, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 h2 {
   color: #92CDCF;
   font: 24px Helvetica107XBCn;
   text-align: center;
 }
-/* line 277, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 289, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 h2 span {
   display: inline-block;
   padding: 0px 15px;
   background: url("/images/bg_pattern.png");
 }
-/* line 283, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 295, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 h2:before {
   position: absolute;
   z-index: -1;
@@ -528,27 +533,27 @@ h2:before {
   content: "";
 }
 
-/* line 297, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 309, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .services {
   margin-top: 30px;
 }
-/* line 300, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 312, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .services .heading {
   margin-bottom: 10px;
 }
-/* line 304, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 316, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .services h3 {
   color: #92CDCF;
   font: 24px Helvetica107XBCn;
   font-size: 18px;
   margin-bottom: 20px;
 }
-/* line 312, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 324, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .services .services-description img {
   float: right;
 }
 
-/* line 320, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 332, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .partners .carousel-control {
   opacity: .3;
   filter: alpha(opacity=30);
@@ -558,61 +563,61 @@ h2:before {
   opacity: .9;
   filter: alpha(opacity=90);
 }
-/* line 323, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 335, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .partners .carousel-control > i {
   position: absolute;
   top: 42%;
 }
-/* line 329, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 341, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .partners .carousel-control.right > i {
   left: 65%;
 }
-/* line 335, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 347, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .partners .carousel-control.left > i {
   left: 28%;
 }
-/* line 341, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 353, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .partners img {
   margin-bottom: 2px;
   max-height: 100px;
   width: auto;
 }
 
-/* line 349, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 361, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .about-us {
   color: #EEEEF7;
 }
-/* line 352, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 364, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .about-us .left-side {
   width: 50%;
   float: left;
 }
-/* line 357, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 369, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .about-us .clear {
   margin-top: 30px;
 }
-/* line 362, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 374, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .about-us .commitment > p {
   margin: 0;
 }
-/* line 369, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 381, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .contacts .office {
   margin-right: 10px;
 }
-/* line 373, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 385, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .contacts .clear {
   margin-bottom: 40px;
 }
-/* line 376, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 388, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .contacts .clear > a {
   display: inline-block;
   margin-top: 25px;
 }
-/* line 383, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 395, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .contacts .address > p {
   margin: 0;
 }
-/* line 386, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+/* line 398, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
 .companyinfo .contacts .address > p:first-child {
   font: 18px Helvetica107XBCn;
   color: #92CDCF;
@@ -699,12 +704,12 @@ h2:before {
     left: 30%;
   }
 
-  /* line 414, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 426, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .services-description {
     min-height: 220px;
   }
 
-  /* line 418, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 430, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .companyinfo .contacts .office {
     float: left;
   }
@@ -748,12 +753,12 @@ h2:before {
     left: 30%;
   }
 
-  /* line 428, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 440, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .services-description {
     min-height: 220px;
   }
 
-  /* line 432, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 444, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .companyinfo .contacts .office {
     float: left;
   }
@@ -797,18 +802,18 @@ h2:before {
     left: 30%;
   }
 
-  /* line 445, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 457, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   #banner .carousel-inner .item.active:first-child > .carousel-caption > div > h3 {
     top: 20%;
     left: 60%;
   }
 
-  /* line 453, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 465, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .services-description {
     min-height: 220px;
   }
 
-  /* line 457, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
+  /* line 469, /home/phuong3030/Documents/SecFly/app/assets/stylesheets/home/index/index.css.scss */
   .companyinfo .contacts .office {
     float: left;
   }
