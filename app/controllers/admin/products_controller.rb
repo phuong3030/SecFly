@@ -59,8 +59,8 @@ class Admin::ProductsController < Admin::DashboardController
 	def set_admin_product
 		@product = Product.find(params[:id])
 
-		rescue ActiveRecord::RecordNotFound
-			redirect_to :controller => 'errors', :action => 'show', :code => '404' 
+	rescue ActiveRecord::RecordNotFound
+		redirect_to :controller => 'errors', :action => 'show', :code => '404' 
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.

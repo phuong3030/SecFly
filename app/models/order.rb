@@ -1,10 +1,10 @@
 class Order < ActiveRecord::Base
 
 	belongs_to :customer
-   has_many :accounts, :through => :order_processings
-   has_many :order_processings, :dependent => :destroy, :autosave => true
+	has_many :accounts, :through => :order_processings
+	has_many :order_processings, :dependent => :destroy, :autosave => true
 
-   acts_as_xlsx
+	acts_as_xlsx
 
 	validates_presence_of(
 		self.column_names - [
@@ -20,38 +20,54 @@ class Order < ActiveRecord::Base
 	)
 	validate :depart_date_cannot_be_greater_than_return_date 
 
-	scope :report_by_emp_date_range, 
-		lambda { |start_time, end_time, emp_id|		
+	scope(
+		:report_by_emp_date_range, 
+		lambda { 
+			|start_time, end_time, emp_id|
 			joins(:accounts).
+				where(
+					:orders => { 
+						:created_at => (start_time.to_date)..((end_time + 1).to_date), 
+						:status => 3 
+					}, 
+					:accounts => { :id => emp_id }
+			). 
+			order(:orders.created_at => :desc) 
+		}
+	)
+
+	scope(
+		:filter_by_date_range_status, 
+		lambda { 
+			|start_time, end_time, status = 0| 
 			where(
 				:orders => { 
 					:created_at => (start_time.to_date)..((end_time + 1).to_date), 
-					:status => 3 
-				}, 
-				:accounts => { :id => emp_id }
+					:status => status 
+				}
 			). 
-			order(:orders.created_at => :desc) }
+			order(:created_at => :desc) 
+		}
+	)
 
-	scope :filter_by_date_range_status, 
-		lambda { |start_time, end_time, status = 0| 
-		   where(
-		   	:orders => { 
-		   		:created_at => (start_time.to_date)..((end_time + 1).to_date), 
-		   		:status => status 
-		   	}
-		   ). 
-		   order(:created_at => :desc) }
-
-	scope :filter_by_status, 
-		lambda { |status = 0|
+	scope(
+		:filter_by_status, 
+		lambda { 
+			|status = 0|
 			where(:status => status).
-			order(:created_at => :desc) }
-	
+			order(:created_at => :desc) 
+		}
+	)
+
 	def self.get_filter_data(start_time, end_time, status)
 		order = []
 
 		if start_time && end_time
-			orders = Order.filter_by_date_range_status(start_time.to_date, end_time.to_date, status)
+			orders = Order.filter_by_date_range_status(
+				start_time.to_date, 
+				end_time.to_date, 
+				status
+			)
 		else 
 			orders = Order.filter_by_status(status)
 		end
@@ -63,15 +79,31 @@ class Order < ActiveRecord::Base
 		# Order filter and get data to export to excel
 		if start_time && start_time != "" && end_time && end_time != ""
 			if emp_id && emp_id != "" 
-				orders = Order.report_by_emp_date_range(start_time.to_date, end_time.to_date, emp_id)
+				orders = Order.report_by_emp_date_range(
+					start_time.to_date, 
+					end_time.to_date, 
+					emp_id
+				)
 			else
-				orders = Order.filter_by_date_range_status(start_time.to_date, end_time.to_date, 3)
+				orders = Order.filter_by_date_range_status(
+					start_time.to_date, 
+					end_time.to_date, 
+					3
+				)
 			end
-		else
+		else # for default or empty filter param from user
 			if emp_id && emp_id != "" 
-				orders = Order.report_by_emp_date_range(30.days.ago, Date.today, emp_id)
+				orders = Order.report_by_emp_date_range(
+					30.days.ago, 
+					Date.today, 
+					emp_id
+				)
 			else
-				orders = Order.filter_by_date_range_status(30.days.ago, Date.today, 3)
+				orders = Order.filter_by_date_range_status(
+					30.days.ago, 
+					Date.today, 
+					3
+				)
 			end
 		end
 	end
@@ -79,7 +111,10 @@ class Order < ActiveRecord::Base
 	def depart_date_cannot_be_greater_than_return_date
 		if (return_date)
 			if depart_date > return_date
-				errors.add(:depart_date, "can't be greater than return date")
+				errors.add(
+					:depart_date, 
+					"can't be greater than return date"
+				)
 			end
 		end
 	end

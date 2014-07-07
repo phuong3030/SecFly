@@ -7,7 +7,7 @@ class Home::ProductsController < ApplicationController
 	def index
 		@number_of_item = params[:_number_of_item] || 8
 		@filtered_category_id = params[:_category_id]
-		
+
 		@categories = Category.select(:id, :name).order(:name)
 		@products = Product.get_filter_paging_data(
 			@filtered_category_id,
@@ -26,8 +26,8 @@ class Home::ProductsController < ApplicationController
 	def set_product
 		@product = Product.find_by_name!(params[:id].tr('-', ' '))
 
-		rescue ActiveRecord::RecordNotFound
-			redirect_to :controller => 'errors', :action => 'show', :code => '404' 
+	rescue ActiveRecord::RecordNotFound
+		redirect_to :controller => 'errors', :action => 'show', :code => '404' 
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.

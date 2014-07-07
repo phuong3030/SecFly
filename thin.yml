@@ -10,7 +10,6 @@ max_persistent_conns: 512
 threaded: true
 no-epoll: true
 daemonize: true
-socket: /home/deploy/nacenopto/sockets/thin.sock
 chdir: /home/deploy/nacenopto/current
 tag: nacenopto 
 address: 0.0.0.0

@@ -13,7 +13,14 @@ module Home::ProductsHelper
 				grid_class << ((i + 1) % 4 == 1 ? 'first-item-in-desktop-row ' : '')
 				grid_class << ((i + 1) % 2 == 1 ? 'first-item-in-tablet-row ' : '')
 
-				list_product << (render 'home/products/product_view', :product => products[i], :grid_class => grid_class)			
+				list_product << render(
+					:partial => 'home/products/product_view', 
+					:locals => {
+						:product => products[i], 
+						:grid_class => grid_class
+					}
+				)
+
 			end
 
 			list_product.html_safe
@@ -39,7 +46,6 @@ module Home::ProductsHelper
 			{
 				:class => 'form-control'
 			}
-
 		)	
 	end
 

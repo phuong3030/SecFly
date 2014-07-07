@@ -5,6 +5,7 @@ class OrderMailer < ActionMailer::Base
 	def confirmation_order_email(to, order, customer)
 		@order = order
 		@customer = customer
+
 		mail(:to => to, :subject => "Please confirm your request tickets")
 	end
 

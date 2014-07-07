@@ -52,8 +52,8 @@ class Admin::ResourcesController < Admin::DashboardController
 	def set_resource
 		@resource = Resource.find(params[:id])
 
-		rescue ActiveRecord::RecordNotFound
-			redirect_to :controller => 'errors', :action => 'show', :code => '404' 
+	rescue ActiveRecord::RecordNotFound
+		redirect_to :controller => 'errors', :action => 'show', :code => '404' 
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.

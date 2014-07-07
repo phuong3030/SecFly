@@ -14,12 +14,18 @@ module Admin
 				content_tag(:ul, :class => 'breadcrumb') do 
 
 					(0...links.length - 1).step(1) do |i|
-						ul_content << (content_tag :li, link_to(links[i][:name], links[i][:path]))
+						ul_content << (
+							content_tag :li, 
+							link_to(
+								links[i][:name], 
+								links[i][:path]
+							)
+						)
 					end
 
 					(ul_content + (content_tag :li, links[links.length - 1][:name])).html_safe
 				end
-				
+
 			end
 
 		end

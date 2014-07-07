@@ -7,7 +7,7 @@ class Resource < ActiveRecord::Base
 	validates_attachment_size :image, :less_than => 3.megabytes
 
 	validates :name, :presence => true
-   validates :name, uniqueness: { case_sensitive: false }
+	validates :name, uniqueness: { case_sensitive: false }
 
 	scope :get_sale_banner, -> { where(:resource_type => 2) }
 	scope :get_sale_text, -> { where(:resource_type => 3) }
