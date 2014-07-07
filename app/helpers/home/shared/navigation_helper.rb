@@ -3,7 +3,7 @@ module Home
 		module NavigationHelper
 			def nav_tab(title, url, options = {})
 				current_tab = options.delete(:current)
-				options[:class] = (current_tab == title) ? 'active' : ''
+				options = options.merge(:class, (current_tab == title) ? 'active' : '')
 				content_tag(:li, link_to(t('main_nav.' + title), url), options)
 			end
 

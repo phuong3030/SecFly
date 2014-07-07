@@ -19,13 +19,19 @@ class Account < ActiveRecord::Base
 
 	def self.create_account(username, email, password)
       password_hash = PasswordHash::create_hash(password)
-      account = Account.create(:username => username, :email => email, :password_hash => password_hash)
+      account = Account.create(
+      	:username => username, 
+      	:email => email, 
+      	:password_hash => password_hash
+      )
    end
 
 	def check_user_credential(password)
       PasswordHash::validate_password(password, self.password_hash)
    end
 
+	private
+	# Todo: change the way how to store and verify user' roles
 	def get_role
 		if self.roles[0]	
 			self.roles[0].role_type 
