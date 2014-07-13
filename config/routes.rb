@@ -1,6 +1,5 @@
 SecFly::Application.routes.draw do
 
-	devise_for :models
 	scope ":locale", :locale => /#{I18n.available_locales.join("|")}/ do 
 
 		namespace :admin do
