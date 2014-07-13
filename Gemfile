@@ -36,6 +36,9 @@ gem 'uglifier', '>= 1.3.0'
 # paginator
 gem 'kaminari'
 
+# authentication
+gem 'devise'
+
 # websockets for rails
 gem 'websocket-rails', :git => 'https://github.com/websocket-rails/websocket-rails.git'
 

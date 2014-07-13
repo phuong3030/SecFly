@@ -65,6 +65,7 @@ GEM
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.4.1)
       rubyzip (~> 1.0.0)
+    bcrypt (3.1.7)
     builder (3.2.2)
     capistrano (2.15.5)
       highline
@@ -78,6 +79,12 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     daemons (1.1.9)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     em-synchrony (1.0.3)
       eventmachine (>= 1.0.0.beta.1)
     erubis (2.7.0)
@@ -116,6 +123,7 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
@@ -190,6 +198,8 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     websocket-driver (0.3.3)
 
 PLATFORMS
@@ -198,6 +208,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_xlsx!
   capistrano
+  devise
   execjs
   jquery-rails
   kaminari

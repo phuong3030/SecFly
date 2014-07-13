@@ -1,5 +1,6 @@
 SecFly::Application.routes.draw do
 
+	devise_for :models
 	scope ":locale", :locale => /#{I18n.available_locales.join("|")}/ do 
 
 		namespace :admin do
@@ -9,7 +10,7 @@ SecFly::Application.routes.draw do
 			post "/logout" => "admin#logout"
 
 			resources :dashboard, :only => [:index]
-			
+
 			scope :orders do
 				get "/" => "orders#index", :as => "orders"
 				get "/orders-management-emp" => "orders#orders_management_by_emp"
