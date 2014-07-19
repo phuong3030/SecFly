@@ -27,25 +27,19 @@ role :db, domain, :primary => true
 set :git_shallow_clone, 1
 set :scm_verbose, true
 
-after "deploy", "deploy:bundle_gems"
-#after "deploy", "deploy:migrate"
-after "deploy", "deploy:bundle_gems"
-
 namespace :deploy do
-	[:start, :stop, :restart].each do |t|
-		desc "#{t} server"
-		task t, :roles => :app do
-			#run "sudo /etc/init.d/nginx reload"
-			#run "sudo /etc/init.d/nginx restart"
-			#run "rvmsudo /etc/init.d/thin restart"
-		end
+	task :start_server do 
+		run "thin start -C '/home/deploy/#{application}/current/thin.yml"
 	end
 
+	taks :stop_server do
+		run "thin stop -C '/home/deploy/#{application}/current/thin.yml"
+	end
+	
 	task :bundle_gems do 
 		run "cd #{deploy_to}/current && bundle install"
 	end
-
-#	task :migration do
-#		run "cd #{release_path}; source $HOME/.bash_profile && bundle exec rake db:migrate RAILS_ENV=production"
-#	end
 end
+
+before "deploy", "deploy:stop_server"
+after "deploy", "deploy:bundle_gems", "deploy:migrate", "deploy:start_server"
