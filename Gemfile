@@ -4,24 +4,24 @@ gem 'rails'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3'
+  gem 'sqlite3'
 
-	# Use for debug
-	gem 'pry'
+  # Use for debug
+  gem 'pry'
 end
 
 # Use postgreSQL as production database
 group :production, :staging do
-	gem 'pg'
-	gem 'thin'
+  gem 'pg'
+  gem 'thin'
 
-	# generate sitemap
-	gem 'sitemap_generator'
+  # generate sitemap
+  gem 'sitemap_generator'
 end
 
 group :doc do
-	# bundle exec rake doc:rails generates the API under doc/api.
-	gem 'sdoc', require: false
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
 
 # Generate excel file
