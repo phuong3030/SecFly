@@ -20,8 +20,8 @@ group :production, :staging do
 end
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+	# bundle exec rake doc:rails generates the API under doc/api.
+	gem 'sdoc', require: false
 end
 
 # Generate excel file
@@ -29,6 +29,9 @@ gem 'acts_as_xlsx', git: 'git://github.com/straydogstudio/acts_as_xlsx.git'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+
+# Better for html mail
+gem 'roadie-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

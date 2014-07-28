@@ -49,7 +49,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 			if @order.status < 2
 				@order.status = 2
 
-				OrderMailer.deliver_confirmation_order_email(
+				OrderMailer.confirmation_order_email(
 					@order.customer.email, 
 					@order, 
 					@order.customer
