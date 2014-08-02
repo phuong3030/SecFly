@@ -70,24 +70,7 @@
 				<a class="popup-youtube" href="https://www.youtube.com/watch?v=Lz48U8npOgc">Guide to request tickets</a>
 			</div>
 
-			<div class='travel-info-region recently-request'>
-				<h4>Recently requested</h4>	
-				<ul>
-					<% if @recently_orders.size > 0 %>
-						<% @recently_orders.size.times do |i| %>
-							<%= 
-								content_tag :li do 
-									content_tag(:span, @customers[i] + ' purchased ' + @quantity[i].to_s + ' tickets ') +
-									content_tag(:span, @recently_orders[i][:from] + ' - ' + @recently_orders[i][:to], :class => 'ticket-place') +
-									content_tag(:span, @recently_orders[i][:depart_date].strftime(' at %d/%m/%Y'), :class => 'ticket-time')
-								end
-							%>
-						<% end %>
-					<% else %>
-						<p>We have no recently customer request tickets</p>
-					<% end %>
-				</ul>
-			</div>
+			
 
 			<div class='travel-info-region contact-info'>
 				<div class='hotline'>

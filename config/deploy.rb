@@ -32,7 +32,7 @@ namespace :deploy do
 		run "thin start -C '/home/deploy/#{application}/current/thin.yml"
 	end
 
-	taks :stop_server do
+	task :stop_server do
 		run "thin stop -C '/home/deploy/#{application}/current/thin.yml"
 	end
 	
@@ -41,5 +41,5 @@ namespace :deploy do
 	end
 end
 
-before "deploy", "deploy:stop_server"
-after "deploy", "deploy:bundle_gems", "deploy:migrate", "deploy:start_server"
+#before "deploy", "deploy:stop_server"
+#after "deploy", "deploy:bundle_gems", "deploy:migrate", "deploy:start_server"
