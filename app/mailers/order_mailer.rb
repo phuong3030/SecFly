@@ -1,6 +1,6 @@
 class OrderMailer < ActionMailer::Base
 
-	default from: "sir1003dem@gmail.com"
+  default from: "travel@mail.nacenopto.com"
 
 	def confirmation_order_email(to, order, customer)
 		@order = order

@@ -79,4 +79,18 @@ SecFly::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.raise_delivery_errors = true
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.smtp_settings = {
+    :address =>	"mail.nacenopto.com",
+			:port => 465,
+			:domain => "nacenopto.com",
+      :user_name => "travel@mail.nacenopto.com",
+      :password => "nacenoptomail12",
+			:authentication => :login,
+			:enable_starttls_auto => true,
+			:ssl => true
+	}
+
 end

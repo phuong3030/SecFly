@@ -42,13 +42,17 @@ h4 {
 	color: #445878;
 }
 
+#travel-logo img {
+  max-width: 300px;
+}
+
 </style>
 </head>
 <body>
 <div class="mfp-content">
 	<div class="preview-email-content">
 		<div class='travel-logo'> 
-			<img class='img-responsive' src='/images/travel-logo.png' alt='Nacenopto travel agency' />
+			<img class='img-responsive' src='http://nacenopto.com/images/travel-logo.png' alt='Nacenopto travel agency' style="width:300px;" />
 		</div>
 		<h3>Thank you for purchasing your tickets at Nacenopto.com!</h3>
 
@@ -57,15 +61,15 @@ h4 {
 		email or call us at +84-4-85 820 820. 
 		</p>
 
-		<p><span class='email_order_info'>Order Number: </span><span class="email_order_id"></span></p> 
-		<p><span class='email_order_info'>Passenger(s): </span><span class="email_customer_name"></span></p> 
-		<p><span class='email_order_info'>Order Date: </span><span class="email_order_created_at"></span></p> 
+    <p><span class='email_order_info'>Order Number: </span><span class="email_order_id"><%= @order.id %></span></p> 
+    <p><span class='email_order_info'>Passenger(s): </span><span class="email_customer_name"><%= @order.customer.name %></span></p> 
+    <p><span class='email_order_info'>Order Date: </span><span class="email_order_created_at"><%= @order.created_at %></span></p> 
 
 		<h4>Ticket(s) information: </h4> 
-		<p><span class='email_order_info'>From: </span><span class="email_from"></span></p>
-		<p><span class='email_order_info'>To: </span><span class="email_to"></span></p>
-		<p><span class='email_order_info'>Depart: </span><span class="email_depart"></span></p>
-		<p><span class='email_order_info'>Return: </span><span class="email_return"></span></p>
+    <p><span class='email_order_info'>From: </span><span class="email_from"><%= @order.from %></span></p>
+		<p><span class='email_order_info'>To: </span><span class="email_to"><%= @order.to %></span></p>
+		<p><span class='email_order_info'>Depart: </span><span class="email_depart"><%= @order.depart_date %></span></p>
+		<p><span class='email_order_info'>Return: </span><span class="email_return"><%= @order.return_date %></span></p>
 		<p><span class='email_order_info'>Status: </span><span class="ticket_status">Confirmed bussiness</span></p>
 		<p>
 		<span class='email_order_info'>Flight information: </span>
