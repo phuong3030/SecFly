@@ -29,11 +29,17 @@ set :scm_verbose, true
 
 namespace :deploy do
 	task :start_server do 
-		run "thin start -C '/home/deploy/#{application}/current/thin.yml"
+		run <<-SHELL
+		  cd #{deploy_to}/current/ 
+		  thin start -C #{deploy_to}/current/thin.yml
+		SHELL
 	end
 
 	task :stop_server do
-		run "thin stop -C '/home/deploy/#{application}/current/thin.yml"
+		run <<-SHELL
+		  cd #{deploy_to}/current/ 
+		  thin stop -C '#{deploy_to}/current/thin.yml
+		SHELL
 	end
 	
 	task :bundle_gems do 
@@ -41,5 +47,5 @@ namespace :deploy do
 	end
 end
 
-#before "deploy", "deploy:stop_server"
-#after "deploy", "deploy:bundle_gems", "deploy:migrate", "deploy:start_server"
+before "deploy", "deploy:stop_server"
+after "deploy", "deploy:bundle_gems", "deploy:migrate", "deploy:start_server"
