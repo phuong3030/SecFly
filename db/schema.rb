@@ -86,7 +86,9 @@ ActiveRecord::Schema.define(version: 20140613141913) do
   create_table "products", force: true do |t|
     t.integer  "category_id"
     t.string   "name"
+    t.string   "name_vi"
     t.text     "description"
+    t.text     "description_vi"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

@@ -30,4 +30,21 @@ class Product < ActiveRecord::Base
 		name
 	end
 
+  def name
+    if I18n.locale == :en
+      read_attribute(:name)
+    else 
+      read_attribute(:name_vi)
+    end
+  end
+
+  def description
+    if I18n.locale == :en
+      read_attribute(:description)
+    else 
+      read_attribute(:description_vi)
+    end
+
+  end
+
 end

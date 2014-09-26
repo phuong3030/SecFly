@@ -4,7 +4,9 @@ class CreateProducts < ActiveRecord::Migration
 			t.belongs_to :category
 
 			t.string :name
+			t.string :name_vi
 			t.text :description
+			t.text :description_vi
 			t.attachment :image
 			t.timestamps
 		end

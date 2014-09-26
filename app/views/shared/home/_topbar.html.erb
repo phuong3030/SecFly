@@ -9,15 +9,12 @@
 				<span class='sitemap'><a href='/sitemap.xml'>Sitemap</a></span>
 
 				<div class="dropdown">
-					<a data-toggle="dropdown" href="#"><%= I18n.locale.capitalize %></a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						<li>
-							<%= link_to_unless_current "English", :locale => 'en' %>
-						</li>
-						<li>
-							<%= link_to_unless_current "Vietnamese", :locale => 'vi' %>
-						</li>
-					</ul>
+          <%= link_to root_path(:vi) do %>
+            <img src="/images/vn_flag.jpg" alt="" />
+          <% end %>
+          <%= link_to root_path(:en) do %>
+            <img src="/images/en_flag.jpg" alt="" />
+          <% end %>
 				</div>
 
 				<span><%= t "main_nav.Language" %>&nbsp;</span>
