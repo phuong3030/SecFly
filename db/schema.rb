@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140613141913) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.string   "name_vi"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

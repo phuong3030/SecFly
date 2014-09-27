@@ -8,7 +8,7 @@ class Home::ProductsController < ApplicationController
 		@number_of_item = params[:_number_of_item] || 8
 		@filtered_category_id = params[:_category_id]
 
-		@categories = Category.select(:id, :name).order(:name)
+		@categories = Category.select(:id, :name, :name_vi).order(:name)
 		@products = Product.get_filter_paging_data(
 			@filtered_category_id,
 			params[:page] || 1,
@@ -32,7 +32,7 @@ class Home::ProductsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def product_params
-		params.require(:product).permit(:name, :description, :category_id, :image)
+		params.require(:product).permit(:name, :description, :category_id, :image, :name_vi, :description_vi)
 	end
 
 end

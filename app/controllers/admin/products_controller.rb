@@ -65,7 +65,7 @@ class Admin::ProductsController < Admin::DashboardController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def admin_product_params
-		params.require(:product).permit(:name, :description, :image)
+		params.require(:product).permit(:name, :description, :image, :name_vi, :description_vi)
 	end
 
 	# Check role to access this controller
