@@ -96,6 +96,8 @@ SecFly::Application.configure do
 	}
 
 
-  config.action_mailer.default_url_options = { host: 'nacenopto.com' }
+  config.action_mailer.default_url_options = { 
+    host: 'mail.nacenopto.com'
+  }
 
 end

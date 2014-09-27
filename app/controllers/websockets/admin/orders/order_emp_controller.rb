@@ -45,7 +45,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
       @order.customer.email, 
       @order, 
       @order.customer
-    )
+    ).deliver
 	end
 
 	def send_email_to_customer
@@ -58,7 +58,7 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 					@order.customer.email, 
 					@order, 
 					@order.customer
-				)
+				).deliver
 				
 				logging = OrderProcessing.new(
 					:order_id => @order.id, 

@@ -7,12 +7,10 @@ class OrderMailer < ActionMailer::Base
 		@customer = customer
 
 		mail(:to => to, :subject => "Please confirm your request tickets")
-    mail.deliver
 	end
 
 	def tickets_email(to)
 		mail(:to => to, :subject => "Ticket(s) from Nacenopto travel agency")
-    mail.deliver
 	end
 
 end
