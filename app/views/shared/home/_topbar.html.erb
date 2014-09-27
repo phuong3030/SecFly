@@ -9,10 +9,10 @@
 				<span class='sitemap'><a href='/sitemap.xml'>Sitemap</a></span>
 
 				<div class="dropdown">
-          <%= link_to root_path(:vi) do %>
+          <%= link_to url_for(:locale => 'vi') do %>
             <img src="/images/vn_flag.jpg" alt="" />
           <% end %>
-          <%= link_to root_path(:en) do %>
+          <%= link_to url_for(:locale => 'en') do %>
             <img src="/images/en_flag.jpg" alt="" />
           <% end %>
 				</div>
