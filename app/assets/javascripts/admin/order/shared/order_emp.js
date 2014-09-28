@@ -24,6 +24,23 @@
 		
 		return false;
 	});
+  $('.preview-email-content').on('click', '#send-email', function(e) {
+
+    alertify.confirm("Do you want to send email to customer?", function (e) {
+
+      if (e) {
+
+        var data = { 
+          order_id: $('.email_order_id').text()
+        };
+
+        window.dis.trigger('send_email', data); 
+      }
+      else {
+        alertify.error("Cancel action send email!", "", 0);
+      }
+    });
+  });
 	$('tbody').on('click', '.send-ticket', function(e) {
 		
 		var data = { 

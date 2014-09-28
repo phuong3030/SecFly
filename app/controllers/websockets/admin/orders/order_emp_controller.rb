@@ -41,11 +41,6 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 				{ :order => @order, :customer => @order.customer }
 			)
 		end
-    OrderMailer.confirmation_order_email(
-      @order.customer.email, 
-      @order, 
-      @order.customer
-    ).deliver
 	end
 
 	def send_email_to_customer
