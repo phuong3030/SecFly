@@ -12,9 +12,9 @@
 
 				<ul class="nav phone">
 					<%= nav_tab 'Home', root_path, :current => current_tab %>
+					<%= nav_tab 'About', about_path, :current => current_tab %>
 					<%= nav_tab 'Services', services_path, :current => current_tab %>
 					<%= nav_tab 'Subsidiary', iit_corp_path, :current => current_tab %>
-					<%= nav_tab 'About', about_path, :current => current_tab %>
 					<%= nav_tab 'Contacts', contacts_path, :current => current_tab %>
 				</ul>
 
@@ -22,14 +22,14 @@
 
 			<ul class="nav nav-tabs desktop">
 				<%= nav_tab 'Home', root_path, :current => current_tab, :id => 'home-nav-item' %>
+				<%= nav_tab 'About', about_path, :current =>  current_tab, :id => 'about-nav-item' %>
 				<%= nav_tab 'Services', services_path, :current => current_tab, :id => 'services-nav-item' %>
 				<%= nav_tab 'Subsidiary', iit_corp_path, :current => current_tab, :id => 'subsidiary-nav-item' %>
-				<%= nav_tab 'About', about_path, :current =>  current_tab, :id => 'about-nav-item' %>
 				<%= nav_tab 'Contacts', contacts_path, :current => current_tab, :id => 'contacts-nav-item' %>
 			</ul>
 		</div>
 
-		<div id='services-submenu'>
+		<div id='services-submenu' class="submenu">
 			<ul class='list-unstyled'>
 				<li>
 					<%= link_to t('main_nav.Electronics'), products_path %>
@@ -43,13 +43,30 @@
 			</ul>
 		</div>
 	
-		<div id='subsidiary-submenu'>
+		<div id='subsidiary-submenu' class="submenu">
 			<ul class='list-unstyled'>
 				<li>
-					<%= link_to 'IIT Corporation', iit_corp_path  %>
+					<%= link_to t('main_nav.iit'), iit_corp_path  %>
 				</li>
 				<li>
-					<%= link_to 'NACENOPTO Travel', travel_path %>
+					<%= link_to t('main_nav.vntravel'), travel_path %>
+				</li>
+        <li>
+					<%= link_to t('main_nav.getravel'), travel_path %>
+				</li>
+			</ul>
+		</div>
+    
+    <div id='about-submenu' class="submenu">
+			<ul class='list-unstyled'>
+				<li>
+					<%= link_to t('main_nav.time'), about_path + "#time" %>
+				</li>
+				<li>
+					<%= link_to t('main_nav.org'), about_path + "#org" %>
+				</li>
+				<li>
+					<%= link_to t('main_nav.partner'), about_path + "#partner" %>
 				</li>
 			</ul>
 		</div>

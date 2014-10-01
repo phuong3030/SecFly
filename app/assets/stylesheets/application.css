@@ -14,7 +14,7 @@
 //= require powertip 
  */
 
-#services-submenu, #subsidiary-submenu {
+.submenu {
 	background: #31353D;
 	position: absolute;
 	display: none;

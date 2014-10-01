@@ -18,7 +18,8 @@
 (function ($) {
 
 	var servicesNavItem = $('#services-nav-item'),
-		 subsidiaryNav = $('#subsidiary-nav-item');
+      subsidiaryNav = $('#subsidiary-nav-item'),
+      aboutNav = $('#about-nav-item');
 
 	// Sub-menu powertip listener
 	servicesNavItem.data('powertiptarget', 'services-submenu').powerTip({
@@ -32,6 +33,12 @@
 		mouseOnToPopup: true,
 		fadeInTime: 100
 	});
+
+  aboutNav.data('powertiptarget', 'about-submenu').powerTip({
+    placement: 's',
+    mouseOnToPopup: true,
+    fadeInTime: 100
+  });
 
 	// Language dropdown slide effect
 	$('.dropdown').on('show.bs.dropdown', function (e) {

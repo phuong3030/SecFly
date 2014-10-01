@@ -3,7 +3,7 @@ vi:
    main_nav:
       Home: "Trang chủ"
       About: "Giới thiệu"
-      Services: "Dịch vụ"
+      Services: "Lĩnh vực kinh doanh"
       Products: "Sản phẩm"
       Contacts: "Liên hệ"
       Language: "Ngôn ngữ:"
@@ -11,6 +11,12 @@ vi:
       Travel: "Dịch Vụ Du Lịch"
       Personal: "Kiều Hối"
       Subsidiary: "Công ty thành viên"
+      time: "Hình thành & phát triển "
+      org: "Cơ cấu tổ chức"
+      partner: "Đối tác"
+      iit: "Công ty IIT"
+      vntravel: "Phòng vé máy bay Hà Nội"
+      getravel: "Phòng vé máy bay Berlin"
    footer: 
       Content: "@ Bản quyền nội dung"
       Design: "Xây dựng và phát triển"
