@@ -58,7 +58,7 @@ class Admin::ResourcesController < Admin::DashboardController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def resource_params
-		params.require(:resource).permit(:name, :description, :resource_type, :image)
+		params.require(:resource).permit(:name, :description, :resource_type, :image, :description_vi)
 	end
 
 	# Check role to access this controller

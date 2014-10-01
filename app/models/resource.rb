@@ -11,4 +11,14 @@ class Resource < ActiveRecord::Base
 
 	scope :get_sale_banner, -> { where(:resource_type => 2) }
 	scope :get_sale_text, -> { where(:resource_type => 3) }
+  scope :get_company_info, -> { where(:resource_type => 4).first }
+
+  def description
+    if I18n.locale == :en
+      read_attribute(:description)
+    else 
+      read_attribute(:description_vi)
+    end
+  end
+
 end

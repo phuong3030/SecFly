@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140613141913) do
   create_table "resources", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.string   "description_vi"
     t.integer  "resource_type"
     t.string   "image_file_name"
     t.string   "image_content_type"

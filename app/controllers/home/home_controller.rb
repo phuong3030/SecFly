@@ -2,6 +2,7 @@ class Home::HomeController < ApplicationController
 
 	# GET /
 	def index
+    @info = Resource.get_company_info
 		render :template => 'home/index/index'
 	end
 

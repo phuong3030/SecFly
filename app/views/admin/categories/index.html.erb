@@ -30,6 +30,7 @@
 			<thead>
 				<tr>
 					<th>name</th>
+					<th>name_vi</th>
 					<th>description</th>				
 					<th></th>
 					<th></th>
@@ -42,6 +43,7 @@
 			<% @category.each do |category| %>
 				<tr>
 					<td><%= category.name %></td>
+					<td><%= category.name_vi %></td>
 					<td><%= category.description %></td>
 					<td><%= link_to 'Show', admin_category_path(category.id) %></td>
 					<td><%= link_to 'List product', admin_category_products_path(category.id) %></td>

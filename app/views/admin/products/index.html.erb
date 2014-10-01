@@ -33,7 +33,9 @@
 			<thead>
 				<tr>
 					<th>Name</th>
+					<th>Name_vi</th>
 					<th>Description</th>
+					<th>Description_vi</th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -44,7 +46,9 @@
 			<% @products.each do |product| %>
 				<tr>			
 					<td><%= product.name %></td>
+					<td><%= product.name_vi %></td>
 					<td><%= product.description %></td>
+					<td><%= product.description_vi %></td>
 	
 					<td><%= link_to 'Show', admin_category_product_path(product.category_id, product.id) %></td>
 					<td><%= link_to 'Edit', edit_admin_category_product_path(product.category_id, product.id) %></td>

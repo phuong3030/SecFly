@@ -6,42 +6,7 @@
 			<span>Information</span>
 		</h2>	
 
-		<p>
-		NACENOPTO is a responsible partner of our customers and worldwide well-known 
-		equipment manufacturers in the field of equipment supply, consultancy, technology transfer.	
-		</p>
-		<p>
-		NACENOPTO operated in many aspects of the high technology equipment, including consultancy, 
-		planning, export and import, technology transfer and after sales services.  
-		</p>
-		<p>
-		NACENOPTO distribute products of well - known equipment manufacturers, such as IBH Impex, 
-		Medav, Rohde&Schwarz, HAMEG, CTS, Siemens, Instek, Rheinmentall Defence, Carl Zeiss, 
-		MetaSystem, Kugel, VTQ Videotronik, Boerger REI, Intel…
-		<p>
-		Our head office located in Hanoi, Vietnam. 
-		NACENOPTO has a representative office in Berlin, operated under Germany law. 
-		</p>
-		</p>
-
-		<p>
-		Our commitment is:
-		</p>
-		<div class='left-side commitment'>
-			<p>•	Partnership - trustworthy</p>
-			<p>•	Experience - broad</p>
-			<p>•	Technology - innovatory</p>
-			<p>•	Information - useful</p>
-		</div>
-		<div class='right-side commitment'>
-			<p>•	Expertise - deep</p>
-			<p>•	Communication - close</p>
-			<p>•	Human resources - dedicated</p>
-		</div>
-
-		<div class='clear'>
-			<%= link_to t("readmore").to_s, about_path %>
-		</div>
+    <%= @info.description.html_safe %>
 
 	</div>
 

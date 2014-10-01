@@ -55,5 +55,7 @@ gem 'therubyracer'
 # File uploading plugin
 gem "paperclip", github: 'thoughtbot/paperclip'
 
+gem 'prawn'
+
 gem 'capistrano'
 gem 'rvm-capistrano'

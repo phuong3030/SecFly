@@ -3,6 +3,7 @@ class CreateResources < ActiveRecord::Migration
 		create_table :resources do |t|
 			t.string :name
 			t.string :description
+			t.string :description_vi
 			t.integer :resource_type
 			t.attachment :image
 		end

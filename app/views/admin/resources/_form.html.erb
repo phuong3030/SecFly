@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+  <div class="tips">
+    <p>
+      Tips: Resource type: 2 - Sale banner image, 3 - Sale text, 4 - company information
+    </p>
+  </div>
 
   <div class="form-group">
     <%= f.label :name %><br>
@@ -18,6 +23,10 @@
   <div class="form-group">
     <%= f.label :description %><br>
 	 <%= f.text_area :description, :size => '40x8', :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description_vi %><br>
+	 <%= f.text_area :description_vi, :size => '40x8', :class => 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :resource_type %><br>
