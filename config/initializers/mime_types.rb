@@ -5,3 +5,4 @@
 # Mime::Type.register_alias "text/html", :iphone
 Mime::Type.register "application/z-gzip", :xml_gz, [], ["xml.gz"]
 #Mime::Type.register "application/vnd.openxmlformates-officedocument.spreadsheetml.sheet", :xlsx
+#Mime::Type.register "application/pdf", :pdf
