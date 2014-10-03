@@ -1,10 +1,15 @@
+#encoding: UTF-8
+#
 class ConfirmEmail < Prawn::Document
-  def initialize(ticket_info)
-    super
+  def initialize(options)
+    preprocess_info(options[:ticket_info], options[:order])
+    super(options)
   end
 
-  def preprocess_info(ticket_info)
+  def preprocess_info(ticket_info, order)
     @ticket_info = ticket_info
+    @order = order
+    @ticket_info[:names] = ticket_info[:names].split(/\d.\d/)[1..2] 
   end
 
   def header
@@ -12,27 +17,33 @@ class ConfirmEmail < Prawn::Document
   end
 
   def names
-    text @ticket_info.start
-    text @ticket_info.end
-    @ticket_info.names.collect do |name|
+    text @order.depart_date.to_s
+    text @order.return_date.to_s
+    @ticket_info[:names].collect do |name|
       text name
     end
-    text("RESERVATION CODE: " + @ticket_info.code)
+    text("RESERVATION CODE: " + @ticket_info[:code])
   end
 
   def segment
-    text @ticket_info.start
-    text @ticket_info.end
+    text @order.depart_date.to_s
+    text @order.return_date.to_s
   end
 
   def price_condition
-    text "GIÁ VÉ NET: " 
+    text("GIÁ VÉ NET: " + @ticket_info[:price])
     text "ĐIỀU KIỆN CỦA GIÁ VÉ: "
+    @ticket_info[:conditions].collect do |con|
+      text('- ' + con)
+    end
   end
 
   def note
-    text "Code trong booking: "
-    text "THỜI HẠN IN VÉ: TRƯỚC 19H00 NGÀY HÔM NAY – 26.09.2014"
+    text("Code trong booking: ")
+    text(@order.from)
+    text(@order.to)
+    text('VN VIETNAM AIRLINES')
+    text("THỜI HẠN IN VÉ: TRƯỚC 19H00 NGÀY HÔM NAY – " + Date.today.strftime('%d.%m.%Y'))
     text "GIÁ, THUẾ, TỶ GIÁ QUY ĐỔI VND TẠI THỜI ĐIỂM IN VÉ."
   end
 
@@ -49,6 +60,14 @@ class ConfirmEmail < Prawn::Document
   end
 
   def ren
+    self.header
+    self.names
+    self.segment
+    self.price_condition
+    self.note
+    self.footer
+    font "#{Rails.root}/public/fonts/HelveticaNeueLTStd-XBlkCn.ttf"
+
     self.render_file "#{Rails.root}/ce.pdf"
   end
 end

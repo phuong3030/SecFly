@@ -52,7 +52,13 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 				OrderMailer.confirmation_order_email(
 					@order.customer.email, 
 					@order, 
-					@order.customer
+					@order.customer,
+          { 
+            :code => params[:code],
+            :names => params[:names],
+            :condition => params[:conditions],
+            :segments => params[:segments]
+          }
 				).deliver
 				
 				logging = OrderProcessing.new(
