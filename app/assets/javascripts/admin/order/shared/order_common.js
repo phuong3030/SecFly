@@ -1,7 +1,7 @@
 (function ($, scope) {
 
 	// Create connection to server and subcribe to special channel
-	scope.dis = new WebSocketRails(scope.location.host + ':3000/websocket');
+	scope.dis = new WebSocketRails(scope.location.host + '/websocket');
 	scope.privateChannel = dis.subscribe($('.userinfo h5').html());
 
 	// Listen event from server

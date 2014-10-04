@@ -68,6 +68,6 @@ class ConfirmEmail < Prawn::Document
     self.footer
     font "#{Rails.root}/public/fonts/HelveticaNeueLTStd-XBlkCn.ttf"
 
-    self.render_file "#{Rails.root}/ce.pdf"
+    #self.render_file "#{Rails.root}/ce.pdf"
   end
 end

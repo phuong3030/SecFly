@@ -35,6 +35,7 @@ SecFly::Application.configure do
 	# Mail setting for test
 	config.action_mailer.raise_delivery_errors = true
 	config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default :charset => 'utf-8'
 	config.action_mailer.smtp_settings = {
     :address =>	"mail.nacenopto.com",
 			:port => 465,
@@ -46,6 +47,6 @@ SecFly::Application.configure do
 			:ssl => true
 	}
 	
-	config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'mail.nacenopto.com' }
 	
 end

@@ -5,7 +5,8 @@ class OrderMailer < ActionMailer::Base
 	def confirmation_order_email(to, order, customer, ticket_info)
 		@order = order
 		@customer = customer
-    booking = ConfirmEmail.new(ticket_info)
+    booking = ConfirmEmail.new(ticket_info, order)
+    booking.ren
 
     attachments["booking.pdf"] = { :mime_type => 'application/pdf', :content => booking.render }
 

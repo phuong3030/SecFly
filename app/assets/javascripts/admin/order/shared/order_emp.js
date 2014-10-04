@@ -31,7 +31,11 @@
       if (e) {
 
         var data = { 
-          order_id: $('.email_order_id').text()
+          order_id: $('.email_order_id').text(),
+          code: $('#code').val(),
+          conditions: $('#conditions').val(),
+          names: $('#names').val(),
+          segments: $('#segments').val()
         };
 
         window.dis.trigger('send_email', data); 
@@ -49,8 +53,10 @@
 
 		alertify.confirm("Has customer already get tickets? System will delete this row.", function (e) {
 			if (e) {
+
 				window.dis.trigger('send_ticket', data);
 			} else {
+
 				alertify.error("Cancel action send tickets!", "", 0);
 			}
 		});
@@ -88,10 +94,6 @@
 		$('.email_order_id').html(order.id);
 		$('.email_customer_name').html(adult + children + infant);
 		$('.email_order_created_at').html(new Date(order.created_at).toLocaleString());
-		$('.email_from').html(order.from);
-		$('.email_to').html(order.to);
-		$('.email_depart').html(order.depart_date);
-		$('.email_return').html(order.return_date);
 
 		$.magnificPopup.open({
 			items: {

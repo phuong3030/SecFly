@@ -54,10 +54,10 @@ class Websockets::Admin::Orders::OrderEmpController < WebsocketRails::BaseContro
 					@order, 
 					@order.customer,
           { 
-            :code => params[:code],
-            :names => params[:names],
-            :condition => params[:conditions],
-            :segments => params[:segments]
+            :code => message[:code],
+            :names => message[:names],
+            :condition => message[:conditions],
+            :segments => message[:segments]
           }
 				).deliver
 				
