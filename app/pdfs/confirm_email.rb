@@ -1,5 +1,5 @@
 #encoding: UTF-8
-#
+
 class ConfirmEmail < Prawn::Document
   def initialize(options)
     preprocess_info(options[:ticket_info], options[:order])
@@ -60,14 +60,19 @@ class ConfirmEmail < Prawn::Document
   end
 
   def ren
+    font_path = "#{Rails.root}/public/fonts/"
+    font_families.update("sans" => {
+      normal: { file: "#{font_path}/ARIALUNI.TTF" }
+    })
+    font "sans"
+
     self.header
     self.names
     self.segment
     self.price_condition
     self.note
     self.footer
-    font "#{Rails.root}/public/fonts/HelveticaNeueLTStd-XBlkCn.ttf"
 
-    #self.render_file "#{Rails.root}/ce.pdf"
+    self.render_file "#{Rails.root}/ce.pdf"
   end
 end
