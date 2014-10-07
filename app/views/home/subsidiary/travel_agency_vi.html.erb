@@ -1,0 +1,86 @@
+<% content_for :page_spec do %>
+	<title>Travel Agency</title>
+	<%= stylesheet_link_tag "home/subsidiary/iit", media: "all" %>
+<% end %>
+
+<%= currently_at 'Subsidiary' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Travel Agency',
+			[
+				{ :name => 'Home', :path => root_path },
+				{ :name => 'Subsidiary', :path => iit_corp_path },
+				{ :name => 'Travel Agency' } 
+			]
+		)%>	
+	</div>
+
+	<div class='services-inner row'>
+		<div class='col-xs-12 col-md-12'>
+      <p>
+      Phòng vé <strong>Nacenopto Travel Agency</strong>, địa chỉ tại số <strong>103 phố Lò Đúc - Hà Nội</strong> là đại lý vé máy 
+      bay cấp <strong>1</strong> của Hãng hàng không quốc gia Việt Nam - <strong>Vietnam Airlines</strong> và một số hãng hàng không 
+      lớn trên thế giới. Bên cạnh đó, chúng tôi còn có quan hệ mật thiết với rất nhiều phòng vé 
+      khác trong nước và nước ngoài, trong đó có Phòng vé <strong>Nacenopto Travel Agency, địa chỉ tại 
+      Seefelder Str. 48 - 13053 Berlin - Germany</strong>. Thông qua một hệ thống cung cấp dịch vụ thống 
+      nhất như nói trên, chúng tôi hy vọng sẽ mang đến cho quý khách hàng một chất lượng phục vụ hoàn hảo.
+      </p>
+      <p>
+      <strong><i>
+      Công ty chúng tôi xin gửi lời đề nghị được hợp tác với quý khách hàng, trước hết trên lĩnh vực 
+      dịch vụ bán vé máy bay, đặt chỗ khách sạn, visa, du lịch nước ngoài và tiếp theo sau là các hợp đồng kinh tế, tài chính khác.
+      </i></strong>
+      </p>
+      <p>
+      Đến với công ty chúng tôi, quý khách hàng sẽ nhận được <strong>phong cách phục vụ chuyên nghiệp</strong>, và 
+      nhiều hơn những gì mà quý khách mong đợi.
+      </p>
+      <ul>
+        <li>Cung cấp thông tin tư vấn, đặt chỗ, xuất vé và giao vé, thu tiền vé theo đúng yêu cầu của quý khách kịp thời, đầy đủ, chính xác.</li>
+        <li>Đảm bảo hỗ trợ khách trong các trường hợp: làm thủ tục muộn, hành lý quá cước, xin chỗ, can thiệp để tìm hành lý thất lạc...</li>
+        <li>Xin chỗ khi các chuyến bay đầy chỗ theo khả năng của từng chuyến bay, mùa bay. </li>
+        <li>Thông báo cho khách hàng vé giá rẻ, giá cạnh tranh tốt nhất. Thông báo kịp thời về các chương trình khuyến mại, thông tin cập nhật của hãng hàng không quốc gia Việt Nam và các hãng hàng không nước ngoài.</li>
+        <li>Đảm bảo không để xảy ra trục trặc cho khách hàng khi sử dụng vé máy bay của bên B.</li>
+        <li>Trường hợp hãng hàng không huỷ chuyến bay, chúng tôi kịp thời thông báo trực tiếp cho quý khách hàng.</li>
+        <li>Cung cấp đầy đủ những thông tin về hành khách, hành trình của quý khách hàng cho hãng hàng không vận chuyển để hãng hàng không vận chuyển có căn cứ đưa ra những ưu đãi hợp lý cho khách hàng.</li>
+        <li>Bồi thường thiệt hại cho quý khách theo quy định của pháp luật Việt Nam khi cung cấp vé không kịp thời làm ảnh hưởng tới lịch trình của khách.</li>
+      </ul>
+      <p>
+      Ngoài ra Quý khách hàng còn nhận được những lợi ích đặc biệt khi tham gia <strong>chương trình khách hàng lớn</strong>. Với quỹ điểm tích lũy từ việc đạt được doanh số quốc tế và quốc nội cam kết, Quý cơ quan có thể lựa chọn các <strong>ưu đãi thích hợp</strong> do hãng Hàng không Quốc gia Việt Nam áp dụng như: ưu đãi vé miễn, giảm cước và hành lý miễn cước; ưu đãi về nâng hạng dịch vụ; ưa đãi cấp thẻ bông sen vàng; và nhiều chính sách bổ trợ, ưu tiên khác.
+      </p>
+      <p>
+      Việc trở thành khách hàng lớn của Vietnam Airlines là cách hiệu quả để giảm thiếu chi phí đi lại, hỗ trợ rất nhiều đối với các chuyến công tác của quý khách (thuận lợi hơn cả trong những chuyến bay có tình trạng chỗ căng thẳng, đặc biệt là các chuyến đi gấp của lãnh đạo hay các đoàn khách lớn tham gia hội nghị, hội thảo… cũng như tận hưởng các dịch vụ tốt nhất.
+      </p>
+      <p>
+      Về tài chính, quý cơ quan có thể nhận được hỗ trợ như sau: Công ty chúng tôi chấp nhận đầy đủ các phương thức thanh toán như tiền mặt, séc, chuyển khoản, thanh toán bằng các loại thẻ. Quý cơ quan có thể lựa chọn hình thức thanh toán theo định kỳ (tuỳ theo hợp đồng hai bên thoả thuận).
+      </p>
+      <p>
+      Trong hoạt động kinh doanh, <strong>công ty chúng tôi thường xuyên có những chính sách hỗ trợ khách hàng một cách tốt, thiết thực nhất</strong> với phương châm không ngừng tăng cường chất lượng dịch vụ để làm cho khách hàng luôn được thoả mãn.
+      </p>
+      <p>
+      Quý khách hàng có nhu cầu, xin vui lòng liên hệ với Công ty chúng tôi theo thông tin sau: 
+      </p>
+      <p><strong>Văn phòng vé máy bay tại Hà Nội</strong></p>
+      <ul>
+        <li>Địa chỉ: 103 Phố Lò Đúc, Hai Bà Trưng, Hà Nội</li>
+        <li>ĐT: (+844) 38213672/ 38213673/ 39717373/ 39717374</li>
+        <li>Fax: (+844) 38211270</li>
+        <li>E-mail: Travel-Agency@nacenopto.com</li>
+        <li>Hot line:  +84485820820</li>
+      </ul>
+      <p><strong>Văn phòng vé máy bay tại Berlin, Đức</strong></p>
+      <ul>
+        <li>Địa chỉ: Seefelder Str. 48, 13053, Berlin, Germany </li>
+        <li>ĐT: (+49 30) 9827056/ 9823257</li>
+        <li>Fax: (+49 30) 9823277</li>
+        <li>E-mail: Nacenoptotrave@t-online.de</li>
+        <li>Hot line: + 49 30</li>
+      </ul>
+		</div>
+		</div>
+	</div>
+
+</div>

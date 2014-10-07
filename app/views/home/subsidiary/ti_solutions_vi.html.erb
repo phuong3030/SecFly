@@ -1,0 +1,26 @@
+<% content_for :page_spec do %>
+	<title>Giải pháp ĐTVT-CNTT</title>
+	<%= stylesheet_link_tag "home/subsidiary/iit", media: "all" %>
+<% end %>
+
+<%= currently_at 'Services' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Giải pháp ĐTVT-CNTT',
+			[
+				{ :name => 'Home', :path => root_path },
+				{ :name => 'Services', :path => services_path },
+				{ :name => 'Giải pháp ĐTVT-CNTT ' } 
+			]
+		)%>	
+	</div>
+
+	<div class='services-inner row'>
+		<div class='col-xs-12 col-md-12'>
+		</div>
+	</div>
+
+</div>

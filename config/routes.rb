@@ -43,6 +43,8 @@ SecFly::Application.routes.draw do
 			end
 			scope :subsidiary do 
 				get "/iit-corporation" => "subsidiary#iit_corp", :as => "iit_corp"
+				get "/travel-agency" => "subsidiary#travel_agency", :as => "travel_agency"
+				get "/ti-solutions" => "subsidiary#ti_solutions", :as => "ti_solutions"
 			end
 			#%w( 404 422 500 ).each do |code|
 			#	get code, :to => "errors#show", :code => code

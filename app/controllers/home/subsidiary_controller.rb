@@ -9,4 +9,22 @@ class Home::SubsidiaryController < ApplicationController
 		end
 	end
 
+  # GET /travel-agency
+  def travel_agency
+    if I18n.locale == :en
+      render :template => 'home/subsidiary/travel_agency_en'
+    elsif I18n.locale == :vi
+      render :template => 'home/subsidiary/travel_agency_vi'
+    end
+  end
+
+  # GET /travel-agency
+  def ti_solutions
+    if I18n.locale == :en
+      render :template => 'home/subsidiary/ti_solutions_en'
+    elsif I18n.locale == :vi
+      render :template => 'home/subsidiary/ti_solutions_vi'
+    end
+  end
+
 end

@@ -1,0 +1,26 @@
+<% content_for :page_spec do %>
+	<title>Telecommunication & Information solutions</title>
+	<%= stylesheet_link_tag "home/subsidiary/iit", media: "all" %>
+<% end %>
+
+<%= currently_at 'Services' %>
+
+<div class='content container'>
+	
+	<div class='row'>	
+		<%= render_page_header(
+			'Telecommunication  & Information solutions',
+			[
+				{ :name => 'Home', :path => root_path },
+				{ :name => 'Services', :path => services_path },
+				{ :name => 'Telecommunication & Information solutions' } 
+			]
+		)%>	
+	</div>
+
+	<div class='services-inner row'>
+		<div class='col-xs-12 col-md-12'>
+		</div>
+	</div>
+
+</div>
